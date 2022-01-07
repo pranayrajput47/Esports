@@ -74,12 +74,12 @@
                             <type>zip</type>
                             <target>/apps/esports-packages/content/install</target>
                         </embedded>
-                        <embedded>
+                       <!--  <embedded>
                             <groupId>com.esports.aem</groupId>
                             <artifactId>esports-aem-project.ui.config</artifactId>
                             <type>zip</type>
                             <target>/apps/esports-packages/application/install</target>
-                        </embedded>
+                        </embedded> -->
                         <embedded>
                             <groupId>com.adobe.cq</groupId>
                             <artifactId>core.wcm.components.content</artifactId>
@@ -91,12 +91,12 @@
                             <artifactId>core.wcm.components.core</artifactId>
                             <target>/apps/esports-vendor-packages/application/install</target>
                         </embedded>
-                        <embedded>
+                        <!-- <embedded>
                             <groupId>com.adobe.cq</groupId>
                             <artifactId>core.wcm.components.config</artifactId>
                             <type>zip</type>
                             <target>/apps/esports-vendor-packages/application/install</target>
-                        </embedded>
+                        </embedded> -->
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -198,22 +198,22 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.esports.aem</groupId>
             <artifactId>esports-aem-project.ui.config</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.content</artifactId>
             <type>zip</type>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.config</artifactId>
             <type>zip</type>
-        </dependency>
+        </dependency> -->
     </dependencies>
 </project>
