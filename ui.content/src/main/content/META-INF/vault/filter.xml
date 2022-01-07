@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/esports" mode="merge"/>
+    <filter root="/content/esports" mode="merge"/>
+    <filter root="/content/dam/esports" mode="merge"/>
+    <filter root="/content/experience-fragments/esports" mode="merge"/>
+</workspaceFilter>
