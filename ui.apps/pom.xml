@@ -63,10 +63,7 @@
                             <groupId>com.adobe.cq</groupId>
                             <artifactId>core.wcm.components.content</artifactId>
                         </dependency>
-                        <dependency>
-                            <groupId>com.adobe.cq</groupId>
-                            <artifactId>core.wcm.components.config</artifactId>
-                        </dependency>
+                       
                     </dependencies>
                 </configuration>
             </plugin>
@@ -116,12 +113,7 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.esports.aem</groupId>
-            <artifactId>esports-aem-project.ui.frontend</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
+       
 
         <dependency>
             <groupId>com.esports.aem</groupId>
@@ -140,11 +132,7 @@
             <artifactId>core.wcm.components.content</artifactId>
             <type>zip</type>
         </dependency>
-        <dependency>
-            <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.config</artifactId>
-            <type>zip</type>
-        </dependency>
+        
 
 
         <dependency>
