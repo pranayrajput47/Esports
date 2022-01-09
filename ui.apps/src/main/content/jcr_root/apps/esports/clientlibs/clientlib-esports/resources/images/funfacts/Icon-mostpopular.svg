@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45.38" height="45.38" viewBox="0 0 45.38 45.38">
+  <g id="Icon" transform="translate(-318.94 -13633.42)">
+    <g id="Circle" transform="translate(318.94 13633.42)" fill="none" stroke="#00ff5b" stroke-width="4">
+      <circle cx="22.69" cy="22.69" r="22.69" stroke="none"/>
+      <circle cx="22.69" cy="22.69" r="20.69" fill="none"/>
+    </g>
+    <g id="Vector_Smart_Object" data-name="Vector Smart Object">
+      <g id="Vector_Smart_Object-2" data-name="Vector Smart Object" transform="translate(330 13645)">
+        <path id="Path_215" data-name="Path 215" d="M8.064,14,4.133,10.137l5.435-.8L12,4.38l2.432,4.962,5.438.8L15.936,14l.93,5.46L12,16.881,7.137,19.46ZM12,0l-.863,1.759L8.293,7.573,0,8.785l6,5.893L4.585,23,12,19.068,19.419,23,18,14.679l6-5.893L15.707,7.573Z"/>
+      </g>
+      <path id="Color_Overlay" data-name="Color Overlay" d="M342,13664.069l-7.413,3.932,1.413-8.322-6-5.893,8.291-1.215,2.844-5.814L342,13645l3.708,7.57,8.291,1.215-6,5.893,1.417,8.322Zm4.867.392-.93-5.461,3.934-3.862-5.44-.8-2.432-4.96-2.432,4.96-5.433.8,3.931,3.862-.926,5.461,4.861-2.58Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>
