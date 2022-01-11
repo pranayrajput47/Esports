@@ -1,0 +1,52 @@
+<template data-sly-template.body="${ @ page}">
+
+   	<head>
+    	<sly data-sly-use.head="head.html" data-sly-call="${head.head @ page = page}"/>
+        <sly data-sly-use.clientlib = "/libs/granite/sightly/templates/clientlib.html"/>
+    	<sly data-sly-call = "${clientlib.css @categories = 'clientlib.esports'}"/>
+	</head>
+
+   <body>
+   <sly data-sly-include = "/libs/wcm/core/components/init/init.jsp"/>
+		<sly data-sly-resource = "${'footer-parsys' @resourceType = '/libs/foundation/components/iparsys'}"/>
+
+		<!-- Header-->
+		<sly data-sly-use.header="header.html" data-sly-call="${header.header @ page = page}"/>
+
+
+
+		<!--Footer-->
+
+		 <sly data-sly-use.footer="footer.html" data-sly-call="${footer.footer @ page = page}"/>
+    	
+
+Footer END -->
+
+	<!-- Back to top -->
+	<div class="back-top"><i class="bi bi-arrow-up-short"></i></div>
+
+	<!-- =======================
+JS libraries, plugins and custom scripts -->
+
+		<sly data-sly-use.clientlib = "/libs/granite/sightly/templates/clientlib.html"/>
+   		<sly data-sly-call = "${clientlib.js @categories = 'clientlib.esports'}"/>
+
+
+    </body>
+</template>
+
+
+
+
+
+
+ <!--<sly data-sly-test="${wcmmode.edit}"/>
+
+
+
+    <sly data-sly-use.header="header.html" data-sly-call="${header.header @ page = page}"/>
+
+    <sly data-sly-use.footer="footer.html" data-sly-call="${footer.footer @ page = page}"/>
+    <sly data-sly-test="${wcmmode.edit}">
+        </div>
+    </sly>-->
