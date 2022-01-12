@@ -3,5 +3,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Teaser"
     sling:resourceSuperType="core/wcm/components/teaser/v1/teaser"
-    componentGroup="Esports - Structure"
-    imageDelegate="esports/components/image"/>
+    componentGroup="Esports - Structure"/>
