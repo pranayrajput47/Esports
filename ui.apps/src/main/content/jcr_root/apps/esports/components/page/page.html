@@ -1,7 +1,19 @@
-
-<sly data-sly-use.head="head.html" data-sly-call="${head.head @ page = page}"/>
-<sly data-sly-include = "head.html"/>
-
-<sly data-sly-use.body="body.html" data-sly-call="${body.body @ page = page}"/>
-<sly data-sly-include = "body.html"/>
-
+<html data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page" lang="${page.language}"
+      data-sly-use.head="head.html"
+      data-sly-use.header="header.html"
+      data-sly-use.footer="footer.html">
+    <head data-sly-call="${head.head @ page = page}"></head>
+    <body id="${page.id}"
+          data-cmp-data-layer-enabled="${page.data ? true : false}">
+        <sly data-sly-test.isRedirectPage="${page.redirectTarget && (wcmmode.edit || wcmmode.preview)}"
+             data-sly-call="${redirect.redirect @ redirectTarget = page.redirectTarget}"></sly>
+        <sly data-sly-test="${!isRedirectPage}">
+    <header data-sly-call="${header.header @ page = page}"></header>
+            <main>
+             <sly data-sly-include = "/libs/wcm/core/components/init/init.jsp"/>
+             <sly data-sly-resource = "${'main' @resourceType = '/libs/foundation/components/parsys'}"/>
+             </main>
+            <sly data-sly-call="${footer.footer @ page = page}"></sly>
+        </sly>
+    </body>
+</html>

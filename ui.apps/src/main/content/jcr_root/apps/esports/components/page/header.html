@@ -1,23 +1,4 @@
-
-<header class="navbar-light navbar-sticky header-static d-md-none">
-		
-		<nav class="navbar navbar-expand-lg">
-			<div class="container-fluid">
-				
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="text-body h6 d-none d-sm-inline-block">Menu</span>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<a class="navbar-brand mx-auto" href="index-2.html">
-					<img class="navbar-brand-item light-mode-item icon-md" src="assets/images/logo.svg" alt="logo">
-				</a>
-				
-			</div>
-		</nav>
-		
-        <sly data-sly-include = "/libs/wcm/core/components/init/init.jsp"/>
-		<sly data-sly-resource = "${'header-parsys' @resourceType = '/libs/foundation/components/iparsys'}"/>
-	</header>
+<template data-sly-template.header="${ @ page}">
+	<sly data-sly-include = "/libs/wcm/core/components/init/init.jsp"/>
+		<div data-sly-resource="${'header-par' @ resourceType='/libs/foundation/components/iparsys'}"></div>
+	</template>
