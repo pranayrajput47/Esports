@@ -1,0 +1,46 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Stride sport league Component here" class = "cq-placeholder"></p>
+ <!-- STRIDE ESPORTS LEAGUES CARD START -->
+ <div>
+    <!-- Card START -->
+    <div class="card border">
+        <div class="card-header">
+            <h4 class="text-white text-uppercase mb-0">${properties.title}
+            </h4>
+        </div>
+        <div class="card-body p-4">
+            <div class="row g-3 justify-content-center">
+                <div class="col-12 col-md-10">
+                    <h3 class="text-uppercase mb-4 text-center">
+                        ${properties.heading}</h3>
+                </div>
+                <div class="col-12 col-md-10">
+                    <h3 class="fw-light mb-4 text-center">${properties.subHeading}
+
+                        <span class="text-primary">${properties.primarySubHeading}</h3>
+                </div>
+                <div class="col-12 col-md-10">
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'sportLeagueCard'}">
+                        <sly data-sly-list.route="${multifield.getChildren}">
+                        <div class="vstack justify-content-center align-items-center px-4 py-3">
+                        <img class="icon-xl mb-4"
+                            src="${route.image}">
+                        <div>
+                            <h3 class="text-center mb-1">
+                                ${route.multiHeading}<span
+                                    class="text-primary">${route.primaryMultiHeading}</span>
+                            </h3>
+                            <p class="text-center">
+                                <span class="text-primary">${route.primaryDescription}</span>${route.description}
+                            </p>
+                        </div>
+                        </div>
+                        </sly>
+                        </sly>
+                        </sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- STRIDE ESPORTS LEAGUES CARD END -->
