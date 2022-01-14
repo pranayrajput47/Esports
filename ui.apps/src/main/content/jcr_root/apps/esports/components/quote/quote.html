@@ -1,0 +1,19 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Quote Component here" class = "cq-placeholder"></p>
+
+<sly data-sly-list.multifield="${resource.getChildren}">
+    <sly data-sly-test="${multifield.name == 'learingItem'}">
+   
+        <div class="bg-body my-4 p-3 p-md-4 rounded-3">
+            <sly data-sly-list.route="${multifield.getChildren}">
+                <sly data-sly-test="${route.textType == 'articleText'}">
+            <q class="lead fst-italic text-primary font-heading d-block mb-4">${route.text}
+            </q>
+            </sly>
+             <sly data-sly-test="${route.textType == 'authorText'}">
+            <p class="lead font-heading mt-4 mb-0">${route.text}</p>
+            </sly>
+        </sly>
+        </div>
+        
+        </sly>
+</sly>
