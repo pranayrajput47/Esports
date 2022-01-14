@@ -1,0 +1,66 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure header Component here" class = "cq-placeholder"></p>
+
+
+	
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+		<div class="offcanvas-body d-flex flex-column pt-0">
+			<div class="sidebar active">
+				<div class="offcanvas-header justify-content-end position-absolute w-100">
+					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<!-- logo and toggle button -->
+				<div class="logo_content">
+					<div class="logo">
+						<div class="logo_name">
+							<a class="navbar-brand" href="${properties.navigationRoot}">
+								<img class="navbar-brand-item light-mode-item"
+									src="${properties.logoImage}" alt="${properties.alternateText}">
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- navigation start -->
+                <sly data-sly-list.multifield="${resource.getChildren}">
+                    <sly data-sly-test="${multifield.name == 'navlinks'}">
+                        <sly data-sly-list.route="${multifield.getChildren}">
+                            <ul class="navbar-nav nav_list">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="${route.hyperlink}">
+                                        <i>
+                                            <img class="icon-md p-2" src="${route.image}" alt="${route.altText}">
+                                        </i>
+                                        <span class="links_name">${route.linktext}</span>
+                                    </a>
+                                    <span class="tooltip"> <i>${route.tooltext}</i> </span>
+                                </li>
+                            </ul>
+                        </sly>
+                    </sly>
+                </sly>
+			</div>
+		</div>
+	</div>
+	<!-- Offcanvas END -->
+
+	<header class="navbar-light navbar-sticky header-static d-block d-md-none">
+		<!-- Logo Nav START -->
+		<nav class="navbar navbar-expand-lg">
+			<div class="container-fluid">
+				<!-- Responsive navbar toggler -->
+				<!-- Offcanvas menu toggler -->
+				<div class="nav-item">
+					<a class="nav-link p-0" data-bs-toggle="offcanvas" href="${properties.togglerLink}" role="button" aria-controls="offcanvasMenu">
+						<i class="bi bi-text-right rtl-flip fs-2" data-bs-target="#offcanvasMenu"> </i>
+					</a>
+				</div>
+				<!-- Logo START -->
+				<a class="navbar-brand mx-auto" href="${properties.logoLink}">
+					<img class="navbar-brand-item light-mode-item" src="${properties.headerImg}" alt="${properties.logoAltText}">
+				</a>
+				<!-- Logo END -->
+			</div>
+		</nav>
+		<!-- Logo Nav END -->
+	</header>
