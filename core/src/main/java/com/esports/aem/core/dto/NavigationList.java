@@ -6,15 +6,13 @@ public class NavigationList {
     private String navImage;
     private String linkText;
     private String toolText;
-    private String alternateText;
 
 
-    public NavigationList(String hyperLink, String navImage, String linkText, String toolText,String alternateText) {
+    public NavigationList(String hyperLink, String navImage, String linkText, String toolText) {
         this.hyperLink = hyperLink;
         this.navImage = navImage;
         this.linkText = linkText;
         this.toolText = toolText;
-        this.alternateText = alternateText;
     }
 
     public String getHyperLink() {
@@ -31,9 +29,5 @@ public class NavigationList {
 
     public String getToolText() {
         return toolText;
-    }
-
-    public String getAlternateText() {
-        return alternateText;
     }
 }
