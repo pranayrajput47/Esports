@@ -6,21 +6,27 @@
         jcr:primaryType="cq:PageContent"
         sling:resourceType="esports/components/page">
         <root
+            jcr:lastModified="{Date}2022-01-14T21:45:11.758+05:30"
+            jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="esports/components/container"
             layout="responsiveGrid">
+            <experiencefragment-header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="esports/components/experiencefragment"/>
+            <navigation
+                jcr:created="{Date}2022-01-07T21:07:45.170+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-01-07T21:07:45.170+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="esports/components/navigation"/>
             <container
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="esports/components/container"
-                layout="responsiveGrid">
-                <title
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="esports/components/title"/>
-                <container
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="esports/components/container"
-                    layout="responsiveGrid"/>
-            </container>
+                sling:resourceType="esports/components/container"/>
+            <experiencefragment-footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="esports/components/experiencefragment"/>
         </root>
     </jcr:content>
 </jcr:root>
