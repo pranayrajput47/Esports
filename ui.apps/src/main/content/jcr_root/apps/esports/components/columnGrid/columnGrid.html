@@ -1,0 +1,13 @@
+<p data-sly-test.edit="${wcmmode.edit}" date-emptytext="Configure Column Grid Component" class="cq-placeholder"></p>
+
+<div  class="col-12">
+    <div class="row gx-4" data-sly-test="${properties.gridType == 'multiple'}">
+        <div data-sly-unwrap data-sly-resource="${'col-par1' @ resourceType='wcm/foundation/components/parsys'}">
+        </div>
+    </div>
+    <div class="row" data-sly-test="${properties.gridType == 'single'}">
+        <div class="col-12">
+        <div data-sly-unwrap data-sly-resource="${'col-par2' @ resourceType='wcm/foundation/components/parsys'}">
+        </div>
+    </div>
+</div>
