@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Header Navigation"
-    sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[core.wcm.components.navigation.v1.editor]"
-    helpPath="https://www.adobe.com/go/aem_cmp_navigation_v1"
-    trackingFeature="core-components:navigation:v1">
+    jcr:title="Footer"
+    sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         granite:class="cmp-navigation__editor"
         jcr:primaryType="nt:unstructured"
