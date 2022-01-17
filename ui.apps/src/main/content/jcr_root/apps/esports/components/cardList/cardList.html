@@ -2,9 +2,9 @@
 <div class="col-12">
     <div class="row">
         <div class="col-12">
-            <!-- LATEST STRIDE ESPORTS NEWS widget START -->
+
             <div>
-                <!--Group Card START -->
+
                 <div class="card">
                     <div class="card-header">
                         <h4 class="text-white text-uppercase mb-0">${properties.heading}<span
@@ -13,28 +13,28 @@
                     <div class="card-body p-4">
                         <div class="container">
                             <div class="row g-5">
-                                <!-- Title -->
+
                                 <div class="col-12">
                                     <h3 class="card-title text-uppercase mb-4 text-center">${properties.description1}
                                         <span class="text-primary">${properties.primaryDescription}</span> ${properties.description2} <span class="text-primary">${properties.primaryDescription2}</span>
                                         ${properties.description3}</h3>
                                 </div>
-                                <!-- League Card Item -->
+
                                 <sly data-sly-list.multifield="${resource.getChildren}">
                                 <sly data-sly-test="${multifield.name == 'cardItem'}">
                                 <sly data-sly-list.route="${multifield.getChildren}">
                                 <div class="col-md-6">
                                     <div class="card bg-transparent">
-                                        <!-- Card img -->
+
                                         <div class="position-relative">
                                             <img class="card-img"
                                                 src="${route.image}"
                                                 alt="Card image">
                                             <div
                                                 class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                                <!-- Card overlay bottom -->
+                                                
                                                 <div class="w-100 mt-auto">
-                                                    <!-- Card category -->
+
                                                     <h4 class="text-primary text-uppercase">${route.subHeading}</h4>
                                                 </div>
                                             </div>
@@ -66,9 +66,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Group Card END -->
+
             </div>
-            <!-- LEVEL UP YOUR LEARNING widget END -->
+
         </div>
     </div>
 </div>

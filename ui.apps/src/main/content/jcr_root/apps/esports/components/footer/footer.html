@@ -1,0 +1,62 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure FooterComponent here" class = "cq-placeholder"></p>
+
+	<footer class="bg-dark pt-4">
+		<div class="container">
+
+			<div class="row ">		
+				<div class="col-12 justify-content-center align-items-center text-center">
+					
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'socialLinks'}">
+                    
+                    <ul class="list-inline text-primary-hover lh-lg">
+                        <sly data-sly-list.route="${multifield.getChildren}">
+						<li class="list-inline-item">
+							<a href="${route.link}">
+								<div class="hstack justify-content-start align-items-center px-3 py-2">
+									<img class="icon-sm" src="${route.icon}" alt="${route.altText}">
+									<div class="text-start text-uppercase ms-3 d-none d-lg-block">
+										<h6 class="fs-5 m-0">${route.socialLinkText}</h6>
+										<span class="d-block fs-6 fst-italic">${route.socialLinkHandle}</span>
+									</div>
+								</div>
+							</a>
+						</li>
+                        </sly>
+					</ul>
+                        </sly>
+                    </sly>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="bg-gray-dark mt-2">
+			<div class="container">
+				<div class="row align-items-center justify-content-md-between py-4">
+					<div class="col-12 d-sm-flex align-items-center justify-content-center">
+						<!-- Links -->
+                        <sly data-sly-list.multifield="${resource.getChildren}">
+                            <sly data-sly-test="${multifield.name == 'footer'}">
+						<ul
+							class="nav text-primary-hover text-center justify-content-center mb-3 mt-md-0">
+                            <sly data-sly-list.footer="${multifield.getChildren}">
+							<li class="nav-item"><a class="nav-link h6 text-white" href="${footer.link}">${footer.text}</a></li>
+                            </sly>
+						</ul>
+                        </sly>
+                        </sly>
+					</div>
+					<div class="col-12 align-items-center justify-content-center">
+						
+						<div class="text-center text-primary-hover small text-reset btn-link text-reset btn-link">
+								${properties.copyRightText @ context = 'html'}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+

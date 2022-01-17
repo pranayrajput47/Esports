@@ -1,6 +1,7 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure header navigation component here" class = "cq-placeholder"></p>
 <div class="main">
     <div class="sidebar active d-none d-md-block">
-        <!-- logo and toggle button -->
+
         <div class="logo_content">
             <div class="logo">
                 <div class="logo_name">
@@ -11,7 +12,7 @@
             </div>
             <i class="sprite-icon bg-less" id="toggle-menu-btn"></i>
         </div>
-        <!-- navigation start -->
+
         <sly data-sly-list.multifield="${resource.getChildren}">
             <sly data-sly-test="${multifield.name == 'navlinks'}">
                 <ul class="navbar-nav nav_list">
@@ -29,7 +30,7 @@
                 </ul>
             </sly>
         </sly>
-        <!-- ads Post -->
+
         <div class="add-post row">
             <div class="col">
                 <a href="${properties.adlink}" class="d-block card-img-flash">
@@ -41,7 +42,7 @@
     </div>
 
     <div class="home_content">
-        <!-- sedebar content START - Why eSports?-->
+
         <div class="card">
             <div class="p-4">
                 <h5 class="text-primary text-uppercase mb-0">${properties.overview}</h5>
@@ -60,6 +61,6 @@
                 </div>
             </div>
         </div>
-        <!-- sedebar content START -->
+        
     </div>
 </div>

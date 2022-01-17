@@ -1,8 +1,8 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Learning Component here" class = "cq-placeholder"></p>
 <div class="col-12">
-    <!-- LEVEL UP YOUR LEARNING widget START -->
+
     <div>
-        <!-- Card START -->
+
         <div class="card border">
             <div class="card-header">
                 <h4 class="text-white text-uppercase mb-0">${properties.title}
@@ -14,9 +14,9 @@
                             class="text-primary">${properties.primaryText}</span>${properties.heading2}</h3>
                 </div>
                 <div class="d-block">
-                    <!-- four group-card START -->
+
                     <div class="list-card row g-0">
-                        <!-- card one Start -->
+                       
                         <sly data-sly-list.multifield="${resource.getChildren}">
                             <sly data-sly-test="${multifield.name == 'learingItem'}">
                             <sly data-sly-list.route="${multifield.getChildren}">
@@ -39,5 +39,5 @@
             </div>
         </div>
     </div>
-    <!-- LEVEL UP YOUR LEARNING widget END -->
+
 </div>
