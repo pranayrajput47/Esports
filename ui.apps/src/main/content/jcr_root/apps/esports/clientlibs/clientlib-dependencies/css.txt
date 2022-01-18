@@ -1,0 +1,6 @@
+#base=css
+
+all.min.css
+bootstrap-icons.css
+tiny-slider.css
+glightbox.css

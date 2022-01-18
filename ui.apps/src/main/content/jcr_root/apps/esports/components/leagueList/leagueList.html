@@ -1,0 +1,36 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure League List Component here" class = "cq-placeholder"></p>
+<div>
+    <div class="card border card-custom">
+        <div class="card-header align-items-center">
+            <div class="cart-title">
+                <small class="small fst-italic text-uppercase mb-0">${properties.title}</small>
+                <h5 class="text-white text-uppercase mb-2">${properties.heading}</h5>
+            </div>
+            <div class="card-toolbar">
+                <a href="${properties.link}"
+                    class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0">${properties.btnText}</a>
+            </div>
+        </div>
+        <div class="card-body px-0 pt-4 py-5">  
+            <div class="list-card border-last-child row g-0">
+                <sly data-sly-list.multifield="${resource.getChildren}">
+                    <sly data-sly-test="${multifield.name == 'leaguesList'}">
+                    <sly data-sly-list.route="${multifield.getChildren}">
+                        <div class="col-12">
+                            <div class="vstack px-4 py-3">
+                                <h6 class="text-primary fw-bold small">${route.date}</h6>
+                                <ul class="nav nav-divider align-items-center small">
+                                    <li class="nav-item fw-bold text-white">
+                                        <span>${route.time}</span>
+                                    </li>
+                                    <li class="nav-item fw-bold text-white">${route.week}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </sly>
+                    </sly>
+                </sly>
+            </div>
+         </div>
+    </div>
+</div>

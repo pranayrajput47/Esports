@@ -1,7 +1,6 @@
 //toggle sidebar script
-
 let btn = document.querySelector("#toggle-menu-btn");
-let sidebar = document.querySelector(".sidebar");
+let sidebar = document.querySelector(".main .sidebar");
 let searchBtn = document.querySelector(".search-btn");
 
 btn.onclick = function () {
@@ -12,6 +11,5 @@ btn.onclick = function () {
         btn.classList.replace("bg-expand", "bg-less");
     }
 }
-searchBtn.onclick = function () {
-    sidebar.classList.toggle("active");
-}
+
+

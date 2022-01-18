@@ -1,13 +1,38 @@
 <p data-sly-test.edit="${wcmmode.edit}" date-emptytext="Configure Column Grid Component" class="cq-placeholder"></p>
-
-<div  class="col-12">
-    <div class="row gx-4" data-sly-test="${properties.gridType == 'multiple'}">
-        <div data-sly-unwrap data-sly-resource="${'col-par1' @ resourceType='wcm/foundation/components/parsys'}">
-        </div>
-    </div>
-    <div class="row" data-sly-test="${properties.gridType == 'single'}">
-        <div class="col-12">
-        <div data-sly-unwrap data-sly-resource="${'col-par2' @ resourceType='wcm/foundation/components/parsys'}">
-        </div>
+<div class="col-12" data-sly-test="${properties.gridType == 'multiple'}">
+    <div class="row gx-4">
+        <sly data-sly-resource="${'col-par1' @ resourceType='wcm/foundation/components/parsys'}">
+        </sly>
     </div>
 </div>
+
+<div class="col-12" data-sly-test="${properties.gridType == 'single'}">
+<div class="row">
+    <div class="col-12">
+        <sly data-sly-resource="${'col-par2' @ resourceType='wcm/foundation/components/parsys'}">
+        </sly>
+    </div>
+</div>
+</div>
+
+<sly data-sly-test="${properties.gridType == 'col-lg-4'}">
+    <div class="col-lg-4 mt-5 mt-lg-0">
+        <div class="row g-4">
+            <sly
+                data-sly-resource="${'col-par-inner1' @ resourceType='wcm/foundation/components/parsys'}">
+            </sly>
+        </div>
+    </div>
+
+</sly>
+
+<sly data-sly-test="${properties.gridType == 'col-lg-8'}">
+    <div class="col-lg-8">
+        <div class="row g-4">
+            <sly
+                data-sly-resource="${'col-par-inner2' @ resourceType='wcm/foundation/components/parsys'}">
+            </sly>
+        </div>
+    </div>
+
+</sly>

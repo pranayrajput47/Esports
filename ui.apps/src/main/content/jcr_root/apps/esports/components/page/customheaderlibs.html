@@ -1,6 +1,11 @@
 <!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ Custom client libs in the page header
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
-
-<sly data-sly-use.clientlib = "/libs/granite/sightly/templates/clientlib.html"/>
-  <sly data-sly-call = "${clientlib.css @categories = 'clientlib.esports'}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet">
+  
+  <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+  <sly data-sly-call="${clientlib.css @categories = 'clientlib.esports'}" />
