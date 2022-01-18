@@ -1,0 +1,51 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure News List Component here" class = "cq-placeholder"></p>
+	<div>
+    <sly data-sly-list.multifield="${resource.getChildren}">
+        <sly data-sly-test="${multifield.name == 'videoMultiList'}">
+        <sly data-sly-list.route="${multifield.getChildren}">
+            <sly data-sly-test="${route.backgroundType == 'image'}"> 
+            <div class="card border up-hover p-3 mb-3">
+                <div class="row g-3">
+                    <div class="col-4">
+                        <img src="${route.image}" alt="jkd">
+                    </div>
+                    <div class="col-8">
+                        <h6><a href="${route.link}" class="btn-link fst-italic text-reset fw-bold">${route.heading}</a></h6>
+                        <div class="small">${route.description}</div>
+                    </div>
+                </div>
+            </div>
+            </sly>
+            <!-- Small Card info item   -->
+            <sly data-sly-test="${route.backgroundType == 'video'}">
+            <div class="card border up-hover p-3 mb-3">
+                <div class="row g-3">
+                    <div class="col-4">
+                        <!-- Card img -->
+                        <div class="card position-relative overflow-hidden">
+                            <img class="card-img" src="${route.logoImg}" alt="Card image">
+                            <div class="card-img-overlay d-flex align-items-start flex-column p-3">
+                                <!-- Card overlay -->
+                                <div class="w-100 my-auto">
+                                    <!-- Popup video -->
+                                    <a href="${route.youtubeVideoUrl}"
+                                        class="icon-md bg-body d-block mx-auto text-white rounded-circle"
+                                        data-glightbox data-gallery="y-video">
+                                        <i class="bi bi-play-fill fs-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <h6><a href="javascript:;"
+                                class="btn-link fst-italic text-reset fw-bold">${route.heading}</a></h6>
+                        <div class="small">${route.description}</div>
+                    </div>
+                </div>
+            </div>
+            </sly>
+        </sly>
+        </sly>
+    </sly>
+</div>
