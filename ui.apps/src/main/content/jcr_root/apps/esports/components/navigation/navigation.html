@@ -18,7 +18,7 @@
                 <ul class="navbar-nav nav_list">
                     <sly data-sly-list.route="${multifield.getChildren}">
                         <li class="nav-item">
-                            <a class="nav-link active" href="${route.hyperlink}">
+                            <a class="nav-link ${route.linkType}" href="${route.hyperlink}">
                                 <i>
                                     <img class="icon-md p-2" src="${route.image}" alt="${route.altText}" />
                                 </i>
