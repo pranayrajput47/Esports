@@ -1,0 +1,49 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Event Card Component here" class = "cq-placeholder"></p>
+
+<div>
+    <div class="card card-custom border">
+        <div class="card-header align-items-center py-2 px-3">
+            <div class="d-flex align-items-center position-relative">
+                <div class="avatar avatar-lg">
+                    <img class="avatar-img scale-4" src="${properties.logo}" alt="Stride eSports Logo">
+                </div>
+                <span class="ms-3">
+                    <div class="d-flex align-items-center">
+                        <small class="small fst-italic me-2">${properties.title}</small>
+                        <span class="static-rating static-rating-sm mt-n1">
+                            <i class="star fas fa-star voted"></i>
+                            <i class="star fas fa-star voted"></i>
+                            <i class="star fas fa-star voted"></i>
+                            <i class="star fas fa-star voted"></i>
+                            <i class="star fas fa-star voted"></i>
+                          </span>
+                    </div>	
+                    <h4 class="text-white text-uppercase mb-0">${properties.heading}</h4>
+                </span>
+            </div>
+            <div class="card-toolbar">
+                <a href="${properties.link}" class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0">${properties.btnText}</a>
+            </div>
+        </div>
+        <div class="card-body px-0">
+            <div class="d-block p-4">
+                <!-- Card img -->
+                <div
+                    class="card position-relative overflow-hidden rounded-0">
+                    <img class="card-img rounded-0" src="${properties.image}" alt="${properties.altText}">
+                    <div class="card-img-overlay d-flex align-items-start flex-column p-3">
+                        <!-- Card overlay -->
+                        <div class="w-100 my-auto">
+                            <!-- Popup video -->
+                            <a href="${properties.youtubeLink}"
+                                class="icon-xl d-block mx-auto text-white rounded-circle"
+                                data-glightbox data-gallery="y-video">
+                                <i class="bi bi-play-fill fs-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

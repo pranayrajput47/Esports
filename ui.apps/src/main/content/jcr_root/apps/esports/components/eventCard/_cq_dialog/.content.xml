@@ -15,7 +15,7 @@
                 <items jcr:primaryType="nt:unstructured">
                     <listSettings
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="LeagueList"
+                        jcr:title="Event Card"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
@@ -28,6 +28,13 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
+                                            <logo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Make the image a link to another resource"
+                                                fieldLabel="logo"
+                                                name="./logo"
+                                                rootPath="/content/dam"/>
                                             <title
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -53,37 +60,25 @@
                                                 fieldDescription="Button Text"
                                                 fieldLabel="Button Text"
                                                 name="./btnText"/>
-                                            <leaguesList
+                                            <image
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                                composite="{Boolean}true"
-                                                fieldLabel="Add News List Items">
-                                                <field
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                    name="./leaguesList">
-                                                    <items jcr:primaryType="nt:unstructured">
-                                                        <date
-                                                            jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldDescription="Date"
-                                                            fieldLabel="Date"
-                                                            name="./date"/>
-                                                        <time
-                                                            jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldDescription="Time"
-                                                            fieldLabel="Time"
-                                                            name="./time"/>
-                                                        <week
-                                                            jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldDescription="Week"
-                                                            fieldLabel="Week"
-                                                            name="./week"/>
-                                                    </items>
-                                                </field>
-                                            </leaguesList>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Make the image a link to another resource"
+                                                fieldLabel="Cover Image"
+                                                name="./image"
+                                                rootPath="/content/dam"/>
+                                            <altText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Alter Text"
+                                                fieldLabel="Alter Text"
+                                                name="./altText"/>
+                                            <youtubeLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Youtube Link"
+                                                fieldLabel="Youtube Link"
+                                                name="./youtubeLink"/>
                                         </items>
                                     </column>
                                 </items>

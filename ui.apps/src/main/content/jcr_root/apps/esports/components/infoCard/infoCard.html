@@ -1,0 +1,45 @@
+<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Info Card Component here" class = "cq-placeholder"></p>
+
+<div class="col-md-6">
+    <h5 class="mb-3">${properties.title}</h5>
+    <!-- Default Card : START -->
+    <div>
+        <div class="card border">
+            <div class="card-header">
+                <h4 class="text-white text-uppercase mb-0">${properties.heading}</h4>
+            </div>
+            <!-- Image -->
+            <img src="${properties.image}" alt="Pro Gammer">
+            <div class="card-body p-4">
+                <div class="row">													
+                    <!-- Content -->
+                    <div class="col-12">
+                        <h3 class="card-title text-uppercase mb-4">${properties.description}</h3>
+                        <div class="row">
+                            <!-- card one Start -->
+                            <sly data-sly-list.multifield="${resource.getChildren}">
+                                <sly data-sly-test="${multifield.name == 'infoList'}">
+                                <sly data-sly-list.route="${multifield.getChildren}">
+                            <div class="col-6">
+                                <div class="vstack justify-content-center align-items-center text-center py-2">
+                                    <img class="card-img" src="${route.logo}" alt="${route.altText}">
+                                </div>
+                            </div>
+                            </sly>
+                            </sly>
+                            </sly>
+                        </div>
+                        <div class="w-100 mt-4 text-center">
+                            <a href="${properties.link}"
+                                class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
+                                role="button" aria-lable="learn">${properties.btnText} 
+                                <i class="fas fa-angle-right ms-2 align-middle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Default Card : END -->
+</div>
