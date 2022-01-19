@@ -1,5 +1,5 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure navigation component here" class = "cq-placeholder"></p>
-<div class="main">
+<div class="${wcmmode.edit ? 'main-edit-mode':'main'}">
     <div class="sidebar active d-none d-md-block">
 
         <div class="logo_content">
@@ -43,7 +43,7 @@
 
     <div class="home_content">
 
-        <sly data-sly-resource="${'quote' @ resourceType='esports/components/overview'}"></sly>
+        <sly data-sly-resource="${'navpar' @ resourceType='wcm/foundation/components/parsys'}"></sly>
         
     </div>
 </div>
