@@ -28,29 +28,11 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <article2
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Article Part 2"
-                                                fieldLabel="Article Part 2"
-                                                name="./article2"/>
-                                            <article3
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Primary Heading"
-                                                fieldLabel="Heading Primary"
-                                                name="./primaryText"/>
-                                            <secondHeading
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Second Heading"
-                                                fieldLabel="Heading 2"
-                                                name="./heading2"/>
                                             <textList
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                 composite="{Boolean}true"
-                                                fieldLabel="Add Learning Items">
+                                                fieldLabel="Add Text Items">
                                                 <field
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
@@ -78,7 +60,7 @@
                                                         </selectTextType>
                                                         <linktext
                                                             jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                                             fieldLabel="Enter the text"
                                                             name="./text"/>
                                                     </items>
