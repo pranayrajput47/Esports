@@ -3,5 +3,4 @@
     cq:isContainer="{Boolean}true"
     jcr:primaryType="cq:Component"
     jcr:title="Fun Fact"
-    sling:resourceSuperType="core/wcm/components/carousel/v1/carousel"
     componentGroup="Esports - Structure"/>
