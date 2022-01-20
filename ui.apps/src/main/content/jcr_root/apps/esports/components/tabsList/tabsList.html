@@ -1,0 +1,95 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Configure Tabs List here" class="cq-placeholder"></p>
+<div>
+    <!-- Card START -->
+    <div class="card">
+        <div class="d-flex align-items-start justify-content-between p-0">
+            <div class="p-4">
+                <h5 class="text-primary text-uppercase mb-0">${properties.heading}</h5>
+                <h2 class="card-title text-uppercase display-5 mb-0">
+                    ${properties.subHeading}
+                </h2>
+            </div>
+            <div class="card-toolbar">
+                <!-- SART: tabs -->
+                <ul class="nav nav-tabs nav-tabs-custom tabs-right-top flex-nowrap px-4">
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'toggle'}">
+                            <sly data-sly-list.route="${multifield.getChildren}">
+                                <li class="nav-item"><a class="nav-link ${route.linkType}" data-bs-toggle="tab"
+                                        href="${route.toggleLink}"> ${route.toggleText}</a></li>
+                            </sly>
+                        </sly>
+                    </sly>
+                </ul>
+                <!-- END: tabs -->
+            </div>
+        </div>
+        <div class="card-body p-4 pt-0" data-sly-test="${properties.viewType=='withDescription'}">
+            <!-- tab-content -->
+            <div class="tab-content p-0">
+                ${properties.description @context = 'html'}
+            </div>
+        </div>
+        <div class="card-body p-0" data-sly-test="${properties.viewType=='withDropdown'}">
+            <!-- filter -->
+            <div class="row align-items-center g-5 px-4">
+                <div class="col-6 col-md-3 border-end">
+                    <!-- START : Custom Dropdown 1 -- -->
+                    <div>
+                        <div class="dropdown-custom py-3">
+                            <a class="dropdown-toggle text-primary-hover" href="${properties.cardLink}" role="button"
+                                id="trounamentSelector" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>
+                                    <span class="fs-6 d-block">${properties.categoryHeading}</span>
+                                    <span class="text-white fs-5 d-block">${properties.categorySubHeading}</span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu min-w-auto dropdown-menu-arrow"
+                                aria-labelledby="trounamentSelector">
+                                <sly data-sly-list.multifield="${resource.getChildren}">
+                                    <sly data-sly-test="${multifield.name == 'dropdownList'}">
+                                        <sly data-sly-list.route="${multifield.getChildren}">
+                                            <li><a class="dropdown-item" href="${route.listLink}">${route.listText}</a>
+                                            </li>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END-- -->
+                </div>
+                <div class="col-6 col-md-3 border-end">
+                    <!-- START : Custom Dropdown 1 -- -->
+                    <div>
+                        <div class="dropdown-custom py-3">
+                            <a class="dropdown-toggle text-primary-hover" href="${properties.customDropdownLink}"
+                                role="button" id="trounamentSelector" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>
+                                    <span class="fs-6 d-block">${properties.customDropdownHeading}</span>
+                                    <span class="text-white fs-5 d-block">${properties.customDropdownSubHeading}</span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu min-w-auto dropdown-menu-arrow"
+                                aria-labelledby="trounamentSelector">
+                                <sly data-sly-list.multifield="${resource.getChildren}">
+                                    <sly data-sly-test="${multifield.name == 'menu'}">
+                                        <sly data-sly-list.route="${multifield.getChildren}">
+                                            <li><a class="dropdown-item" href="${route.menuLink}">${route.menuText}</a>
+                                            </li>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END-- -->
+                </div>
+            </div>
+
+            <sly data-sly-test="${properties.withTable}"
+                data-sly-resource="${'table' @ resourceType='esports/components/tournamentTable'}"></sly>
+
+        </div>
+    </div>
+</div>
