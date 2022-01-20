@@ -18,11 +18,32 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<div class="w-100 my-auto text-lg-start">
+								<div class="w-100 my-auto text-lg-start" data-sly-test="${properties.viewType == 'generic'}">
 									<h3 class="text-white fst-italic pe-lg-5 d-lg-inline">${properties.startInfo}</h3>
 									<a href="#" class="btn btn-secondary btn-sm fst-italic rounded-pill text-uppercase"
 										role="button" aria-lable="view">${properties.viewInfo}<i
 											class="fas fa-angle-right ms-2 align-middle"></i></a>
+								</div>
+								<div class="w-100 my-auto text-center text-lg-start d-md-flex align-items-end" data-sly-test="${properties.viewType == 'withList'}">
+									<sly data-sly-list.multifield="${resource.getChildren}">
+										<sly data-sly-test="${multifield.name == 'listItems'}">
+											<div class="result-league d-flex" data-sly-list.item="${multifield.getChildren}">
+												<div class="d-block">
+													<h2 class="text-primary text-uppercase">${item.heading}</h2>
+													<ul
+														class="list-unstyled fs-4 fw-bolder font-heading text-uppercase text-white">
+														${item.description @ context = 'html'}
+													</ul>
+												</div>
+											</div>
+										</sly>
+									</sly>
+									<div>
+										<a href="${properties.ctaLink}"
+											class="btn btn-secondary btn-sm fst-italic rounded-pill text-uppercase"
+											role="button" aria-lable="view">${properties.viewInfo}<i
+												class="fas fa-angle-right ms-2 align-middle"></i></a>
+									</div>
 								</div>
 							</div>
 						</div>
