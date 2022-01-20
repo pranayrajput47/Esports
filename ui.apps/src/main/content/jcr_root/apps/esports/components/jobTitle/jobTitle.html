@@ -1,0 +1,59 @@
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Job Title component here" class = "cq-placeholder"></p>
+<div class="row g-4">
+                   
+    <div class="col-lg-8 col-xxl-9">
+
+            <div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-white text-uppercase mb-0">${properties.primaryHeading}</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="group-list-border">
+                            <sly data-sly-list.multifield="${resource.getChildren}">
+                                <sly data-sly-test="${multifield.name == 'jobs'}">
+                                    <sly data-sly-list.route="${multifield.getChildren}">
+                                        <div class="d-flex align-items-start position-relative">
+                                            <img class="icon-xl" src="${route.image}"
+                                            alt="Stride eSports Logo">
+                                            <div class="info ms-5">
+                                                <h4 class="text-primary text-uppercase mb-3">${route.heading}</h4>
+                                                <p>${route.description}</p>
+                                                <div class="row">
+                                                    <sly data-sly-list.secondmultifield="${route.getChildren}">
+                                                        <sly data-sly-test="${secondmultifield.name == 'jobsList'}">
+                                                            <sly data-sly-list.routeList="${secondmultifield.getChildren}">
+                                                                <div class="col-lg-6">
+                                                                    <ul class="list-unstyled">
+                                                                        <li class="my-3">
+                                                                            <p class="mb-0">${routeList.salary}
+                                                                            </p>
+                                                                            <p class="mb-0 text-primary">
+                                                                                ${routeList.digitSalary}
+                                                                            </p>
+                                                                        </li>
+                                                                        <li class="my-3">
+                                                                            <p class="mb-0">${routeList.projectedSalary}																	
+                                                                            </p>
+                                                                            <p class="mb-0 text-primary">
+                                                                                ${routeList.upcomingSalary}
+                                                                            </p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </sly>
+                                                        </sly>
+                                                    </sly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

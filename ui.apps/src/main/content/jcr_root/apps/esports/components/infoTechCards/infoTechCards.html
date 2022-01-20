@@ -1,0 +1,42 @@
+
+
+
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Event Cards component here" class = "cq-placeholder"></p>
+
+
+<div class="row g-4 mt-4">
+
+    <sly data-sly-list.multifield="${resource.getChildren}">
+        <sly data-sly-test="${multifield.name == 'events'}">
+            <sly data-sly-list.route="${multifield.getChildren}"> 
+                <div class="col-md-6">
+                    
+                    <div>
+                        <div class="card">
+                            <div class="card-header align-items-center py-3">
+                                <div class="d-flex align-items-center position-relative">
+                                    <img class="icon-lg" src="${route.image}"
+                                    alt="Stride eSports Logo">
+                                    <span class="ms-3">
+                                        <h4 class="text-white text-uppercase mb-0">${route.imageDescription}</h4>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Card img -->
+                                <ul class="list-unstyled">
+                                    <li class="my-2 d-flex">${route.lineOne}</li>
+                                    <li class="my-2 d-flex">${route.lineTwo}</li>
+                                    <li class="my-2 d-flex">${route.lineThree}</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Info Icon Card : END-- -->
+                </div>
+            </sly>
+        </sly>
+    </sly>
+   
+</div>
