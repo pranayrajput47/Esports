@@ -57,26 +57,42 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                 composite="{Boolean}true"
-                                                fieldLabel="Add Navigation Links">
+                                                fieldLabel="Roster">
                                                 <field
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                     name="./roster">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <altText
+                                                        <rosterList
                                                             jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="Enter Alt text here"
-                                                            name="./altText"/>
-                                                        <link
-                                                            jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="cq/gui/components/coral/common/form/pagefield"
-                                                            fieldDescription="this is the navigation root of this logo"
-                                                            fieldLabel="Image"
-                                                            name="./image"
-                                                            required="{Boolean}true"
-                                                            rootPath="/content"
-                                                            value="${not empty cqDesign.navigationRoot ? cqDesign.navigationRoot : ''}"/>
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                            composite="{Boolean}true"
+                                                            fieldLabel="Roster List">
+                                                            <field
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                name="./rosterList">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <imageLink
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        fieldLabel="Image Link Path"
+                                                                        name="./imageLink"/>
+                                                                    <image
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        fieldDescription="Make the image a link to another resource"
+                                                                        fieldLabel="Image"
+                                                                        name="./image"
+                                                                        rootPath="/content/dam"/>
+                                                                    <altText
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Alternate Text"
+                                                                        name="./altText"/>
+                                                                </items>
+                                                            </field>
+                                                        </rosterList>
                                                     </items>
                                                 </field>
                                             </roster>

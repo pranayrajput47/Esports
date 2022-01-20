@@ -1,16 +1,23 @@
-<!-- LATEST STRIDE ESPORTS NEWS widget START -->
-<div>
-    <!--Group Card START -->
-    <div class="card card-custom">
-        <div class="card-header">
-            <h4 class="text-white text-uppercase mb-1">${properties.rosterHeading}<span
-                    class="text-primary"> >${properties.rosterSubHeading}</span></h4>
-            <div class="card-toolbar">
-                <a href="#" class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0">>${properties.rosterCTA}</a>
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Roster Component here" class="cq-placeholder"></p>
+
+
+<div id="item-17">
+   
+    
+
+    <!--  START -->
+    <div>
+        <!--Group Card START -->
+        <div class="card card-custom">
+            <div class="card-header">
+                <h4 class="text-white text-uppercase mb-1">${properties.rosterHeading}<span
+                        class="text-primary">${properties.rosterSubHeading}</span></h4>
+                <div class="card-toolbar">
+                    <button type="button"
+                        class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0" data-bs-toggle="modal" data-bs-target="#rosterModal">${properties.rosterCTA}</button>
+                </div>
             </div>
-        </div>
-        <div class="card-body p-4">
-            <div class="container">
+            <div class="card-body p-4">
                 <div class="row">
                     <!-- Title -->
                     <div class="col-12">
@@ -18,392 +25,36 @@
                             <span class="text-primary">${properties.rosterTitle}</span>
                         </h3>
                     </div>
-                    <!-- sponser/roster Logo Item -->
-                    <div class="col-12 d-none d-lg-block">
-                        <div class="three-four-card-list d-md-flex">
-                            <!-- four group-card START -->
-                            <div class="four-card row g-0">
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-1.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-2.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-3.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-4.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
 
-                            </div>
-                            <!-- four group-card START -->
-                            <div class="four-card row g-0">
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-5.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-6.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-7.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-8.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- four group-card START -->
-                            <div class="four-card row g-0">
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-9.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-10.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-11.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-12.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="three-four-card-list d-md-flex">
-                            <!-- four group-card START -->
-                            <div class="four-card row g-0">
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-1.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-2.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-3.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-4.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- four group-card START -->
-                            <div class="four-card row g-0">
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-5.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-6.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-7.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-8.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- four group-card START -->
-                            <div class="four-card row g-0">
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-9.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-10.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-11.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-                                <!-- card one Start -->
-                                <div class="col-6">
-                                    <div
-                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                        <img class="card-img"
-                                            src="assets/images/roster-logos/rlogo-12.svg"
-                                            alt="image title">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 d-block d-lg-none">
-                        <div class="d-block pb-4">
-                            <!-- Slider START -->
+                    <div class="col-12">
+                        <div class="roster-list">
                             <div
                                 class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
                                 <div class="tiny-slider-inner" data-autoplay="false"
-                                    data-hoverpause="true" data-gutter="0"
-                                    data-arrow="false" data-dots="true" data-items="1"
-                                    data-loop="false">
+                                    data-hoverpause="true" data-gutter="0" data-arrow="false"
+                                    data-dots="true" data-items-xl="6" data-items-md="3"
+                                    data-items-sm="2" data-items-xs="2" data-loop="false">
                                     <!-- Slide item -->
-                                    <div class="item pb-5">
-                                        <!-- four group-card START -->
-                                        <div class="four-card row g-0">
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-1.svg"
-                                                        alt="image title">
+                                    <sly data-sly-list.multifield="${resource.getChildren}">
+                                        <sly data-sly-test="${multifield.name == 'roster'}">
+                                            <sly data-sly-list.route="${multifield.getChildren}">
+                                                <div class="item pb-5">
+                                                    <sly data-sly-list.secondMultifield="${route.getChildren}">
+                                                        <sly data-sly-test="${secondMultifield.name == 'rosterList'}">
+                                                            <sly data-sly-list.data="${secondMultifield.getChildren}">
+                                                                <div
+                                                                    class="vstack justify-content-center align-items-center text-center p-4">
+                                                                    <a href="${data.imagePath}"><img class="card-img"
+                                                                            src="${data.image}"
+                                                                            alt="${data.altText}"></a>
+                                                                </div>
+                                                            </sly>
+                                                        </sly>
+                                                    </sly>
                                                 </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-2.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-3.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-4.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- Slide item -->
-                                    <div class="item pb-5">
-                                        <!-- four group-card START -->
-                                        <div class="four-card row g-0">
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-5.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-6.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-7.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-8.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- Slide item -->
-                                    <div class="item pb-5">
-                                        <!-- four group-card START -->
-                                        <div class="four-card row g-0">
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-9.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-10.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-11.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-                                            <!-- card one Start -->
-                                            <div class="col-6">
-                                                <div
-                                                    class="vstack justify-content-center align-items-center text-center py-4">
-                                                    <img class="card-img"
-                                                        src="assets/images/roster-logos/rlogo-12.svg"
-                                                        alt="image title">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                            </sly>
+                                        </sly>
+                                    </sly>
                                 </div>
                             </div>
                         </div>
@@ -411,7 +62,8 @@
                 </div>
             </div>
         </div>
+
     </div>
-    <!-- Group Card END -->
+    <!-- END -->
+
 </div>
-<!-- LEVEL UP YOUR LEARNING widget END -->
