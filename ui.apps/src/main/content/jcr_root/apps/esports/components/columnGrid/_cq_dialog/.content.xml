@@ -42,6 +42,14 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Multiple Grid"
                                                         value="multiple"/>
+                                                    <col-lg-8
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="col-lg-8 (Inner)"
+                                                        value="col-lg-8"/>
+                                                    <col-lg-4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="col-lg-4 (Inner)"
+                                                        value="col-lg-4"/>
                                                 </items>
                                             </gridType>
                                         </items>
