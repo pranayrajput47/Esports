@@ -1,0 +1,55 @@
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure About League Component here" class = "cq-placeholder"></p>
+<div class="about-league">
+    <div class="card bg-dark-overlay-3 rounded-0 h-400 h-lg-500 position-relative overflow-hidden"
+        style="background-image:url(assets/images/bg-aboutLeauge.jpg); background-position: center left; background-size: cover;">
+        <!-- Card Image overlay -->
+        <div
+            class="card-img-overlay rounded-0 d-flex align-items-center">
+            <div class="container-fluid p-3 mt-auto">
+                <div class="row">
+                    <div class="col text-center">
+                        <!-- Card category -->
+                        <a class="logo-leauge mx-auto" href="${properties.imageLink}"><img
+                                class="img"
+                                src="${properties.image}"
+                                alt="${properties.imageAltText}"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- info-detail -->
+    <div class="info-detail">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'leagueList'}">
+                            <sly data-sly-list.route="${multifield.getChildren}">
+                                <h3 class="text-center text-uppercase mb-3 fs-4">
+                                    <span class="text-primary">${route.title}</span>
+                                </h3>
+                                <h5 class="text-center text-uppercase mb-5">${route.description}
+                                </h5>
+                            </sly>
+                        </sly>
+                    </sly>
+
+                    
+
+                    
+                    
+                    <!-- button -->
+                    <div class="w-100 mt-5 text-center">
+                        <a href="${properties.ctaLink}"
+                            class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
+                            role="button" aria-lable="learn">${properties.ctaText}
+                            <i
+                                class="fas fa-angle-right ms-2 align-middle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
