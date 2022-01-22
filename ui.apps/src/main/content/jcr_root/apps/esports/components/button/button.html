@@ -1,0 +1,22 @@
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Configure Button Component here" class="cq-placeholder"></p>
+
+<button type="button" class="btn btn-sm btn-light-soft fst-italic rounded-pill text-uppercase mb-4"
+    data-bs-toggle="modal" data-bs-target="${properties.ctaUrl}" data-sly-test="${properties.viewType == 'custom'}">
+    ${properties.ctaText}
+</button>
+
+<button type="button" class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-4"
+    data-bs-toggle="modal" data-bs-target="${properties.ctaUrl}"
+    data-sly-test="${properties.viewType == 'roster'}">${properties.ctaText}</button>
+
+<button type="button" class="btn btn-sm btn-dark fst-italic rounded-pill text-uppercase mb-4"
+    data-bs-toggle="modal" data-bs-target="${properties.ctaUrl}"
+    data-sly-test="${properties.viewType == 'form'}">${properties.ctaText}</button>
+
+<a href="#" class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase" role="button" data-bs-toggle="modal"
+    data-bs-target="${properties.ctaUrl}" data-sly-test="${properties.viewType == 'primary'}">${properties.ctaText} <i
+        class="fas fa-angle-right ms-2 align-middle"></i></a>
+
+<a href="#" class="btn btn-secondary btn-sm fst-italic rounded-pill text-uppercase" role="button" data-bs-toggle="modal"
+    data-bs-target="${properties.ctaUrl}" data-sly-test="${properties.viewType == 'secondary'}">${properties.ctaText} <i
+        class="fas fa-angle-right ms-2 align-middle"></i></a>
