@@ -1,4 +1,4 @@
-<p data-sly-test.edit="${wcmmode.edit}" date-emptytext="Configure Contact Us Form Component here"
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Configure Contact Us Form Component here"
     class="cq-placeholder"></p>
 
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
@@ -20,10 +20,9 @@
                         <div class="card-body p-4 p-lg-5">
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <h2 class="text-uppercase fst-italic text-center h1 mb-4">WELCOME!</h2>
+                                    <h2 class="text-uppercase fst-italic text-center h1 mb-4">${properties.greetingText}</h2>
                                     <h3 class="text-uppercase fst-italic text-center mb-4"> <span
-                                            class="text-primary">NEED MORE INFO?</span> SIGN UP BELOW AND ONE OF OUR
-                                        PROFESSIONALS WILL CONTACT YOU.
+                                            class="text-primary">${properties.heading}</span>${properties.subHeading}
                                     </h3>
 
                                     <form class="contact-form" id="contact-form" name="contactform" method="POST">
@@ -34,7 +33,7 @@
                                                         <div class="mb-3 mt-1">
                                                             <select class="form-select form-select-lg rounded-pill" name="selectCity"
                                                                 aria-label="State 3 select example">
-                                                                <option value="">Choose your state</option>
+                                                                <option value="">${properties.state}</option>
                                                                 <option value="INTL">International</option>
                                                                 <option value="AL">Alabama</option>
                                                                 <option value="AK">Alaska</option>
@@ -71,7 +70,7 @@
                                                                 <option value="WI">Wisconsin</option>
                                                                 <option value="WY">Wyoming</option>
                                                             </select>
-                                                            <div class=" error CityError">Please select City</div>
+                                                            <div class=" error CityError">${properties.chooseCity}</div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
@@ -79,43 +78,43 @@
                                                             <input  id="con-name" name="firstname" type="text"
                                                                 aria-label="First Name"
                                                                 class="form-control form-control-lg rounded-pill"
-                                                                placeholder="First Name">
+                                                                placeholder="${properties.firstName}">
                                                         </div>
-                                                        <div class=" error fNameError">Please Enter First Name.</div>
+                                                        <div class=" error fNameError">${properties.enterFirstName}</div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3 mt-1">
                                                             <input  id="con-name" name="lastname" type="text"
                                                                 aria-label="last Name"
                                                                 class="form-control form-control-lg rounded-pill"
-                                                                placeholder="Last Name">
+                                                                placeholder="${properties.lastName}">
                                                         </div>
-                                                        <div class=" error lNameError">Please Enter Last Name.</div>
+                                                        <div class=" error lNameError">${properties.enterLastName}</div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3 mt-1">
                                                             <input  id="con-email" name="email" type="email"
                                                                 aria-label="E Mail"
                                                                 class="form-control form-control-lg rounded-pill"
-                                                                placeholder="E-mail">
+                                                                placeholder="${properties.email}">
                                                         </div>
-                                                        <div class=" error EmailError">Please Enter Email.</div>
+                                                        <div class=" error EmailError">${properties.enterEmail}</div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="mb-3 mt-1">
                                                             <input  id="con-subject" name="zip" type="text"
                                                                 aria-label="last Name"
                                                                 class="form-control form-control-lg rounded-pill"
-                                                                placeholder="Zip Code">
+                                                                placeholder="${properties.zipCode}">
                                                         </div>
-                                                        <div class=" error PincodeError">Pincode.</div>
+                                                        <div class=" error PincodeError">${properties.enterZip}</div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="mb-3 mt-1">
                                                             <input  id="con-subject" name="phone" type="text"
                                                                 aria-label="last Name"
                                                                 class="form-control form-control-lg rounded-pill"
-                                                                placeholder="Phone">
+                                                                placeholder="${properties.phoneNumber}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -124,9 +123,7 @@
                                             <hr>
 
                                             <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">What grades are you
-                                                    interested in? <span class="text-primary">Please select all that
-                                                        apply.</span></h4>
+                                                <h4 class="text-center fst-italic mb-3 fs-4">${properties.checkboxHeading}<span class="text-primary">${properties.checkboxSubHeading}</span></h4>
 
                                                 <div class="row justify-content-center">
                                                     <div class="col-10  text-center">
@@ -150,9 +147,8 @@
                                                                 id="inlineCheckbox3" value="option3">
                                                             <label
                                                                 class="form-check-label text-white font-heading h4 fst-italic"" for="
-                                                                inlineCheckbox3"> Yes, I’m interested in career
-                                                                prep</label>
-                                                            <div class=" error GradeError">Please select Grade</div>
+                                                                inlineCheckbox3">${properties.gradeHeading}</label>
+                                                            <div class=" error GradeError">${properties.enterGrade}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -162,8 +158,8 @@
                                             <hr>
 
                                             <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">I have questions about the
-                                                    <span class="text-primary">following topics.</span>
+                                                <h4 class="text-center fst-italic mb-3 fs-4">${properties.questionHeading}
+                                                    <span class="text-primary">${properties.questionSubHeading}</span>
                                                 </h4>
                                                 <div class="row justify-content-center">
                                                     <div class="col-10  text-center">
@@ -172,16 +168,16 @@
                                                                 id="inlineCheckbox4" value="option4">
                                                             <label
                                                                 class="form-check-label text-white font-heading h4 fst-italic"" for="
-                                                                inlineCheckbox4">Virtual/Online Schooling</label>
-                                                                 <div class=" error QuestionError1">Please Enter Question
+                                                                inlineCheckbox4">${properties.checkboxFirstDescription}</label>
+                                                                 <div class=" error QuestionError1">${properties.questionOne}
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="checkbox"
                                                                 id="inlineCheckbox5" value="option5">
                                                             <label
                                                                 class="form-check-label text-white font-heading h4 fst-italic"
-                                                                for="inlineCheckbox5">Teacher Involvement</label>
-                                                            <div class=" error QuestionError2">Please Enter Question
+                                                                for="inlineCheckbox5">${properties.checkboxSecondDescription}</label>
+                                                            <div class=" error QuestionError2">${properties.questionTwo}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -192,8 +188,8 @@
                                             <hr>
 
                                             <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">Have something to say?
-                                                    <span class="text-primary">Write us a message.</span>
+                                                <h4 class="text-center fst-italic mb-3 fs-4">${properties.messageHeading}
+                                                    <span class="text-primary">${properties.messageSubHeading}</span>
                                                 </h4>
 
                                                 <div class="row justify-content-center">
@@ -201,8 +197,8 @@
                                                         <div class="mb-4">
                                                             <textarea  id="con-message" name="message" cols="40"
                                                                 rows="6" class="form-control rounded-3"
-                                                                placeholder="please type your message here."></textarea>
-                                                            <div class="MessageError">Please Write Message</div>
+                                                                placeholder="${properties.message}"></textarea>
+                                                            <div class="MessageError">${properties.enterMessage}</div>
                                                         </div>
                                                         <div class="mb-4">
                                                             <div class="form-check form-check-inline">
@@ -210,9 +206,8 @@
                                                                     id="inlineCheckbox6" value="option5">
                                                                 <label
                                                                     class="form-check-label text-white font-heading h4 fst-italic"
-                                                                    for="inlineCheckbox6">My child /children are already
-                                                                    enrolled at a K12 school</label>
-                                                                <div class="error EnrollError">Please select enrolled
+                                                                    for="inlineCheckbox6">${properties.enrolledCheckbox}</label>
+                                                                <div class="error EnrollError">${properties.selectEnrolled}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -223,13 +218,10 @@
                                             <div class="col-md-10 text-center">
                                                 <button
                                                     class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase w-50 mb-4"
-                                                    type="submit" id="esportsSubmit">SUBMIT</button>
+                                                    type="submit" id="esportsSubmit">${properties.ctaText}</button>
                                             </div>
                                             <div class="col-md-10 text-center">
-                                                <p>By providing this information, you agree to receive calls/texts from
-                                                    a K12 or school r
-                                                    epresentative or a device that will autodial the number provided.
-                                                    Message and data rates may apply.</p>
+                                                <p>${properties.agreementText}</p>
                                             </div>
                                         </div>
                                     </form>
