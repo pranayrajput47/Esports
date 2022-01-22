@@ -4,9 +4,13 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
 <sly data-sly-call="${clientlib.all @categories = 'esports.contactUsForm'}" />
 
-<div class="modal custom-modal fade show" id="formModal" tabindex="-1" aria-labelledby="Get in Touch form"
-    aria-hidden="true" style="
-    display: block;">
+<div class="position-absolute top-0 end-0 z-index-999 m-5">
+    <sly data-sly-resource="${'button' @ resourceType='/apps/esports/components/button'}">
+    </sly>
+</div>
+
+<div class="modal custom-modal fade" id="formModal" tabindex="-1" aria-labelledby="Get in Touch form"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0">

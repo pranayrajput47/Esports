@@ -66,6 +66,7 @@ $(document).ready(function () {
         let email = $("[name='email']").val();
         let zipcode = $("[name='zip']").val();
         let description = $("#con-message").val();
+        let phone = $("input[name=phone]").val(); 
         if (city == "") {
             $(".CityError").show();
             $("[name='selectCity']").focus();
@@ -93,58 +94,34 @@ $(document).ready(function () {
             $("#inlineCheckbox6").focus();
         } else {
             formData = {
-                fullName: fullName,
+                fname: fullName,
+                lname: lastName,
                 email: email,
                 description: description,
-                zipCode: zipcode,
+                pcode: zipcode,
+                phone: phone,
 
 
             };
 
             console.log(formData);
-            // $.ajax({
-            //     url: submitApi,
-            //     method: "POST",
-            //     data: JSON.stringify(formData),
-            //     contentType: 'application/json',
-            //     success: function (res) {
-            //         if (res.code == 200) {
-            //             if (showDialogueMessage == "true") {
-            //                 showDialogSouthPole(dataSuccess, successURL);
-            //                 signUpFormSubmitSouthPoleAnalytics(
-            //                     ctaText,
-            //                     "successful |" + pageUrlPathPage,
-            //                     ""
-            //                 );
-            //             } else {
-            //                 window.location.href = successURL;
-            //                 signUpFormSubmitSouthPoleAnalytics(
-            //                     ctaText,
-            //                     " unsuccessful |" + pageUrlPathPage,
-            //                     ""
-            //                 );
-            //             }
+            $.ajax({
+                url: "/bin/sendEmail",
+                method: "POST",
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function (res) {
+                    if (res.code == 200) {
+                        alert("Submitted");
 
-            //         }
-            //         if (res.code == 401) {
-            //             showDialogSouthPole(allReadyMessage, successURL);
-            //             signUpFormSubmitSouthPoleAnalytics(
-            //                 ctaText,
-            //                 " unsuccessful |" + pageUrlPathPage,
-            //                 ""
-            //             );
-            //         }
-            //     },
-            //     error: function (error) {
-            //         showDialogSouthPole(dataError, window.location.href);
-            //         signUpFormSubmitSouthPoleAnalytics(
-            //             ctaText,
-            //             " unsuccessful |" + pageUrlPathPage,
-            //             dataError
-            //         );
+                    }else {
 
-            //     },
-            // });
+                    }
+                },
+                error: function (error) {
+
+                },
+            });
         }
 
     });
@@ -239,9 +216,6 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
     });
-
-
-
 
 
 })
