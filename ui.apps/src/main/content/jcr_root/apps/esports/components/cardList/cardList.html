@@ -1,4 +1,4 @@
-<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure CardList Component here" class = "cq-placeholder"></p>
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure CardList Component here" class = "cq-placeholder"></p>
 <div class="col-12">
     <div class="row">
         <div class="col-12">
@@ -15,9 +15,7 @@
                             <div class="row g-5">
 
                                 <div class="col-12">
-                                    <h3 class="card-title text-uppercase mb-4 text-center">${properties.description1}
-                                        <span class="text-primary">${properties.primaryDescription}</span> ${properties.description2} <span class="text-primary">${properties.primaryDescription2}</span>
-                                        ${properties.description3}</h3>
+                                    <h3 class="card-title text-uppercase mb-4 text-center">${properties.description @ context = 'html'}
                                 </div>
 
                                 <sly data-sly-list.multifield="${resource.getChildren}">
