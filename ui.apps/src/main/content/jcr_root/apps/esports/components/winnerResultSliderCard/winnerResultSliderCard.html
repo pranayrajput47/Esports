@@ -1,0 +1,81 @@
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Winner Result Slider Card Component here" class = "cq-placeholder"></p>
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h4 class="text-white text-uppercase mb-1">${properties.title}</h4>
+        <div class="card-toolbar">
+            <button type="button"
+                class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0"
+                data-bs-toggle="modal" data-bs-target="#${properties.btnLink}">${properties.btnText}</button>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <div class="d-block pb-4">
+            <!-- slider START -->
+            <div class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
+                <div class="tiny-slider-inner" data-autoplay="false"
+                    data-hoverpause="true" data-gutter="0" data-arrow="false"
+                    data-dots="true" data-items="1" data-loop="false">
+                    <!-- Slide item -->
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'gameTabList'}">
+                            <sly data-sly-list.route="${multifield.getChildren}">
+                            
+                                <div class="item pb-5">
+
+                        <!-- start -->
+                                    <sly data-sly-list.second="${route.getChildren}">
+                                    <sly data-sly-test="${second.name == 'nestedMultiField'}">
+                                    <sly data-sly-list.data="${second.getChildren}">
+                                    <div class="winner-result">
+
+                                        <div class="d-flex px-4 py-3 justify-content-between align-items-center">
+                                            <span class="font-heading fw-bolder fs-6">${data.heading}</span>
+                                            <span class="font-heading fw-bolder fs-6 text-primary">${data.date}</span>
+                                        </div>
+                                        <h3 class="text-uppercase mt-3 mb-5 text-white text-center">${data.gameHeading}</h3>
+                                        <div class="row justify-content-center align-items-center">
+                                            <div class="col col-lg-5 text-end">
+                                                <div class="d-block p-2 ps-lg-5 text-center">
+                                                    <img class="icon-xl" src="${data.team1Logo}" alt="${data.logoAltText}">
+                                                    <h4 class="mt-4">${data.team1Name}</h4>
+                                                </div>
+                                            </div>
+                                        <div class="col col-lg-2 justify-content-center">
+                                        <div class="d-flex justify-content-center fst-italic fw-bolder font-heading fs-1">
+                                            <span class="w-first text-white">${data.team1Point}</span>
+                                            <span class="text-white">${data.symbol}</span>
+                                            <span class="w-second">${data.team2Point}</span>
+                                        </div>
+
+                                        <a href="${data.youtubeLink}" class="bg-primary icon-md d-block mx-auto text-white rounded-circle"
+                                        data-bs-toggle="tooltip" data-bs-html="true"
+                                        data-bs-placement="bottom"
+                                        title="WATCH MATCH" data-glightbox=""
+                                        data-gallery="y-video">
+                                        <i class="bi bi-play-fill fs-4"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col col-lg-5 text-start">
+                                        <div class="d-block p-2 text-center pe-lg-5">
+                                            <img class="icon-xl" src="${data.secondTeamLogo}" alt="${data.logo2AltText}">
+                                            <h4 class="mt-4">${data.team2Name}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </div>
+                                    </sly>
+                                    </sly>
+                                    </sly>
+                        <!-- End -->
+                                </div>
+                            </sly>
+                        </sly>
+                    </sly>        
+
+                </div>
+            </div>
+            <!-- slider END -->
+        </div>
+    </div>
+</div>
