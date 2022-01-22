@@ -243,7 +243,7 @@ var e = {
         });
     },
     // END: Mega Menu
-
+    
     // START: 03 Sticky Header
     stickyHeader: function () {
         var stickyNav = e.select('.navbar-sticky');
