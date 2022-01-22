@@ -77,19 +77,20 @@ $(document).ready(function () {
             $("[name='lastname']").focus();
         } else if (email == "" || !emailRe.test(email)) {
             $(".EmailError").show();
-            $("[name='email]").focus();
+            $("#con-email").focus();
         } else if (zipcode == "" || !zipCodeRe.test(zipcode)) {
             $(".PincodeError").show();
-            $("[name='zip]").focus();
-        } else if ($("#inlineCheckbox3").prop("checked") == false) {
-            $(".QuestionError1").show();
-        } else if ($("#inlineCheckbox5").prop("checked") == false) {
+            $("#con-pincode").focus();
+        } else if ($("#inlineCheckbox3").prop("checked") == false && $("#inlineCheckbox5").prop("checked") == false) {
             $(".QuestionError2").show();
+            $("#inlineCheckbox3").focus();
+
         } else if (description == "") {
             $(".MessageError").show();
             $("#con-message").focus();
         } else if ($("#inlineCheckbox6").prop("checked") == false) {
             $(".EnrollError").show();
+            $("#inlineCheckbox6").focus();
         } else {
             formData = {
                 fullName: fullName,
@@ -150,30 +151,93 @@ $(document).ready(function () {
 
     $("[name='selectCity']").on("change", function () {
         $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("[name='firstname']").on("input", function () {
         $(".fNameError").hide();
+        $(".CityError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("[name='lastname']").on("input", function () {
         $(".lNameError").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("[name='email']").on("input", function () {
         $(".EmailError").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("[name='zip']").on("input", function () {
         $(".PincodeError").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("#inlineCheckbox3").on("input", function () {
-        $(".QuestionError1").hide();
+        $(".QuestionError2").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("#inlineCheckbox5").on("input", function () {
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
         $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
     });
     $("#con-message").on("input", function () {
         $(".MessageError").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".EnrollError").hide();
     });
     $("#inlineCheckbox6").on("input", function () {
         $(".EnrollError").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
     });
 
 
