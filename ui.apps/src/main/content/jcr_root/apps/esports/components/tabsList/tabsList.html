@@ -37,50 +37,19 @@
                     <!-- START : Custom Dropdown 1 -- -->
                     <div>
                         <div class="dropdown-custom py-3">
-                            <a class="dropdown-toggle text-primary-hover" href="${properties.cardLink}" role="button"
-                                id="trounamentSelector" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>
-                                    <span class="fs-6 d-block">${properties.categoryHeading}</span>
-                                    <span class="text-white fs-5 d-block">${properties.categorySubHeading}</span>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu min-w-auto dropdown-menu-arrow"
-                                aria-labelledby="trounamentSelector">
-                                <sly data-sly-list.multifield="${resource.getChildren}">
-                                    <sly data-sly-test="${multifield.name == 'dropdownList'}">
-                                        <sly data-sly-list.route="${multifield.getChildren}">
-                                            <li><a class="dropdown-item" href="${route.listLink}">${route.listText}</a>
-                                            </li>
-                                        </sly>
-                                    </sly>
-                                </sly>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END-- -->
-                </div>
-                <div class="col-6 col-md-3 border-end">
-                    <!-- START : Custom Dropdown 1 -- -->
-                    <div>
-                        <div class="dropdown-custom py-3">
-                            <a class="dropdown-toggle text-primary-hover" href="${properties.customDropdownLink}"
-                                role="button" id="trounamentSelector" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span>
                                     <span class="fs-6 d-block">${properties.customDropdownHeading}</span>
-                                    <span class="text-white fs-5 d-block">${properties.customDropdownSubHeading}</span>
                                 </span>
-                            </a>
-                            <ul class="dropdown-menu min-w-auto dropdown-menu-arrow"
-                                aria-labelledby="trounamentSelector">
+                            <select name="categories" id="categories">
+                                <option value="all" class="dropdown-item">${properties.customDropdownSubHeading}</option>
                                 <sly data-sly-list.multifield="${resource.getChildren}">
                                     <sly data-sly-test="${multifield.name == 'menu'}">
                                         <sly data-sly-list.route="${multifield.getChildren}">
-                                            <li><a class="dropdown-item" href="${route.menuLink}">${route.menuText}</a>
-                                            </li>
+                                            <option class="dropdown-item" value="${route.gameType}">${route.menuText}</option>
                                         </sly>
                                     </sly>
                                 </sly>
-                            </ul>
+                            </select>
                         </div>
                     </div>
                     <!-- END-- -->

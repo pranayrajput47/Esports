@@ -1,0 +1,15 @@
+<p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Tournament Content List here" class = "cq-placeholder"></p>
+<div class="tab-content p-0">
+    <h3>${properties.leagueType}</h3>
+    <sly data-sly-list.multifield="${resource.getChildren}">
+        <sly data-sly-test="${multifield.name == 'contentList'}">
+            <sly data-sly-list.route="${multifield.getChildren}">
+                <span class="text-white fw-bold d-block">${route.date}</span>
+                <span class="text-white fw-bold d-block">${route.logoImage}</span>
+                <span class="text-white fw-bold d-block">${route.gameType}</span>
+                <span class="text-white fw-bold d-block">${route.instanceType}</span>
+                <span class="text-white fw-bold d-block">${route.time}</span>
+            </sly>
+        </sly>
+    </sly>
+</div>

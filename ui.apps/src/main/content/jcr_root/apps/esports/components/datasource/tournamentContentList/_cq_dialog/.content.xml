@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Tournament Content List"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <leagueType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="League Type"
+                        name="./leagueType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Academy
+                                jcr:primaryType="nt:unstructured"
+                                text="Academy League"
+                                value="Academy"/>
+                            <Champions
+                                jcr:primaryType="nt:unstructured"
+                                text="Champions League"
+                                value="Champions"/>
+                        </items>
+                    </leagueType>
+                    <contentList
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Content List">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./contentList">
+                            <items jcr:primaryType="nt:unstructured">
+                                <date
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Date"
+                                    name="./date"/>
+                                <logoImage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Logo Image "
+                                    name="./logoImage"
+                                    rootPath="/content/dam"/>
+                                <gameType
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Game Type"
+                                    name="./gameType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <fortnite
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Fortnite"
+                                            value="fortnite"/>
+                                        <rocketleague
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Rocket League"
+                                            value="rocketleague"/>
+                                        <leagueOfLegends
+                                            jcr:primaryType="nt:unstructured"
+                                            text="League of Legends"
+                                            value="leagueOfLegends"/>
+                                    </items>
+                                </gameType>
+                                <gameName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Game Name"
+                                    name="./gameName"/>
+                                <instanceType
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Instance Type"
+                                    name="./instanceType"
+                                    required="{Boolean}true"/>
+                                <time
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Time"
+                                    name="./time"/>
+                            </items>
+                        </field>
+                    </contentList>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

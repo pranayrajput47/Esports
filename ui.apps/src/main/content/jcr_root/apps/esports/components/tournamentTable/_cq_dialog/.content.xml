@@ -11,76 +11,52 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <contentList
+                    <leagueType
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                        composite="{Boolean}true"
-                        fieldLabel="Content List">
-                        <field
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                            name="./contentList">
-                            <items jcr:primaryType="nt:unstructured">
-                                <dateHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Date Heading"
-                                    name="./dateHeading"/>
-                                <dateSubHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Date Sub Heading"
-                                    name="./dateSubHeading"/>
-                                <logoImage
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    fieldDescription="Make the image a link to another resource"
-                                    fieldLabel="Logo Image "
-                                    name="./logoImage"
-                                    rootPath="/content/dam"/>
-                                <spanHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Span Heading"
-                                    name="./spanHeading"/>
-                                <spanSubHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Span Sub Heading"
-                                    name="./spanSubHeading"/>
-                                <academyHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Academy Heading"
-                                    name="./academyHeading"/>
-                                <academySubHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Academy Sub Heading"
-                                    name="./academySubHeading"/>
-                                <champHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Championship heading"
-                                    name="./champHeading"/>
-                                <champSubHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Championship Sub Heading"
-                                    name="./champSubHeading"/>
-                                <timeFormat
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Time Format"
-                                    name="./timeFormat"/>
-                                <timeText
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Time Text"
-                                    name="./timeText"/>
-                            </items>
-                        </field>
-                    </contentList>
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="League Type"
+                        name="./leagueType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Academy
+                                jcr:primaryType="nt:unstructured"
+                                text="Academy League"
+                                value="Academy"/>
+                            <Champions
+                                jcr:primaryType="nt:unstructured"
+                                text="Champions League"
+                                value="Champions"/>
+                        </items>
+                    </leagueType>
+                    <contentRootPath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="League Content Root path"
+                        name="./contentRootPath"/>
+                    <dateText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Date Text"
+                        name="./dateText"/>
+                    <gameText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Game Text"
+                        name="./gameText"/>
+                    <competitionText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Competition Text"
+                        name="./competitionText"/>
+                    <instanceText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Instance Text"
+                        name="./instanceText"/>
+                    <timeText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Time Text"
+                        name="./timeText"/>
                 </items>
             </column>
         </items>

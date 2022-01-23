@@ -450,45 +450,6 @@
                                 toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
                         </uiSettings>
                     </description>
-                    <categoryHeading
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Category Heading"
-                        name="./categoryHeading"/>
-                    <categorySubHeading
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Category Sub Heading"
-                        name="./categorySubHeading"/>
-                    <dropdownList
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                        composite="{Boolean}true"
-                        fieldLabel="Dropdown List">
-                        <field
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                            name="./dropdownList">
-                            <items jcr:primaryType="nt:unstructured">
-                                <listLink
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                    fieldLabel="List Link"
-                                    name="./listLink"
-                                    rootPath="/content"/>
-                                <listText
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="List Text"
-                                    name="./listText"/>
-                            </items>
-                        </field>
-                    </dropdownList>
-                    <customDropdownLink
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="Custom Dropdown Path"
-                        name="./customDropdownLink"/>
                     <customDropdownHeading
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -509,17 +470,31 @@
                             sling:resourceType="granite/ui/components/coral/foundation/container"
                             name="./menu">
                             <items jcr:primaryType="nt:unstructured">
-                                <menuLink
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                    fieldLabel="Menu Link"
-                                    name="./listLink"
-                                    rootPath="/content"/>
                                 <menuText
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Menu Text"
+                                    fieldLabel="Category Text"
                                     name="./menuText"/>
+                                <gameType
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Game Type"
+                                    name="./gameType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <fortnite
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Fortnite"
+                                            value="fortnite"/>
+                                        <rocketleague
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Rocket League"
+                                            value="rocketleague"/>
+                                        <leagueOfLegends
+                                            jcr:primaryType="nt:unstructured"
+                                            text="League of Legends"
+                                            value="leagueOfLegends"/>
+                                    </items>
+                                </gameType>
                             </items>
                         </field>
                     </menu>
