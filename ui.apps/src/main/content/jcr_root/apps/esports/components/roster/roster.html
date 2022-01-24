@@ -64,6 +64,70 @@
         </div>
 
     </div>
-    <!-- END -->
+
 
 </div>
+
+		<div class="modal custom-modal fade" id="rosterModal" tabindex="-1" aria-labelledby="VIEW
+		FULL ROSTER" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-xl modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<i class="fa fa-times"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="card card-custom">
+							<div class="card-header">
+								<h4 class="text-white text-uppercase mb-1">WHO’S PLAYING ?<span class="text-primary">
+										(2022 STRIDE ESPORTS ROSTER)</span></h4>
+							</div>
+							<div class="card-body p-4">
+								<div class="row">
+
+									<!-- Title -->
+									<div class="col-12">
+										<h3 class="card-title text-uppercase mb-4 text-center">2021-2022
+											<span class="text-primary">STRIDE ESPORTS ROSTER</span>
+										</h3>
+									</div>
+									<!-- Roster Logos -->
+									<div class="col-12">
+										<!-- Group list of League logo -->
+										<div class="roster-inline-list">
+                                            <sly data-sly-list.multifield="${resource.getChildren}">
+                                                <sly data-sly-test="${multifield.name == 'modalList'}">
+                                                    <sly data-sly-list.data="${multifield.getChildren}">
+                                                        <div class="row">
+                                                            <sly data-sly-list.secmultifield="${data.getChildren}">
+                                                                <sly data-sly-test="${secmultifield.name == 'modal'}">
+                                                                    <sly data-sly-list.routeList="${secmultifield.getChildren}">
+                                                                        <div class="col-6 col-sm-4 col-lg-2">
+                                                                            <div
+                                                                                class="vstack justify-content-center align-items-center text-center p-3">
+                                                                                <a href="${routeList.imagePath}"><img class="card-img"
+                                                                                        src="${routeList.image}"
+                                                                                        alt="${routeList.altText}"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </sly>
+                                                                </sly>
+                                                            </sly>
+                                                            
+                                                        </div>
+                                                    </sly>
+                                                </sly>
+                                            </sly>
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer border-0 justify-content-between"></div>
+				</div>
+			</div>
+		</div>
