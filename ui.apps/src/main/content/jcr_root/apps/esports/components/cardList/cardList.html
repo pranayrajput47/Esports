@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="card-body p-3">
                                             <div class="row">
-                                                <div class="col-3 g-0">
+                                                <div class="col-3 g-0" data-sly-test="${route.logo}">
                                                     <img class="img-fluid"
                                                         src="${route.logo}"
                                                         alt="Teen Content">
@@ -51,6 +51,7 @@
                                             <div class="w-100 mt-4 text-center">
                                                 <a href="${route.link}"
                                                     class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
+                                                    data-bs-toggle="modal" data-bs-target="#aboutRocketLeagueModal"
                                                     role="button" aria-lable="learn">${route.btn}<i
                                                         class="fas fa-angle-right ms-2 align-middle"></i></a>
                                             </div>

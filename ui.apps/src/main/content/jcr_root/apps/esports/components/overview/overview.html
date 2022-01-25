@@ -12,7 +12,7 @@
             ${properties.description @context = 'html'}
 
             <sly data-sly-test="${properties.viewType=='overviewQuote'}"  data-sly-resource="${'quote' @ resourceType='esports/components/quote'}"></sly>
-            <div class="w-100 mt-5 text-center text-lg-end">
+            <div class="w-100 mt-5 text-center text-lg-end" data-sly-test="${properties.ctaText}">
                 <a href="${properties.ctaLink}" class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase" role="button" aria-lable="learn">${properties.ctaText} 
                     <i class="fas fa-angle-right ms-2 align-middle"></i></a>
             </div>
