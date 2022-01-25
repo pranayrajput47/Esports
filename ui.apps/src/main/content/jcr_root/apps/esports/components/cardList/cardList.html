@@ -11,11 +11,11 @@
                                 class="text-primary">${properties.primaryHeading}</span></h4>
                     </div>
                     <div class="card-body p-4">
-                        <div class="container">
+                        <div class="container col-12 col-lg-9">
                             <div class="row g-5">
 
                                 <div class="col-12">
-                                    <h3 class="card-title text-uppercase mb-4 text-center">${properties.description @ context = 'html'}
+                                    <h3 class="card-title text-uppercase mb-4 mt-2 text-center">${properties.description @ context = 'html'}
                                 </div>
 
                                 <sly data-sly-list.multifield="${resource.getChildren}">
@@ -24,8 +24,8 @@
                                 <div class="col-md-6">
                                     <div class="card bg-transparent">
 
-                                        <div class="position-relative">
-                                            <img class="card-img"
+                                        <div class="position-relative text-center">
+                                            <img class="card-img w-75"
                                                 src="${route.image}"
                                                 alt="Card image">
                                             <div
@@ -44,8 +44,8 @@
                                                         src="${route.logo}"
                                                         alt="Teen Content">
                                                 </div>
-                                                <div class="col-9">
-                                                    <p>${route.subDescription}</p>
+                                                <div class="col-12">
+                                                    <p class="text-center">${route.subDescription}</p>
                                                 </div>
                                             </div>
                                             <div class="w-100 mt-4 text-center">

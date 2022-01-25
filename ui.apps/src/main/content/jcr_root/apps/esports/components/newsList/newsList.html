@@ -1,4 +1,5 @@
 <p data-sly-test.edit="${wcmmode.edit}" date-emptytext="Configure News List Component here" class="cq-placeholder"></p>
+
 <!-- LATEST STRIDE ESPORTS NEWS widget START -->
 <div>
     <!-- Card START -->
@@ -11,12 +12,11 @@
             </div>
         </div>
         <div class="card-body p-0">
-            <sly data-sly-list.multifield="${resource.getChildren}">
-                <sly data-sly-test="${multifield.name == 'newsList'}">
-                    <sly data-sly-list.route="${multifield.getChildren}">
-                        <div class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
-                            <div class="customize">
-                                <!-- Slide item -->
+            <div class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
+                <div class="customize">
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'newsList'}">
+                            <sly data-sly-list.route="${multifield.getChildren}">
                                 <div class="item p-4">
                                     <!-- News 1 -->
                                     <div class="row">
@@ -38,7 +38,7 @@
                                             </h6>
                                             <h6 class="small fst-italic mb-4">${route.writeBy}
                                             </h6>
-                                            <p>${route.description}</p>
+                                            <p>${route.description @ context = 'html'}</p>
                                             <div class="w-100 mt-4 text-center text-lg-end">
                                                 <a href="${route.btnLink}"
                                                     class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
@@ -47,180 +47,47 @@
                                             </div>
                                         </div>
                                     </div>
-
+            
                                 </div>
-                                <!-- Slide item -->
-                                <div class="item p-4">
-                                    <!-- News 1 -->
-                                    <div class="row">
-                                        <!-- Image -->
-                                        <div class="col-md-7 position-relative">
-                                            <div class="mb-4"><img src="${route.image}" alt="Image Title"></div>
-                                            <div class="w-100 mb-4">
-                                                <div class="small text-start mb-2">${route.sponserText}</div>
-                                                <a href="${route.logoLink}" class="d-block card-img-flash">
-                                                    <img src="${route.logoImg}" alt="stride">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Content -->
-                                        <div class="col-md-5">
-                                            <h3 class="card-title text-uppercase mb-4"><a href="${route.headingLink}"
-                                                    class="btn-link text-reset fw-bold">${route.heading}</a></h3>
-                                            <h6 class="small fst-italic mb-4">${route.dateHeading}
-                                            </h6>
-                                            <h6 class="small fst-italic mb-4">${route.writeBy}
-                                            </h6>
-                                            <p>${route.description}</p>
-                                            <div class="w-100 mt-4 text-center text-lg-end">
-                                                <a href="${route.btnLink}"
-                                                    class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
-                                                    role="button" aria-lable="learn">${route.btnText} <i
-                                                        class="fas fa-angle-right ms-2 align-middle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Slide item -->
-                                <div class="item p-4">
-                                    <!-- News 1 -->
-                                    <div class="row">
-                                        <!-- Image -->
-                                        <div class="col-md-7 position-relative">
-                                            <div class="mb-4"><img src="${route.image}" alt="Image Title"></div>
-                                            <div class="w-100 mb-4">
-                                                <div class="small text-start mb-2">${route.sponserText}</div>
-                                                <a href="${route.logoLink}" class="d-block card-img-flash">
-                                                    <img src="${route.logoImg}" alt="stride">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Content -->
-                                        <div class="col-md-5">
-                                            <h3 class="card-title text-uppercase mb-4"><a href="${route.headingLink}"
-                                                    class="btn-link text-reset fw-bold">${route.heading}</a></h3>
-                                            <h6 class="small fst-italic mb-4">${route.dateHeading}
-                                            </h6>
-                                            <h6 class="small fst-italic mb-4">${route.writeBy}
-                                            </h6>
-                                            <p>${route.description}</p>
-                                            <div class="w-100 mt-4 text-center text-lg-end">
-                                                <a href="${route.btnLink}"
-                                                    class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
-                                                    role="button" aria-lable="learn">${route.btnText} <i
-                                                        class="fas fa-angle-right ms-2 align-middle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Slide item -->
-                                <div class="item p-4">
-                                    <!-- News 1 -->
-                                    <div class="row">
-                                        <!-- Image -->
-                                        <div class="col-md-7 position-relative">
-                                            <div class="mb-4"><img src="${route.image}" alt="Image Title"></div>
-                                            <div class="w-100 mb-4">
-                                                <div class="small text-start mb-2">${route.sponserText}</div>
-                                                <a href="${route.logoLink}" class="d-block card-img-flash">
-                                                    <img src="${route.logoImg}" alt="stride">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Content -->
-                                        <div class="col-md-5">
-                                            <h3 class="card-title text-uppercase mb-4"><a href="${route.headingLink}"
-                                                    class="btn-link text-reset fw-bold">${route.heading}</a></h3>
-                                            <h6 class="small fst-italic mb-4">${route.dateHeading}
-                                            </h6>
-                                            <h6 class="small fst-italic mb-4">${route.writeBy}
-                                            </h6>
-                                            <p>${route.description}</p>
-                                            <div class="w-100 mt-4 text-center text-lg-end">
-                                                <a href="${route.btnLink}"
-                                                    class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
-                                                    role="button" aria-lable="learn">${route.btnText} <i
-                                                        class="fas fa-angle-right ms-2 align-middle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Slide item -->
-                                <div class="item p-4">
-                                    <!-- News 1 -->
-                                    <div class="row">
-                                        <!-- Image -->
-                                        <div class="col-md-7 position-relative">
-                                            <div class="mb-4"><img src="${route.image}" alt="Image Title"></div>
-                                            <div class="w-100 mb-4">
-                                                <div class="small text-start mb-2">${route.sponserText}</div>
-                                                <a href="${route.logoLink}" class="d-block card-img-flash">
-                                                    <img src="${route.logoImg}" alt="stride">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Content -->
-                                        <div class="col-md-5">
-                                            <h3 class="card-title text-uppercase mb-4"><a href="${route.headingLink}"
-                                                    class="btn-link text-reset fw-bold">${route.heading}</a></h3>
-                                            <h6 class="small fst-italic mb-4">${route.dateHeading}
-                                            </h6>
-                                            <h6 class="small fst-italic mb-4">${route.writeBy}
-                                            </h6>
-                                            <p>${route.description}</p>
-                                            <div class="w-100 mt-4 text-center text-lg-end">
-                                                <a href="${route.btnLink}"
-                                                    class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
-                                                    role="button" aria-lable="learn">${route.btnText} <i
-                                                        class="fas fa-angle-right ms-2 align-middle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                            </sly>
+                        </sly>
                     </sly>
-                </sly>
-            </sly>
+                </div>
+            </div>
         </div>
         <div class="card-footer pt-0">
-            <sly data-sly-list.multifield="${resource.getChildren}">
-                <sly data-sly-test="${multifield.name == 'newsLinkList'}">
-
                     <nav class="d-lg-flex justify-content-between align-items-center" aria-label="navigation">
                         <!-- Pagination 1 2 3  -->
                         <ul
                             class="customize-thumbnails pagination pagination-bordered pagination-sm justify-content-center d-inline-block d-lg-flex pb-2 m-0">
-                            <sly data-sly-list.items="${multifield.getChildren}">
+                            <sly data-sly-list.multifield="${resource.getChildren}">
+                                <sly data-sly-test="${multifield.name == 'newsList'}">
+                                    <sly data-sly-list.route="${multifield.getChildren}">
                                 <li class="page-item"><a class="btn page-link"
-                                        href="${items.countLink}">${items.conut}</a>
+                                       >${routeList.count}</a>
                                 </li>
                             </sly>
+                                </sly>
+                                </sly>
                         </ul>
 
                         <!-- date, like and coment START-->
-                        <ul class="nav nav-divider align-items-center d-sm-inline-block">
+                        <!-- <ul class="nav nav-divider align-items-center d-sm-inline-block">
                             <sly data-sly-list.items="${multifield.getChildren}">
                                 <li class="nav-item">
                                     ${items.date}
                                 </li>
                             </sly>
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                             <i class="bi bi-heart me-1"></i> 745
                         </li>
                         <li class="nav-item">
                             <i class="bi bi-chat me-1"></i> 284
                         </li>
-                        -->
-                        </ul>
+                       
+                        </ul> -->
 
                     </nav>
-                </sly>
-            </sly>
         </div>
     </div>
 </div>

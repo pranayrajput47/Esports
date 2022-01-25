@@ -1,7 +1,7 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure hero banner Component here" class = "cq-placeholder"></p>
 <section class="py-0">
 
-			<div class="card bg-dark-overlay-4 overflow-hidden h-400 text-center shadow-lg-n"
+			<div class="js-custom-banner card bg-dark-overlay-2 overflow-hidden h-400 h-md-500 text-center shadow-lg-n rounded-0"
 				style="background-image:url(${properties.image @ context = 'html'}); background-position: center left; background-size: cover;">
 				
 				<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
@@ -18,13 +18,15 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<div class="w-100 my-auto text-lg-start" data-sly-test="${properties.viewType == 'generic'}">
+								<div class="w-100 my-auto text-md-start d-md-flex" data-sly-test="${properties.viewType == 'generic'}">
 									<h3 class="text-white fst-italic pe-lg-5 d-lg-inline">${properties.startInfo}</h3>
+									<div>
 									<a href="#" class="btn btn-secondary btn-sm fst-italic rounded-pill text-uppercase"
 										role="button" aria-lable="view">${properties.viewInfo}<i
 											class="fas fa-angle-right ms-2 align-middle"></i></a>
+									</div>
 								</div>
-								<div class="w-100 my-auto text-center text-lg-start d-md-flex align-items-end" data-sly-test="${properties.viewType == 'withList'}">
+								<div class="w-100 my-auto text-center text-md-start d-md-flex align-items-end" data-sly-test="${properties.viewType == 'withList'}">
 									<sly data-sly-list.multifield="${resource.getChildren}">
 										<sly data-sly-test="${multifield.name == 'listItems'}">
 											<div class="result-league d-flex" data-sly-list.item="${multifield.getChildren}">

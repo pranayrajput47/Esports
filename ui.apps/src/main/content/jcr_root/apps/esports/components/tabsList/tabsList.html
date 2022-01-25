@@ -3,7 +3,7 @@
     <!-- Card START -->
     <div class="card">
         <div class="d-flex align-items-start justify-content-between p-0">
-            <div class="p-4">
+            <div class="p-4 col-md-5">
                 <h5 class="text-primary text-uppercase mb-0">${properties.heading}</h5>
                 <h2 class="card-title text-uppercase display-5 mb-0">
                     ${properties.subHeading}
@@ -15,8 +15,8 @@
                     <sly data-sly-list.multifield="${resource.getChildren}">
                         <sly data-sly-test="${multifield.name == 'toggle'}">
                             <sly data-sly-list.route="${multifield.getChildren}">
-                                <li class="nav-item"><a class="nav-link ${route.linkType}" data-bs-toggle="tab"
-                                        href="${route.toggleLink}"> ${route.toggleText}</a></li>
+                                <li class="nav-item"><a class="nav-link ${route.linkType}" href="${route.toggleLink}.html">
+                                        ${route.toggleText}</a></li>
                             </sly>
                         </sly>
                     </sly>
@@ -25,6 +25,34 @@
             </div>
         </div>
         <div class="card-body p-4 pt-0" data-sly-test="${properties.viewType=='withDescription'}">
+            <div class="row align-items-center g-5 px-4">
+                <div class="col-6 col-md-3 border-end d-block d-md-none">
+
+                    <div>
+                        <div class="dropdown-custom py-3">
+                            <a class="dropdown-toggle text-primary-hover" href="#" role="button" id="trounamentSelector"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>
+                                    <span class="fs-6 d-block">${properties.customDropdownHeading}</span>
+                                    <span class="text-white fs-5 d-block">${properties.customDropdownSubHeading}</span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu min-w-auto dropdown-menu-arrow"
+                                aria-labelledby="trounamentSelector">
+                                <sly data-sly-list.multifield="${resource.getChildren}">
+                                    <sly data-sly-test="${multifield.name == 'toggle'}">
+                                        <sly data-sly-list.route="${multifield.getChildren}">
+                                <li><a class="dropdown-item" href="${route.toggleLink}.html">${route.toggleText}</a></li>
+                                </li>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <!-- tab-content -->
             <div class="tab-content p-0">
                 ${properties.description @context = 'html'}
@@ -37,15 +65,17 @@
                     <!-- START : Custom Dropdown 1 -- -->
                     <div>
                         <div class="dropdown-custom py-3">
-                                <span>
-                                    <span class="fs-6 d-block">${properties.customDropdownHeading}</span>
-                                </span>
+                            <span>
+                                <span class="fs-6 d-block">${properties.customDropdownHeading}</span>
+                            </span>
                             <select name="categories" id="categories">
-                                <option value="all" class="dropdown-item">${properties.customDropdownSubHeading}</option>
+                                <option value="all" class="dropdown-item">${properties.customDropdownSubHeading}
+                                </option>
                                 <sly data-sly-list.multifield="${resource.getChildren}">
                                     <sly data-sly-test="${multifield.name == 'menu'}">
                                         <sly data-sly-list.route="${multifield.getChildren}">
-                                            <option class="dropdown-item" value="${route.gameType}">${route.menuText}</option>
+                                            <option class="dropdown-item" value="${route.gameType}">${route.menuText}
+                                            </option>
                                         </sly>
                                     </sly>
                                 </sly>
