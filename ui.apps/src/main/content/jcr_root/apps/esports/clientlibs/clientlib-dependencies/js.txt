@@ -4,4 +4,3 @@ bootstrap.bundle.min.js
 tiny-slider.js
 sticky.min.js
 glightbox.js
-jquery.js

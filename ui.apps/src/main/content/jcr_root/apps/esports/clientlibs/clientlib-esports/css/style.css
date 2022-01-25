@@ -62,12 +62,12 @@
 }
 .sprite-icon.bg-expand::before {
     width: 15px; height: 9px;
-    background: url('/../assets/images/sprites-less-expand.png') -10px -10px;
+    background: url('/../../../../content/dam/esports/images/sprites-less-expand.png') -10px -10px;
 }
 
 .sprite-icon.bg-less::before {
     width: 15px; height: 9px;
-    background: url('/../assets/images/sprites-less-expand.png') -45px -10px;
+    background: url('/../../../../content/dam/esports/images/sprites-less-expand.png') -45px -10px;
 }
 
 .logo_content .logo .logo_name a {
