@@ -24,10 +24,8 @@
                             </div>
                             <div class="card-body">
                                 <!-- Card img -->
-                                <ul class="list-unstyled">
-                                    <li class="my-2 d-flex">${route.lineOne}</li>
-                                    <li class="my-2 d-flex">${route.lineTwo}</li>
-                                    <li class="my-2 d-flex">${route.lineThree}</li>
+                                <ul class="list-unstyled list-style-plus">
+                                    ${route.description @ context = 'html'}
                                 </ul>
 
                             </div>
