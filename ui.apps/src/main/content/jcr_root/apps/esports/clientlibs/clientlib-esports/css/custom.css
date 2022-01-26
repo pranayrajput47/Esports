@@ -6,8 +6,24 @@ main .container-fluid, .container-fluid, .container{
     --bs-gutter-x: 0;
 }
 
+header .container-fluid, header .container{
+    --bs-gutter-x: 1rem;
+}
+
+
 header.navbar-sticky-on .navbar-brand .navbar-brand-item {
     transform: scale(1) translateY(0px);
+}
+.list-style-plus > li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.list-style-plus > li:before {
+    content: "+";
+    position: absolute;
+    top: 0;
+    left: 0;             
 }
 .js-custom-banner .container{
     padding-left: 10rem;

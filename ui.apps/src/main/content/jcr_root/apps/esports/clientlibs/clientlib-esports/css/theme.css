@@ -15035,7 +15035,7 @@ main {
 
 header {
   position: relative;
-  z-index: 99;
+  z-index: 1024;
   background: #000000;
 }
 
