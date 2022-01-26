@@ -109,7 +109,6 @@
                                                                         fieldLabel="Select the image"
                                                                         name="./image"
                                                                         rootPath="/content/dam"/>
-
                                                                     <description
                                                                         jcr:primaryType="nt:unstructured"
                                                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"

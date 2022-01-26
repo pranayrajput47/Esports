@@ -53,31 +53,41 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldLabel="Checkbox Sub Heading"
                                                 name="./checkboxSubHeading"/>
+                                            <checkbox1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Checkbox 1"
+                                                name="./checkbox1"/>
+                                            <checkbox2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Checkbox 2"
+                                                name="./checkbox2"/>
+                                            <checkbox3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Checkbox 3"
+                                                name="./checkbox3"/>
+                                            <checkboxFirstDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Checkbox 4"
+                                                name="./checkboxFirstDescription"/>
+                                            <checkboxSecondDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Checkbox 5"
+                                                name="./checkboxSecondDescription"/>
                                             <questionHeading
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldLabel="Question Heading"
                                                 name="./questionHeading"/>
-                                            <questionValue
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldLabel="Question Value"
-                                                name="./questionValue"/>
                                             <questionSubHeading
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldLabel="Question Sub Heading"
                                                 name="./questionSubHeading"/>
-                                            <checkboxFirstDescription
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldLabel="Checkbox One"
-                                                name="./checkboxFirstDescription"/>
-                                            <checkboxSecondDescription
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldLabel="Checkbox Two"
-                                                name="./checkboxSecondDescription"/>
                                             <messageHeading
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

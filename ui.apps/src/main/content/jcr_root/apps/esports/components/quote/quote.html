@@ -6,11 +6,11 @@
         <div class="bg-body m-4 mt-0 p-3 p-md-4 rounded-3">
             <sly data-sly-list.route="${multifield.getChildren}">
                 <sly data-sly-test="${route.textType == 'articleText'}">
-            <q class="lead fst-italic text-primary font-heading d-block mb-4">${route.text}
+            <q class="lead fst-italic text-primary font-heading d-block mb-4">${route.text @ context = 'html'}
             </q>
             </sly>
              <sly data-sly-test="${route.textType == 'authorText'}">
-            <p class="lead font-heading mt-4 mb-0">${route.text}</p>
+            <p class="lead font-heading mt-4 mb-0">${route.text @ context = 'html'}</p>
             </sly>
         </sly>
         </div>

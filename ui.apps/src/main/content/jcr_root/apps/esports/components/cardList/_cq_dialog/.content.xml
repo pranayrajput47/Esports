@@ -450,8 +450,13 @@
                                                         <button
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="Enter the Button Text"
+                                                            fieldLabel="Button"
                                                             name="./btn"/>
+                                                        <targetID
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Target ID"
+                                                            name="./targetId"/>
                                                     </items>
                                                 </field>
                                             </cardItems>

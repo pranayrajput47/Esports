@@ -9,7 +9,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="w-100 my-auto text-lg-start">
-									<h6 class="text-primary">${properties.pretitle}</h6>
+									<h6 class="${properties.textColor}">${properties.pretitle}</h6>
 									<h1 class="text-white fst-italic display-1 lh-1">${properties.subtitle} <br>
 										<span class="text-primary">${properties.subheading}</span>
 									</h1>
@@ -21,7 +21,7 @@
 								<div class="w-100 my-auto text-md-start d-md-flex" data-sly-test="${properties.viewType == 'generic'}">
 									<h3 class="text-white fst-italic pe-lg-5 d-lg-inline">${properties.startInfo}</h3>
 									<div>
-									<a href="#" class="btn btn-secondary btn-sm fst-italic rounded-pill text-uppercase"
+									<a href="${properties.ctaLink}" class="btn ${properties.btnColor} btn-sm fst-italic rounded-pill text-uppercase"
 										role="button" aria-lable="view">${properties.viewInfo}<i
 											class="fas fa-angle-right ms-2 align-middle"></i></a>
 									</div>
@@ -31,7 +31,7 @@
 										<sly data-sly-test="${multifield.name == 'listItems'}">
 											<div class="result-league d-flex" data-sly-list.item="${multifield.getChildren}">
 												<div class="d-block">
-													<h2 class="text-primary text-uppercase">${item.heading}</h2>
+													<h2 class="text-secondary text-uppercase">${item.heading}</h2>
 													<ul
 														class="list-unstyled fs-4 fw-bolder font-heading text-uppercase text-white">
 														${item.description @ context = 'html'}
@@ -42,9 +42,13 @@
 									</sly>
 									<div>
 										<a href="${properties.ctaLink}"
-											class="btn btn-secondary btn-sm fst-italic rounded-pill text-uppercase"
-											role="button" aria-lable="view">${properties.viewInfo}<i
+											class="btn ${properties.btnColor} btn-sm fst-italic rounded-pill text-uppercase" 
+                                            data-glightbox data-gallery="y-video"
+											role="button" aria-lable="view" >${properties.viewInfo}<i
 												class="fas fa-angle-right ms-2 align-middle"></i></a>
+
+
+
 									</div>
 								</div>
 							</div>
