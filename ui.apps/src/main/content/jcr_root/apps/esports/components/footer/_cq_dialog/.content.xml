@@ -33,11 +33,11 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                 composite="{Boolean}true"
-                                                fieldLabel="Add Navigation Links">
+                                                fieldLabel="Add Social Links">
                                                 <field
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                    name="./navlinks">
+                                                    name="./socialLinks">
                                                     <items jcr:primaryType="nt:unstructured">
                                                         <hyperlink
                                                             jcr:primaryType="nt:unstructured"
