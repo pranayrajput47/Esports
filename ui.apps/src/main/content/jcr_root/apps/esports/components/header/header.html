@@ -9,7 +9,7 @@
 				<div class="logo_content">
 					<div class="logo">
 						<div class="logo_name">
-							<a class="navbar-brand" href="${properties.navigationRoot}">
+							<a class="navbar-brand" href="${properties.navigationRoot}.html">
 								<img class="navbar-brand-item light-mode-item" src="${properties.logoImage}" alt="${properties.alternateText}">
 							</a>
 						</div>
@@ -21,7 +21,7 @@
                         <sly data-sly-test="${multifield.name == 'navlinks'}">
                             <sly data-sly-list.route="${multifield.getChildren}">
                                 <li class="nav-item">
-                                    <a class="nav-link ${routeList.first?'active':''}" href="${route.hyperlink}">
+                                    <a class="nav-link ${routeList.first?'active':''}" href="${route.hyperlink}.html">
                                         <i>
                                             <img class="icon-md p-2" src="${route.image}" alt="${route.altText}">
                                         </i>
@@ -42,12 +42,12 @@
             <div class="container-fluid">
     
                 <div class="nav-item">
-                    <a class="nav-link p-0" data-bs-toggle="offcanvas" href="${properties.offcanvaslink}" role="button" aria-controls="offcanvasMenu">
+                    <a class="nav-link p-0" data-bs-toggle="offcanvas" href="${properties.offcanvaslink}.html" role="button" aria-controls="offcanvasMenu">
                         <i class="bi bi-text-right rtl-flip fs-2" data-bs-target="#offcanvasMenu"> </i>
                     </a>
                 </div>
     
-                <a class="navbar-brand mx-auto" href="${properties.logolink}">
+                <a class="navbar-brand mx-auto" href="${properties.logolink}.html">
                     <img class="navbar-brand-item light-mode-item" src="${properties.image}" alt="${properties.altText}">
                 </a>
                     <div class="nav-item">

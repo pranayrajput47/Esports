@@ -5,7 +5,7 @@
         <div class="logo_content">
             <div class="logo">
                 <div class="logo_name">
-                    <a class="navbar-brand" href="${properties.navigationRoot}">
+                    <a class="navbar-brand" href="${properties.navigationRoot}.html">
                         <img class="navbar-brand-item light-mode-item" src="${properties.logoImage}" alt="${properties.alternateText}" />
                     </a>
                 </div>
@@ -18,7 +18,7 @@
                 <ul class="navbar-nav nav_list">
                     <sly data-sly-list.route="${multifield.getChildren}">
                         <li class="nav-item">
-                            <a class="nav-link ${route.linkType}" href="${route.hyperlink}">
+                            <a class="nav-link ${route.linkType}" href="${route.hyperlink}.html">
                                 <i>
                                     <img class="icon-md p-2" src="${route.image}" alt="${route.altText}" />
                                 </i>
