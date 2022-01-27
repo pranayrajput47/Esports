@@ -46,32 +46,25 @@ public class EmailServiceImpl implements EmailService {
     @Activate
     public void activate(final ComponentContext context) {
         templatePath = PropertiesUtil.toString(context.getProperties().get("template.path"), "/etc/notification/email/html/en.html");
-        senderEmail = PropertiesUtil.toString(context.getProperties().get("sender.email"), "");
-        recipient = PropertiesUtil.toString(context.getProperties().get("receiver.email"), "pra47nay@gmail.com");
+        senderEmail = PropertiesUtil.toString(context.getProperties().get("sender.email"), "accessibility@k12.com");
     }
 
     @Override
-    public String sendMail(ResourceResolver resolver, Map emailParams) {
-        String recipientEmail = recipient;
+    public boolean sendMail(ResourceResolver resolver, Map emailParams) {
+        boolean sentEmail = false;
         try {
-            send(resolver, emailParams);
-        } catch (EmailException | IOException | MessagingException e) {
-            LOGGER.error("Error sending email to " + recipientEmail, e);
-            recipientEmail = "";
-        }
-
-        return recipientEmail;
-    }
-
-
-    private void send(ResourceResolver resolver, Map emailParams) throws EmailException, IOException, MessagingException {
             MailTemplate mailTemplate = MailTemplate.create(templatePath, resolver.adaptTo(Session.class));
             Email email = mailTemplate.getEmail(StrLookup.mapLookup(emailParams), HtmlEmail.class);
-            email.setSubject(String.valueOf(emailParams.get("emailSubject")));
-            email.addTo(recipient);
+            email.addTo(String.valueOf(emailParams.get("senderEmail")));
             email.setFrom(senderEmail);
             MessageGateway messageGateway = messageGatewayService.getGateway(email.getClass());
             messageGateway.send(email);
+            sentEmail = true;
+        } catch (EmailException | IOException | MessagingException e) {
+            LOGGER.error("Error sending email to " + emailParams.get("senderEmail"), e);
+        }
 
+        return sentEmail;
     }
+
 }

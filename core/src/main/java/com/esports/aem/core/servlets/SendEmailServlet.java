@@ -72,11 +72,12 @@ public class SendEmailServlet extends SlingAllMethodsServlet {
         emailParams.put("senderPostalCode", pcode);
         emailParams.put("emailSubject", subject);
         emailParams.put("emailBody", body);
-        String recipientEmail = emailService.sendMail(resolver, emailParams);
-        if (StringUtils.isEmpty(recipientEmail)) {
-            LOGGER.info("mail not sent");
-        } else {
+        boolean sentEmail = emailService.sendMail(resolver, emailParams);
+        if (sentEmail) {
             LOGGER.info("mail sent successfully");
+        } else {
+            LOGGER.info("Error while sending email.");
         }
+        resolver.commit();
     }
 }

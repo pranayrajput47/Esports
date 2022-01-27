@@ -5,5 +5,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import java.util.Map;
 
 public interface EmailService {
-    String sendMail(ResourceResolver resolver, Map emailParams);
+
+    boolean sendMail(ResourceResolver resolver, Map emailParams);
 }
