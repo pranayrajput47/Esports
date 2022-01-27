@@ -1,6 +1,18 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure About League Component here" class = "cq-placeholder"></p>
-<div class="about-league">
-    <div class="card bg-dark-overlay-3 rounded-0 h-400 h-lg-500 position-relative overflow-hidden"
+<div class="modal custom-modal fade" id="${properties.targetID}" tabindex="-1" aria-labelledby="VIEW
+FULL ROSTER" aria-hidden="true">
+<div class="modal-dialog modal-lg modal-xl modal-dialog-centered">
+<div class="modal-content bg-transparent">
+<div class="modal-header border-0">
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+<i class="fa fa-times"></i>
+</button>
+</div>
+<div class="modal-body">
+<!-- Add Any Components Here  -->
+<!-- start -->
+<div class="about-league bg-transparent">
+    <div class="card bg-transparent bg-dark-overlay-3 rounded-0 h-300 position-relative overflow-hidden"
         style="background-image:url(assets/images/bg-aboutLeauge.jpg); background-position: center left; background-size: cover;">
         <!-- Card Image overlay -->
         <div
@@ -29,16 +41,11 @@
                                 <h3 class="text-center text-uppercase mb-3 fs-4">
                                     <span class="text-primary">${route.title}</span>
                                 </h3>
-                                <h5 class="text-center text-uppercase mb-5">${route.description}
+                                <h5 class="text-center text-uppercase mb-5">${route.description @ context = 'html'}
                                 </h5>
                             </sly>
                         </sly>
                     </sly>
-
-                    
-
-                    
-                    
                     <!-- button -->
                     <div class="w-100 mt-5 text-center">
                         <a href="${properties.ctaLink}"
@@ -52,4 +59,10 @@
             </div>
         </div>
     </div>
+</div>
+<!-- END -->
+</div>
+<div class="modal-footer border-0 justify-content-between"></div>
+</div>
+</div>
 </div>

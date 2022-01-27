@@ -9,12 +9,12 @@
     </sly>
 </div>
 
-<div class="modal custom-modal fade" id="formModal" tabindex="-1" aria-labelledby="Get in Touch form"
-    aria-hidden="true">
+<div class="modal custom-modal fade" id="formModal" api-Url="/bin/sendEmail" tabindex="-1"
+    aria-labelledby="Get in Touch form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa fa-times"></i>
                 </button>
             </div>
@@ -24,7 +24,8 @@
                         <div class="card-body p-4 p-lg-5">
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <h2 class="text-uppercase fst-italic text-center h1 mb-4">${properties.greetingText}</h2>
+                                    <h2 class="text-uppercase fst-italic text-center h1 mb-4">${properties.greetingText}
+                                    </h2>
                                     <h3 class="text-uppercase fst-italic text-center mb-4"> <span
                                             class="text-primary">${properties.heading}</span>${properties.subHeading}
                                     </h3>
@@ -35,8 +36,8 @@
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="mb-3 mt-1">
-                                                            <select class="form-select form-select-lg rounded-pill" name="selectCity"
-                                                                aria-label="State 3 select example">
+                                                            <select class="form-select is-astrik form-select-lg rounded-pill"
+                                                                name="selectCity" aria-label="State 3 select example">
                                                                 <option value="">${properties.state}</option>
                                                                 <option value="INTL">International</option>
                                                                 <option value="AL">Alabama</option>
@@ -79,43 +80,46 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3 mt-1">
-                                                            <input  id="con-name" name="firstname" type="text"
+                                                            <input id="con-name" name="firstname" type="text"
                                                                 aria-label="First Name"
-                                                                class="form-control form-control-lg rounded-pill"
+                                                                class="form-control is-astrik form-control-lg rounded-pill"
                                                                 placeholder="${properties.firstName}">
                                                         </div>
-                                                        <div class=" error fNameError">${properties.enterFirstName}</div>
+                                                        <div class=" error fNameError">${properties.enterFirstName}
+                                                        </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3 mt-1">
-                                                            <input  id="con-name" name="lastname" type="text"
+                                                            <input id="con-name" name="lastname" type="text"
                                                                 aria-label="last Name"
-                                                                class="form-control form-control-lg rounded-pill"
+                                                                class="form-control is-astrik form-control-lg rounded-pill"
                                                                 placeholder="${properties.lastName}">
                                                         </div>
                                                         <div class=" error lNameError">${properties.enterLastName}</div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="mb-3 mt-1">
-                                                            <input  id="con-email" name="email" type="email"
+                                                            <input id="con-email" name="email" type="email"
                                                                 aria-label="E Mail"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                pattern="[^ @]*@[^ @]*" placeholder="${properties.email}">
+                                                                class="form-control is-astrik form-control-lg rounded-pill"
+                                                                pattern="[^ @]*@[^ @]*"
+                                                                placeholder="${properties.email}">
                                                         </div>
                                                         <div class=" error EmailError">${properties.enterEmail}</div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="mb-3 mt-1">
-                                                            <input  id="con-subject" name="zip" type="text"
+                                                            <input id="con-subject" name="zip" type="text"
                                                                 aria-label="last Name"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                pattern="\d{5,5}(-\d{4,4})?" placeholder="${properties.zipCode}">
+                                                                class="form-control is-astrik form-control-lg rounded-pill"
+                                                                pattern="\d{5,5}(-\d{4,4})?"
+                                                                placeholder="${properties.zipCode}">
                                                         </div>
                                                         <div class=" error PincodeError">${properties.enterZip}</div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="mb-3 mt-1">
-                                                            <input  id="con-subject" name="phone" type="text"
+                                                            <input id="con-subject" name="phone" type="text"
                                                                 aria-label="last Name"
                                                                 class="form-control form-control-lg rounded-pill"
                                                                 pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
@@ -126,101 +130,75 @@
                                             </div>
 
                                             <hr>
-
                                             <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">${properties.checkboxHeading}<span class="text-primary">${properties.checkboxSubHeading}</span></h4>
-
-                                                <div class="row justify-content-center">
-                                                    <div class="col-10  text-center">
-                                                        <!-- <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="inlineCheckbox1" value="option1">
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic"" for="
-                                                                inlineCheckbox1">K-8</label>
-                                                            <div class="GradeError">Please Enter Email.</div>
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="inlineCheckbox2" value="option2">
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic"
-                                                                for="inlineCheckbox2">9-12</label>
-                                                        </div> -->
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="inlineCheckbox3" value="option3">
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic"" for="
-                                                                inlineCheckbox3">${properties.gradeHeading}</label>
-                                                            <div class=" error GradeError">${properties.enterGrade}</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <hr>
-
-                                            <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">${properties.questionHeading}
-                                                    <span class="text-primary">${properties.questionSubHeading}</span>
-                                                </h4>
-                                                <div class="row justify-content-center">
-                                                    <div class="col-10  text-center">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="inlineCheckbox4" value="option4">
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic"
-                                                                 for="inlineCheckbox4">${properties.checkboxFirstDescription}</label>
-                                                                 <div class=" error QuestionError1">${properties.questionOne}
-                                                        </div>
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="inlineCheckbox5" value="option5">
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic"
-                                                                for="inlineCheckbox5">${properties.checkboxSecondDescription}</label>
-                                                            <div class=" error QuestionError2">${properties.questionTwo}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <hr>
-
-                                            <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">${properties.messageHeading}
+                                                <h4 class="text-center fst-italic mb-3 fs-4">
+                                                    ${properties.messageHeading}
                                                     <span class="text-primary">${properties.messageSubHeading}</span>
                                                 </h4>
-
                                                 <div class="row justify-content-center">
                                                     <div class="col-10  text-center">
                                                         <div class="mb-4">
-                                                            <textarea  id="con-message" name="message" cols="40"
-                                                                rows="6" class="form-control rounded-3"
+                                                            <textarea id="con-message" name="message" cols="40" rows="6"
+                                                                class="form-control rounded-3"
                                                                 placeholder="${properties.message}"></textarea>
-                                                            <div class="MessageError">${properties.enterMessage}</div>
+                                                            <div class="error MessageError">${properties.enterMessage}
+                                                            </div>
                                                         </div>
-                                                        <div class="mb-4">
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="inlineCheckbox6" value="option5">
-                                                                <label
-                                                                    class="form-check-label text-white font-heading h4 fst-italic"
-                                                                    for="inlineCheckbox6">${properties.enrolledCheckbox}</label>
-                                                                <div class="error EnrollError">${properties.selectEnrolled}
-                                                                </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <h4 class="text-center fst-italic mb-3 fs-4">
+                                                    ${properties.checkboxHeading}<span
+                                                        class="text-primary">${properties.checkboxSubHeading}</span>
+                                                </h4>
+
+                                                <div class="row justify-content-center">
+                                                    <div class="col-10  text-center">
+
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input checkbox-val" type="checkbox"
+                                                                id="inlineCheckbox1" value=${properties.checkbox1}>
+                                                            <label
+                                                                class="form-check-label text-white font-heading h4 fst-italic" for="
+                                                                inlineCheckbox1">${properties.checkbox1}</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input checkbox-val" type="checkbox"
+                                                                id="inlineCheckbox2" value=${properties.checkbox2}>
+                                                            <label
+                                                                class="form-check-label text-white font-heading h4 fst-italic"
+                                                                for="inlineCheckbox2">${properties.checkbox2}</label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input checkbox-val" type="checkbox"
+                                                                id="inlineCheckbox3" value=${properties.checkbox3}>
+                                                            <label
+                                                                class="form-check-label text-white font-heading h4 fst-italic" for="
+                                                                inlineCheckbox3">${properties.checkbox3}</label>
+                                                            <div class=" error GradeError">${properties.enterGrade}
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
+
+                                            <hr>
                                             <div class="col-md-10 text-center">
+                                                <div class="mb-4">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="inlineCheckbox6" value=${properties.enrolledCheckbox}>
+                                                        <label
+                                                            class="form-check-label text-white font-heading h4 fst-italic"
+                                                            for="inlineCheckbox6">${properties.enrolledCheckbox}</label>
+                                                        <div class="error EnrollError">
+                                                            ${properties.selectEnrolled}
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <button
                                                     class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase w-50 mb-4"
                                                     type="submit" id="esportsSubmit">${properties.ctaText}</button>
@@ -235,7 +213,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal-body p-4 messagePopUp " success-message="Thank you for Submitting"
+                    error-message="something Went Wrong">
+                    <h3 class="display-message"></h3>
+                </div>
+                <div class="modal-footer border-0 justify-content-between p-4 messagePopUp">
+                    <a href="#" class="btn btn-light-soft close btn-sm fst-italic rounded-pill text-uppercase"
+                        data-bs-dismiss="modal" aria-label="Close">Close</a>
+                    <a href="#" class="btn btn-primary btn-sm close fst-italic rounded-pill text-uppercase">ok</a>
+                </div>
             </div>
+
             <div class="modal-footer border-0 justify-content-between"></div>
         </div>
     </div>

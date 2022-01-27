@@ -1,6 +1,6 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Info Card Component here" class = "cq-placeholder"></p>
 
-<div class="col-md-6">
+<div class="">
     <h5 class="mb-3">${properties.title}</h5>
     <!-- Default Card : START -->
     <div>
@@ -21,7 +21,7 @@
                                 <sly data-sly-test="${multifield.name == 'infoList'}">
                                 <sly data-sly-list.route="${multifield.getChildren}">
                             <div class="col-6">
-                                <div class="vstack justify-content-center align-items-center text-center py-2">
+                                <div class="vstack justify-content-center align-items-center text-center py-3">
                                     <img class="card-img" src="${route.logo}" alt="${route.altText}">
                                 </div>
                             </div>

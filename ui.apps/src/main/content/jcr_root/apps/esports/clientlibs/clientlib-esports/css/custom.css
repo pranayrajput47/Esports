@@ -2,32 +2,31 @@ header .navbar-brand .navbar-brand-item {
     transform: scale(1.2) translateY(10px);
 }
 
-main .container-fluid, .container-fluid, .container{
-    --bs-gutter-x: 0;
-}
-
-header .container-fluid, header .container{
-    --bs-gutter-x: 1rem;
-}
-
-
 header.navbar-sticky-on .navbar-brand .navbar-brand-item {
     transform: scale(1) translateY(0px);
-}
-.list-style-plus > li {
-    position: relative;
-    padding-left: 1rem;
-}
-
-.list-style-plus > li:before {
-    content: "+";
-    position: absolute;
-    top: 0;
-    left: 0;             
 }
 .js-custom-banner .container{
     padding-left: 10rem;
     padding-right: 10rem;
+}
+.responsivegrid.container{
+    max-width: 100% !important;
+    padding: 0;
+}
+.form-control.is-astrik:after {
+    content: "";
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    position: relative;
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+    z-index: 2;
 }
 .card.card-custom > .card-header, .card > .card-header{
     -ms-flex-wrap: nowrap !important;
@@ -36,6 +35,10 @@ header.navbar-sticky-on .navbar-brand .navbar-brand-item {
     -ms-flex-align: center !important;
     align-items: center !important;
 }
+@media (min-width: 1400px) {
+
+}
+
 @media (max-width: 1400px) {
     .js-custom-banner .container{
         padding-left: 5rem;
@@ -48,6 +51,9 @@ header.navbar-sticky-on .navbar-brand .navbar-brand-item {
     }
     main{
         overflow-x: hidden;
+    }
+    main .container-fluid, .container-fluid, .container{
+        --bs-gutter-x: 0;
     }
     .home_content .card > div {
         padding-top: 1rem !important;
@@ -302,13 +308,47 @@ header.navbar-sticky-on .navbar-brand .navbar-brand-item {
     min-height: 90px;
     line-height: 90px;
 }
-
 .table.table-tournament tbody tr {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .table.table-tournament tbody tr:first-child{
     border-top: 0;
+}
+
+/* TODO Schedule league Table (Academy/Champion League) */
+.schedule-academy-leauge > div, .schedule-champion-leauge > div {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+}
+.table.table-schedule-leauge th:first-child{
+    min-width: 90px !important;
+}
+.table.table-schedule-leauge th:nth-child(2){
+    min-width: 45px !important;
+}
+.table.table-schedule-leauge th:nth-child(3){
+    min-width: 80px !important;
+}
+.table.table-schedule-leauge th:nth-child(4){
+    min-width: 120px !important;
+}
+.schedule-academy-leauge .table tr td {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+.schedule-academy-leauge .table tr td:last-child, .schedule-champion-leauge .table tr td:last-child{
+    text-align: center;
+}
+.schedule-academy-leauge .table{
+    padding-top: 1rem;
+}
+.schedule-champion-leauge {
+    padding-bottom: 0.5rem;
+}
+
+.schedule-academy-leauge {
+    padding-bottom: 1rem;
 }
 
 /* TODO Custom Dropdown */
@@ -502,17 +542,15 @@ background-color: #191a1f;
 }
 .about-league .info-detail {
     position: relative;
-    margin-top: -4rem;
-    z-index: 99;
 }
 .about-league .logo-leauge img{
     padding-bottom: 4rem;
-    max-width: 400px;
+    width: 300px;
 }
 
 @media (max-width: 767.98px) {
     .about-league .logo-leauge img{
-        max-width: 250px;
+        width: 250px;
     }
 }
 

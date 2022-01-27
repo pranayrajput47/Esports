@@ -1,7 +1,4 @@
 <p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Configure League List here" class="cq-placeholder"></p>
-
-<!-- Schedule for spring 2022 League lists CARD START -->
-
 <div class="card card-custom">
     <div class="card-header">
         <h4 class="text-white text-uppercase mb-1">${properties.cardTitle}<br>${properties.cardSubTitle}</h4>
@@ -9,7 +6,7 @@
         <div class="card-toolbar">
             
             <button type="button" class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0"
-                data-bs-toggle="modal" data-bs-target=#"${properties.ctaLink}">${properties.ctaText}</button>
+                data-bs-toggle="modal" data-bs-target="${properties.ctaLink}">${properties.ctaText}</button>
         </div>
     </sly>
     </div>
@@ -26,10 +23,13 @@
                                 <div class="item pb-2">
                                     <!-- start -->
                                     <sly data-sly-test="${route.viewType=='academy'}">
+                                        <sly data-sly-list.second="${route.getChildren}">
+                                            <sly data-sly-test="${second.name == 'secondList'}">
+                                                <sly data-sly-list.secondList="${second.getChildren}">
                                         <div class="schedule-academy-leauge">
                                             <div class="d-flex px-4 py-3 justify-content-between align-items-center">
                                                 <span
-                                                    class="text-primary font-heading fw-bolder lead text-uppercase">${route.heading}<span class="winner ms-1 text-white">${route.subHeading}</span></span>
+                                                    class="text-primary font-heading fw-bolder lead text-uppercase">${secondList.heading}<span class="winner ms-1 text-white">${secondList.subHeading}</span></span>
                                             </div>
                                             <table
                                                 class="table table-schedule-leauge table-borderless align-middle font-heading text-uppercase">
@@ -42,9 +42,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <sly data-sly-list.multifieldList="${route.getChildren}">
-                                                        <sly data-sly-test="${multifieldList.name == 'leagueList'}">
-                                                            <sly data-sly-list.routeItem="${multifieldList.getChildren}">
+                                                    <sly data-sly-list.third="${secondList.getChildren}">
+                                                        <sly data-sly-test="${third.name == 'leagueList'}">
+                                                            <sly data-sly-list.routeItem="${third.getChildren}">
                                                     <tr>
                                                         <td class="px-2 text-center">
                                                             <span class="text-primary fw-bolder">${routeItem.month}</span>
@@ -67,15 +67,20 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        </sly>
+                                        </sly>
+                                        </sly>
                                     </sly>
                                     <!-- End -->
                                     <!-- start -->
                                     <sly data-sly-test="${route.viewType=='champion'}">
+                                        <sly data-sly-list.second="${route.getChildren}">
+                                            <sly data-sly-test="${second.name == 'secondList'}">
+                                                <sly data-sly-list.secondList="${second.getChildren}">
                                         <div class="schedule-champion-leauge">
                                             <div class="d-flex px-4 py-3 justify-content-between align-items-center">
                                                 <span
-                                                <span
-                                                class="text-primary font-heading fw-bolder lead text-uppercase">${route.heading}<span class="winner ms-1 text-white">${route.subHeading}</span></span>
+                                                    class="text-primary font-heading fw-bolder lead text-uppercase">${secondList.heading}<span class="winner ms-1 text-white">${secondList.subHeading}</span></span>
                                             </div>
                                             <table
                                                 class="table table-schedule-leauge table-borderless align-middle font-heading text-uppercase">
@@ -88,29 +93,34 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <sly data-sly-list.multifieldList="${route.getChildren}">
-                                                        <sly data-sly-test="${multifieldList.name == 'leagueList'}">
-                                                            <sly data-sly-list.routeItem="${multifieldList.getChildren}">
-                                                                <tr>
-                                                                    <td class="px-2 text-center">
-                                                                        <span class="text-primary fw-bolder">${routeItem.month}</span>
-                                                                    </td>
-                                                                    <td class="px-2">
-                                                                        <span class="text-primary fw-bold">${routeItem.date}</span>
-                                                                    </td>
-                                                                    <td class="px-2">
-                                                                        <span class="text-white fw-bolder">${routeItem.week}</span>
-                                                                    </td>
-                                                                    <td class="px-2">
-                                                                        <span class="text-white fw-bolder">${routeItem.time} </span>
-                                                                    </td>
-                                                                </tr>
-                                                            </sly>
-                                                        </sly>
+                                                    <sly data-sly-list.third="${secondList.getChildren}">
+                                                        <sly data-sly-test="${third.name == 'leagueList'}">
+                                                            <sly data-sly-list.routeItem="${third.getChildren}">
+                                                    <tr>
+                                                        <td class="px-2 text-center">
+                                                            <span class="text-primary fw-bolder">${routeItem.month}</span>
+                                                        </td>
+                                                        <td class="px-2">
+                                                            <span class="text-primary fw-bold">${routeItem.date}</span>
+                                                        </td>
+                                                        <td class="px-2">
+                                                            <span class="text-white fw-bolder">${routeItem.week}</span>
+                                                        </td>
+                                                        <td class="px-2">
+                                                            <span class="text-white fw-bolder">${routeItem.time}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
                                                     </sly>
+                                                    </sly>
+                                                    </sly>
+
                                                 </tbody>
                                             </table>
                                         </div>
+                                        </sly>
+                                        </sly>
+                                        </sly>
                                     </sly>
                                     <!-- End -->
                                 </div>

@@ -666,6 +666,11 @@ progress {
     max-width: 1200px;
   }
 } */
+@media (min-width: 1920px) {
+  .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1900px;
+  }
+}
 .row {
   --bs-gutter-x: 1.875rem;
   --bs-gutter-y: 0;
@@ -6186,7 +6191,7 @@ textarea.form-control-lg {
   opacity: 0;
 }
 .modal-backdrop.show {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .modal-header {
@@ -7186,10 +7191,10 @@ textarea.form-control-lg {
 }
 
 .link-light {
-  color: #202227;
+  color: #ffffff;
 }
 .link-light:hover, .link-light:focus {
-  color: #1a1b1f;
+  color: #00FF5B;
 }
 
 .link-dark {
@@ -15034,9 +15039,10 @@ main {
 }
 
 header {
-  position: relative;
-  z-index: 1024;
-  background: #000000;
+  position: absolute;
+  z-index: 999;
+  background: rgba(0,0,0,0.6);
+  width: 100%;
 }
 
 a {
@@ -15473,12 +15479,12 @@ a.badge:hover {
   .back-top {
     bottom: 10px;
     right: 10px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
   }
   .back-top i {
-    font-size: 1rem;
+    font-size: 1.625rem;
   }
 }
 .sticky-post {

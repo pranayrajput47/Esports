@@ -1,5 +1,7 @@
 $(document).ready(function () {
-
+    let successMessage = $(".messagePopUp").attr("success-message");
+    let errorMessage = $(".messagePopUp").attr("error-message");
+    let apiUrl = $("#formModal").attr("api-Url");
 
     $("[name='firstname']").on("input", function () {
         let username = $(this).val();
@@ -66,7 +68,17 @@ $(document).ready(function () {
         let email = $("[name='email']").val();
         let zipcode = $("[name='zip']").val();
         let description = $("#con-message").val();
-        let phone = $("input[name=phone]").val(); 
+        let phone = $("input[name=phone]").val();
+        if (phone == undefined) {
+            phone = "";
+        }
+        let interested = $('.checkbox-val:checked').map(function (_, el) {
+            return $(el).val();
+        }).get();
+        let enrolled = $('#inlineCheckbox6:checked').val();
+        if (enrolled == undefined) {
+            enrolled = "";
+        }
         if (city == "") {
             $(".CityError").show();
             $("[name='selectCity']").focus();
@@ -81,45 +93,64 @@ $(document).ready(function () {
             $("#con-email").focus();
         } else if (zipcode == "" || !zipCodeRe.test(zipcode)) {
             $(".PincodeError").show();
-            $("#con-pincode").focus();
-        } else if ($("#inlineCheckbox3").prop("checked") == false && $("#inlineCheckbox5").prop("checked") == false) {
-            $(".QuestionError2").show();
-            $("#inlineCheckbox3").focus();
+            $("#con-subject").focus();
+        }
+        // else if ($("#inlineCheckbox1").prop("checked") == false) {
+        //     $(".GradeError").show();
+        //     $("#inlineCheckbox1").focus();
+        // }
+        else if ($("#inlineCheckbox1").prop("checked") == false && $("#inlineCheckbox2").prop("checked") == false && $("#inlineCheckbox3").prop("checked") == false) {
+            $(".GradeError").show();
+            $("#inlineCheckbox1").focus();
 
         } else if (description == "") {
             $(".MessageError").show();
             $("#con-message").focus();
-        } else if ($("#inlineCheckbox6").prop("checked") == false) {
-            $(".EnrollError").show();
-            $("#inlineCheckbox6").focus();
-        } else {
+        }
+
+        // else if ($("#inlineCheckbox6").prop("checked") == false) {
+        //     $(".EnrollError").show();
+        //     $("#inlineCheckbox6").focus();
+        // }
+        else {
             formData = {
+                city: city,
                 fname: fullName,
                 lname: lastName,
                 email: email,
                 description: description,
                 pcode: zipcode,
                 phone: phone,
+                interested: interested,
+                enrolled: enrolled
 
 
             };
 
             console.log(formData);
             $.ajax({
-                url: "/bin/sendEmail",
+                url: apiUrl,
                 method: "POST",
                 data: JSON.stringify(formData),
                 contentType: 'application/json',
                 success: function (res) {
-                    if (res.code == 200) {
-                        alert("Submitted");
+                    $(".form-custom").hide();
+                    $(".messagePopUp").show();
+                    $(".messagePopUp").html(successMessage);
+                    $(document).on("click", ".close", function (e) {
+                        location.reload();
 
-                    }else {
+                    });
 
-                    }
                 },
                 error: function (error) {
+                    $(".form-custom").hide();
+                    $(".messagePopUp").show();
+                    $(".display-message").append(errorMessage);
+                    $(document).on("click", ".close", function (e) {
+                        location.reload();
 
+                    });
                 },
             });
         }
@@ -135,6 +166,7 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
     $("[name='firstname']").on("input", function () {
         $(".fNameError").hide();
@@ -145,6 +177,7 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
     $("[name='lastname']").on("input", function () {
         $(".lNameError").hide();
@@ -155,6 +188,7 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
     $("[name='email']").on("input", function () {
         $(".EmailError").hide();
@@ -165,6 +199,7 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
     $("[name='zip']").on("input", function () {
         $(".PincodeError").hide();
@@ -175,18 +210,42 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
+    });
+    // $("#inlineCheckbox1").on("input", function () {
+    //     $(".GradeError").hide();
+    //     $(".QuestionError2").hide();
+    //     $(".CityError").hide();
+    //     $(".fNameError").hide();
+    //     $(".lNameError").hide();
+    //     $(".EmailError").hide();
+    //     $(".PincodeError").hide();
+    //     $(".MessageError").hide();
+    //     $(".EnrollError").hide();
+    // });
+    $("#inlineCheckbox1").on("input", function () {
+        $(".QuestionError2").hide();
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
+        $(".GradeError").hide();
+    });
+    $("#inlineCheckbox2").on("input", function () {
+        $(".CityError").hide();
+        $(".fNameError").hide();
+        $(".lNameError").hide();
+        $(".EmailError").hide();
+        $(".PincodeError").hide();
+        $(".QuestionError2").hide();
+        $(".MessageError").hide();
+        $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
     $("#inlineCheckbox3").on("input", function () {
-        $(".QuestionError2").hide();
-        $(".CityError").hide();
-        $(".fNameError").hide();
-        $(".lNameError").hide();
-        $(".EmailError").hide();
-        $(".PincodeError").hide();
-        $(".MessageError").hide();
-        $(".EnrollError").hide();
-    });
-    $("#inlineCheckbox5").on("input", function () {
         $(".CityError").hide();
         $(".fNameError").hide();
         $(".lNameError").hide();
@@ -195,6 +254,7 @@ $(document).ready(function () {
         $(".QuestionError2").hide();
         $(".MessageError").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
     $("#con-message").on("input", function () {
         $(".MessageError").hide();
@@ -205,17 +265,19 @@ $(document).ready(function () {
         $(".PincodeError").hide();
         $(".QuestionError2").hide();
         $(".EnrollError").hide();
+        $(".GradeError").hide();
     });
-    $("#inlineCheckbox6").on("input", function () {
-        $(".EnrollError").hide();
-        $(".CityError").hide();
-        $(".fNameError").hide();
-        $(".lNameError").hide();
-        $(".EmailError").hide();
-        $(".PincodeError").hide();
-        $(".QuestionError2").hide();
-        $(".MessageError").hide();
-    });
+    // $("#inlineCheckbox6").on("input", function () {
+    //     $(".EnrollError").hide();
+    //     $(".CityError").hide();
+    //     $(".fNameError").hide();
+    //     $(".lNameError").hide();
+    //     $(".EmailError").hide();
+    //     $(".PincodeError").hide();
+    //     $(".QuestionError2").hide();
+    //     $(".MessageError").hide();
+    //     $(".GradeError").hide();
+    // });
 
 
 })

@@ -1,13 +1,5 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Roster Component here" class="cq-placeholder"></p>
 
-
-<div id="item-17">
-   
-    
-
-    <!--  START -->
-    <div>
-        <!--Group Card START -->
         <div class="card card-custom">
             <div class="card-header">
                 <h4 class="text-white text-uppercase mb-1">${properties.rosterHeading}<span
@@ -44,7 +36,7 @@
                                                             <sly data-sly-list.data="${secondMultifield.getChildren}">
                                                                 <div
                                                                     class="vstack justify-content-center align-items-center text-center p-4">
-                                                                    <a href="${data.imagePath}"><img class="card-img"
+                                                                    <a href="${data.imageLink}" target = "_blank"><img class="card-img"
                                                                             src="${data.image}"
                                                                             alt="${data.altText}"></a>
                                                                 </div>
@@ -63,11 +55,6 @@
             </div>
         </div>
 
-    </div>
-
-
-</div>
-
 		<div class="modal custom-modal fade" id="rosterModal" tabindex="-1" aria-labelledby="VIEW
 		FULL ROSTER" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-xl modal-dialog-centered">
@@ -80,16 +67,16 @@
 					<div class="modal-body">
 						<div class="card card-custom">
 							<div class="card-header">
-								<h4 class="text-white text-uppercase mb-1">WHO’S PLAYING ?<span class="text-primary">
-										(2022 STRIDE ESPORTS ROSTER)</span></h4>
+								<h4 class="text-white text-uppercase mb-1">${properties.rosterHeading}<span class="text-primary">
+										${properties.rosterSubHeading}</span></h4>
 							</div>
 							<div class="card-body p-4">
 								<div class="row">
 
 									<!-- Title -->
 									<div class="col-12">
-										<h3 class="card-title text-uppercase mb-4 text-center">2021-2022
-											<span class="text-primary">STRIDE ESPORTS ROSTER</span>
+										<h3 class="card-title text-uppercase mb-4 text-center">${properties.rosterYear}
+											<span class="text-primary">${properties.rosterTitle}</span>
 										</h3>
 									</div>
 									<!-- Roster Logos -->
@@ -106,7 +93,7 @@
                                                                         <div class="col-6 col-sm-4 col-lg-2">
                                                                             <div
                                                                                 class="vstack justify-content-center align-items-center text-center p-3">
-                                                                                <a href="${routeList.imagePath}"><img class="card-img"
+                                                                                <a href="${routeList.imageLink}"><img class="card-img"
                                                                                         src="${routeList.image}"
                                                                                         alt="${routeList.altText}"></a>
                                                                             </div>
