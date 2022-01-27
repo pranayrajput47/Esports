@@ -1,36 +1,129 @@
-<p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure League List Component here" class = "cq-placeholder"></p>
-<div>
-    <div class="card border card-custom">
-        <div class="card-header align-items-center">
-            <div class="cart-title">
-                <small class="small fst-italic text-uppercase mb-0">${properties.title}</small>
-                <h5 class="text-white text-uppercase mb-2">${properties.heading}</h5>
-            </div>
-            <div class="card-toolbar">
-                <a href="${properties.link}"
-                    class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0">${properties.btnText}</a>
-            </div>
+<p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Configure League List here" class="cq-placeholder"></p>
+
+<!-- Schedule for spring 2022 League lists CARD START -->
+
+<div class="card card-custom">
+    <div class="card-header">
+        <h4 class="text-white text-uppercase mb-1">${properties.cardTitle}<br>${properties.cardSubTitle}</h4>
+        <sly data-sly-test="${properties.ctaText}">
+        <div class="card-toolbar">
+            
+            <button type="button" class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0"
+                data-bs-toggle="modal" data-bs-target=#"${properties.ctaLink}">${properties.ctaText}</button>
         </div>
-        <div class="card-body px-0 pt-4 py-5">  
-            <div class="list-card border-last-child row g-0">
-                <sly data-sly-list.multifield="${resource.getChildren}">
-                    <sly data-sly-test="${multifield.name == 'leaguesList'}">
-                    <sly data-sly-list.route="${multifield.getChildren}">
-                        <div class="col-12">
-                            <div class="vstack px-4 py-3">
-                                <h6 class="text-primary fw-bold small">${route.date}</h6>
-                                <ul class="nav nav-divider align-items-center small">
-                                    <li class="nav-item fw-bold text-white">
-                                        <span>${route.time}</span>
-                                    </li>
-                                    <li class="nav-item fw-bold text-white">${route.week}</li>
-                                </ul>
-                            </div>
-                        </div>
+    </sly>
+    </div>
+    <div class="card-body p-0">
+        <div class="d-block pb-4">
+            <!-- slider START -->
+            <div class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
+                <div class="tiny-slider-inner" data-autoplay="false" data-hoverpause="true" data-gutter="0"
+                    data-arrow="false" data-dots="true" data-items="1" data-loop="false">
+                    <!-- Slide item -->
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'league'}">
+                            <sly data-sly-list.route="${multifield.getChildren}">
+                                <div class="item pb-2">
+                                    <!-- start -->
+                                    <sly data-sly-test="${route.viewType=='academy'}">
+                                        <div class="schedule-academy-leauge">
+                                            <div class="d-flex px-4 py-3 justify-content-between align-items-center">
+                                                <span
+                                                    class="text-primary font-heading fw-bolder lead text-uppercase">${route.heading}<span class="winner ms-1 text-white">${route.subHeading}</span></span>
+                                            </div>
+                                            <table
+                                                class="table table-schedule-leauge table-borderless align-middle font-heading text-uppercase">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="p-0"></th>
+                                                        <th class="p-0"></th>
+                                                        <th class="p-0"></th>
+                                                        <th class="p-0"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <sly data-sly-list.multifieldList="${route.getChildren}">
+                                                        <sly data-sly-test="${multifieldList.name == 'leagueList'}">
+                                                            <sly data-sly-list.routeItem="${multifieldList.getChildren}">
+                                                    <tr>
+                                                        <td class="px-2 text-center">
+                                                            <span class="text-primary fw-bolder">${routeItem.month}</span>
+                                                        </td>
+                                                        <td class="px-2">
+                                                            <span class="text-primary fw-bold">${routeItem.date}</span>
+                                                        </td>
+                                                        <td class="px-2">
+                                                            <span class="text-white fw-bolder">${routeItem.week}</span>
+                                                        </td>
+                                                        <td class="px-2">
+                                                            <span class="text-white fw-bolder">${routeItem.time}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    </sly>
+                                                    </sly>
+                                                    </sly>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </sly>
+                                    <!-- End -->
+                                    <!-- start -->
+                                    <sly data-sly-test="${route.viewType=='champion'}">
+                                        <div class="schedule-champion-leauge">
+                                            <div class="d-flex px-4 py-3 justify-content-between align-items-center">
+                                                <span
+                                                <span
+                                                class="text-primary font-heading fw-bolder lead text-uppercase">${route.heading}<span class="winner ms-1 text-white">${route.subHeading}</span></span>
+                                            </div>
+                                            <table
+                                                class="table table-schedule-leauge table-borderless align-middle font-heading text-uppercase">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="p-0"></th>
+                                                        <th class="p-0"></th>
+                                                        <th class="p-0"></th>
+                                                        <th class="p-0"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <sly data-sly-list.multifieldList="${route.getChildren}">
+                                                        <sly data-sly-test="${multifieldList.name == 'leagueList'}">
+                                                            <sly data-sly-list.routeItem="${multifieldList.getChildren}">
+                                                                <tr>
+                                                                    <td class="px-2 text-center">
+                                                                        <span class="text-primary fw-bolder">${routeItem.month}</span>
+                                                                    </td>
+                                                                    <td class="px-2">
+                                                                        <span class="text-primary fw-bold">${routeItem.date}</span>
+                                                                    </td>
+                                                                    <td class="px-2">
+                                                                        <span class="text-white fw-bolder">${routeItem.week}</span>
+                                                                    </td>
+                                                                    <td class="px-2">
+                                                                        <span class="text-white fw-bolder">${routeItem.time} </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </sly>
+                                                        </sly>
+                                                    </sly>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </sly>
+                                    <!-- End -->
+                                </div>
+                            </sly>
+                        </sly>
                     </sly>
-                    </sly>
-                </sly>
+                    <!-- Slide item -->
+
+
+
+                </div>
             </div>
-         </div>
+            <!-- slider END -->
+        </div>
     </div>
 </div>
