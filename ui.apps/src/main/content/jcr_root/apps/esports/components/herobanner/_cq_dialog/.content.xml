@@ -46,6 +46,10 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="With List"
                                                         value="withList"/>
+                                                    <videoBox
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Video Box"
+                                                        value="videoBox"/>
                                                 </items>
                                             </viewType>
                                             <bgImage
@@ -103,7 +107,7 @@
                                             <ctaLink
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                fieldLabel="CTA Link"
+                                                fieldLabel="CTA Link/Video Link"
                                                 name="./ctaLink"/>
                                             <list
                                                 jcr:primaryType="nt:unstructured"

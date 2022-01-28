@@ -4,9 +4,11 @@
     <div class="card-header">
         <h4 class="text-white text-uppercase mb-1">${properties.title}</h4>
         <div class="card-toolbar">
+            <sly data-sly-test="${properties.btnText}">
             <button type="button"
                 class="btn btn-xs btn-light-soft fst-italic rounded-pill text-uppercase mb-0"
                 data-bs-toggle="modal" data-bs-target="#${properties.btnLink}">${properties.btnText}</button>
+            </sly>
         </div>
     </div>
     <div class="card-body p-0">

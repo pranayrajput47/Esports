@@ -45,6 +45,11 @@
                                                             fieldLabel="Cover Image"
                                                             name="./image"
                                                             rootPath="/content/dam"/>
+                                                        <altText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Alternate Text"
+                                                            name="./altText"/>
                                                         <title
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
