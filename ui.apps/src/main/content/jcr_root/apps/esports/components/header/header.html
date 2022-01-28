@@ -21,7 +21,7 @@
                         <sly data-sly-test="${multifield.name == 'navlinks'}">
                             <sly data-sly-list.route="${multifield.getChildren}">
                                 <li class="nav-item">
-                                    <a class="nav-link ${routeList.first?'active':''}" href="${route.hyperlink}">
+                                    <a class="nav-link ${routeList.first?'active':''}" href="${route.hyperlink}.html">
                                         <i>
                                             <img class="icon-md p-2" src="${route.image}" alt="${route.altText}">
                                         </i>
@@ -43,7 +43,7 @@
     
                 <div class="nav-item">
                     <a class="nav-link p-0" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
-                        <i class="bi bi-list rtl-flip fs-1" data-bs-target="#offcanvasMenu"> </i>
+                        <i class="bi bi-text-right rtl-flip fs-2" data-bs-target="#offcanvasMenu"> </i>
                     </a>
                 </div>
     
