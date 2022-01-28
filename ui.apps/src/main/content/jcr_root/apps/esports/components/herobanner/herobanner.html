@@ -1,7 +1,7 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure hero banner Component here" class = "cq-placeholder"></p>
 <section class="py-0">
 
-			<div class="js-custom-banner card overflow-hidden h-400 h-md-500 text-center shadow-lg-n rounded-0 parallax-hero-1200"
+			<div class="js-custom-banner card bg-dark-overlay-2 overflow-hidden h-400 h-md-500 text-center shadow-lg-n rounded-0 parallax-hero-1200"
 				style="background-image:url(${properties.image @ context = 'html'}); background-position: center left; background-size: cover;">
 				
 				<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
@@ -54,8 +54,8 @@
 									<div>
 										<a href="${properties.ctaLink}"
 											class="btn ${properties.btnColor} btn-sm fst-italic rounded-pill text-uppercase" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s"
-                                            
-											role="button" aria-lable="view">${properties.viewInfo}<i
+                                            data-glightbox data-gallery="y-video"
+											role="button" aria-lable="view" >${properties.viewInfo}<i
 												class="fas fa-angle-right ms-2 align-middle"></i></a>
 
 									</div>

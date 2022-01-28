@@ -58,40 +58,40 @@ public class SendEmailServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         try(ResourceResolver resolver = request.getResourceResolver()) {
-        String firstName = request.getParameter("fname") == null ? StringUtils.EMPTY : request.getParameter("fname");
-        String lastName = request.getParameter("lname") == null ? StringUtils.EMPTY : request.getParameter("lname");
-        String email = request.getParameter("email") == null ? StringUtils.EMPTY : request.getParameter("email");
-        String phone = request.getParameter("phone") == null ? StringUtils.EMPTY : request.getParameter("phone");
-        String pcode = request.getParameter("pcode") == null ? StringUtils.EMPTY : request.getParameter("pcode");
-        String state = request.getParameter("state") == null ? StringUtils.EMPTY : request.getParameter("state");
-        String description = request.getParameter("description") == null ? StringUtils.EMPTY : request.getParameter("description");
-        String interestedGrade = request.getParameter("interested") == null ? StringUtils.EMPTY : request.getParameter("interested");
+            String firstName = request.getParameter("fname") == null ? StringUtils.EMPTY : request.getParameter("fname");
+            String lastName = request.getParameter("lname") == null ? StringUtils.EMPTY : request.getParameter("lname");
+            String email = request.getParameter("email") == null ? StringUtils.EMPTY : request.getParameter("email");
+            String phone = request.getParameter("phone") == null ? StringUtils.EMPTY : request.getParameter("phone");
+            String pcode = request.getParameter("pcode") == null ? StringUtils.EMPTY : request.getParameter("pcode");
+            String state = request.getParameter("state") == null ? StringUtils.EMPTY : request.getParameter("state");
+            String description = request.getParameter("description") == null ? StringUtils.EMPTY : request.getParameter("description");
+            String interestedGrade = request.getParameter("interested") == null ? StringUtils.EMPTY : request.getParameter("interested");
 
-        Map emailParams = new HashMap<>();
-        emailParams.put("senderFName", firstName);
-        emailParams.put("senderLName", lastName);
-        emailParams.put("senderEmail", email);
-        emailParams.put("senderPhone", phone);
-        emailParams.put("senderPostalCode", pcode);
-        emailParams.put("state", state);
-        emailParams.put("description", description);
-        emailParams.put("interestedGrade", interestedGrade);
+            Map emailParams = new HashMap<>();
+            emailParams.put("senderFName", firstName);
+            emailParams.put("senderLName", lastName);
+            emailParams.put("senderEmail", email);
+            emailParams.put("senderPhone", phone);
+            emailParams.put("senderPostalCode", pcode);
+            emailParams.put("state", state);
+            emailParams.put("description", description);
+            emailParams.put("interestedGrade", interestedGrade);
 
-        boolean sentEmail = emailService.sendMail(resolver, emailParams);
+            boolean sentEmail = emailService.sendMail(resolver, emailParams);
 
-        JSONObject jsonObject = new JSONObject();
-        if (sentEmail) {
+            JSONObject jsonObject = new JSONObject();
+            if (sentEmail) {
                 jsonObject.put("code", 200);
                 jsonObject.put("message", "Email sent successfully");
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
                 response.getWriter().write(jsonObject.toString());
-            LOGGER.info("mail sent successfully");
-        } else {
-            LOGGER.info("Error while sending email.");
+                LOGGER.info("mail sent successfully");
+            } else {
+                LOGGER.info("Error while sending email.");
+            }
+        } catch (JSONException e) {
+            LOGGER.error("Error while creating response json object {}", e);
         }
-    } catch (JSONException e) {
-        LOGGER.error("Error while creating response json object {}", e);
-    }
     }
 }

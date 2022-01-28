@@ -45,7 +45,7 @@ public class EmailServiceImpl implements EmailService {
 
     @Activate
     public void activate(final ComponentContext context) {
-        templatePath = PropertiesUtil.toString(context.getProperties().get("template.path"), "/etc/notification/email/html/en.html");
+        templatePath = PropertiesUtil.toString(context.getProperties().get("template.path"), "/etc/notification/email/html/esportsTemplate.html");
         senderEmail = PropertiesUtil.toString(context.getProperties().get("sender.email"), "accessibility@k12.com");
     }
 
