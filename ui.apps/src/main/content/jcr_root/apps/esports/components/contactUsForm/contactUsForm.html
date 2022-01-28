@@ -4,7 +4,7 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
 <sly data-sly-call="${clientlib.all @categories = 'esports.contactUsForm'}" />
 
-<div class="position-absolute top-0 end-0 z-index-999 m-5">
+<div class="position-absolute top-0 end-0 z-index-999 m-5 d-none d-md-block">
     <sly data-sly-resource="${'button' @ resourceType='/apps/esports/components/button'}">
     </sly>
 </div>
@@ -35,8 +35,8 @@
                                             <div class="col-md-7 col-lg-6">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="mb-3 mt-1">
-                                                            <select class="form-select is-astrik form-select-lg rounded-pill"
+                                                        <div class="mb-3 mt-1 is-astrik">
+                                                            <select class="form-select form-select-lg rounded-pill"
                                                                 name="selectCity" aria-label="State 3 select example">
                                                                 <option value="">${properties.state}</option>
                                                                 <option value="INTL">International</option>
@@ -79,39 +79,39 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="mb-3 mt-1">
+                                                        <div class="mb-3 mt-1 is-astrik">
                                                             <input id="con-name" name="firstname" type="text"
                                                                 aria-label="First Name"
-                                                                class="form-control is-astrik form-control-lg rounded-pill"
+                                                                class="form-control form-control-lg rounded-pill"
                                                                 maxlength="20" pattern="[A-Za-z]" placeholder="${properties.firstName}">
                                                         </div>
                                                         <div class=" error fNameError">${properties.enterFirstName}
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="mb-3 mt-1">
+                                                        <div class="mb-3 mt-1 is-astrik">
                                                             <input id="con-name" name="lastname" type="text"
                                                                 aria-label="last Name"
-                                                                class="form-control is-astrik form-control-lg rounded-pill"
+                                                                class="form-control form-control-lg rounded-pill"
                                                                 maxlength="20" pattern="[A-Za-z]" placeholder="${properties.lastName}">
                                                         </div>
                                                         <div class=" error lNameError">${properties.enterLastName}</div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="mb-3 mt-1">
+                                                        <div class="mb-3 mt-1 is-astrik">
                                                             <input id="con-email" name="email" type="email"
                                                                 aria-label="E Mail"
-                                                                class="form-control is-astrik form-control-lg rounded-pill"
+                                                                class="form-control form-control-lg rounded-pill"
                                                                 pattern="[^ @]*@[^ @]*"
                                                                 placeholder="${properties.email}">
                                                         </div>
                                                         <div class=" error EmailError">${properties.enterEmail}</div>
                                                     </div>
                                                     <div class="col-6">
-                                                        <div class="mb-3 mt-1">
+                                                        <div class="mb-3 mt-1 is-astrik">
                                                             <input id="con-subject" name="zip" type="text"
                                                                 aria-label="last Name"
-                                                                class="form-control is-astrik form-control-lg rounded-pill"
+                                                                class="form-control form-control-lg rounded-pill"
                                                                 pattern="\d{5,5}(-\d{4,4})?"
                                                                 placeholder="${properties.zipCode}">
                                                         </div>
@@ -171,7 +171,7 @@
                                                                 for="inlineCheckbox2">${properties.checkbox2}</label>
                                                         </div>
 
-                                                        <div class="form-check form-check-inline">
+                                                        <div class="form-check form-check-inline is-astrik shift-astrik">
                                                             <input class="form-check-input checkbox-val" type="checkbox"
                                                                 id="inlineCheckbox3" value=${properties.checkbox3}>
                                                             <label
