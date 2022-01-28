@@ -240,6 +240,16 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldLabel="Enroll"
                                                 name="./selectEnrolled"/>
+                                            <successMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Success Message"
+                                                name="./successMessage"/>
+                                            <errorMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Error Message"
+                                                name="./errorMessage"/>
                                         </items>
                                     </column>
                                 </items>

@@ -38,7 +38,7 @@ $(document).ready(function () {
         }
     });
     $("input[name=phone]").on("input", function () {
-        var passwrdNu = /^[0-9]+$/;
+        var passwrdNu =/^[0-9]+$/;
         var mobile = $(this).val();
         if (!passwrdNu.test(mobile) || mobile.length > 15) {
             var mobilestr = mobile.substring(0, mobile.length - 1);
@@ -123,7 +123,6 @@ $(document).ready(function () {
                 phone: phone,
                 interested: interested,
                 enrolled: enrolled
-
 
             };
 

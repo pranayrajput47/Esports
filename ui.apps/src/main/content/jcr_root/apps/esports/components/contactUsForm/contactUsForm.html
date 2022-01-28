@@ -83,7 +83,7 @@
                                                             <input id="con-name" name="firstname" type="text"
                                                                 aria-label="First Name"
                                                                 class="form-control is-astrik form-control-lg rounded-pill"
-                                                                placeholder="${properties.firstName}">
+                                                                maxlength="20" pattern="[A-Za-z]" placeholder="${properties.firstName}">
                                                         </div>
                                                         <div class=" error fNameError">${properties.enterFirstName}
                                                         </div>
@@ -93,7 +93,7 @@
                                                             <input id="con-name" name="lastname" type="text"
                                                                 aria-label="last Name"
                                                                 class="form-control is-astrik form-control-lg rounded-pill"
-                                                                placeholder="${properties.lastName}">
+                                                                maxlength="20" pattern="[A-Za-z]" placeholder="${properties.lastName}">
                                                         </div>
                                                         <div class=" error lNameError">${properties.enterLastName}</div>
                                                     </div>
@@ -122,7 +122,7 @@
                                                             <input id="con-subject" name="phone" type="text"
                                                                 aria-label="last Name"
                                                                 class="form-control form-control-lg rounded-pill"
-                                                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                                                minlength = "8" maxlength = "15 "pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                                                                 placeholder="${properties.phoneNumber}">
                                                         </div>
                                                     </div>
@@ -213,8 +213,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-body p-4 messagePopUp " success-message="Thank you for Submitting"
-                    error-message="something Went Wrong">
+                <div class="modal-body p-4 messagePopUp " success-message="${properties.successMessage}"
+                    error-message="${properties.errorMessage}">
                     <h3 class="display-message"></h3>
                 </div>
                 <div class="modal-footer border-0 justify-content-between p-4 messagePopUp">
