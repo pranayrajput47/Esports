@@ -1,6 +1,8 @@
 <p data-sly-test.edit="${wcmmode.edit}" date-emptytext="Configure News List Component here" class="cq-placeholder"></p>
 
-<!-- LATEST STRIDE ESPORTS NEWS widget START -->
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.all @categories = 'clientlib.newsList'}" />
+
 <div>
     <!-- Card START -->
     <div class="card card-custom">
@@ -91,4 +93,3 @@
         </div>
     </div>
 </div>
-<!-- LEVEL UP YOUR LEARNING widget END -->
