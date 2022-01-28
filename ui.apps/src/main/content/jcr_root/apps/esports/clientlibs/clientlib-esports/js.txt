@@ -1,4 +1,5 @@
 #base=js
 
 functions.js
+parallax.js
 sidebar-nav.js

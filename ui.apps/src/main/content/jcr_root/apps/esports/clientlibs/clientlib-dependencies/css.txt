@@ -1,6 +1,6 @@
 #base=css
 
 all.min.css
-bootstrap-icons.css
+animation.css
 tiny-slider.css
 glightbox.css

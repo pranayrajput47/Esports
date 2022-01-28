@@ -1,6 +1,7 @@
 #base=js
 
 bootstrap.bundle.min.js
+animation.js
 tiny-slider.js
 sticky.min.js
 glightbox.js
