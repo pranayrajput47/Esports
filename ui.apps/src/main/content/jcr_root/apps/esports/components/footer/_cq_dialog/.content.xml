@@ -99,6 +99,23 @@
                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                     name="./footer">
                                                     <items jcr:primaryType="nt:unstructured">
+                                                        <viewType
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldDescription="select the view type of component"
+                                                            fieldLabel="View type"
+                                                            name="./viewType">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <o1
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Link"
+                                                                    value="link"/>
+                                                                <o2
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Modal"
+                                                                    value="modal"/>
+                                                            </items>
+                                                        </viewType>
                                                         <text
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
