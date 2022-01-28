@@ -62,7 +62,7 @@
                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
                                                     name="./navlinks">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                    <linkType
+                                                        <linkType
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                             fieldDescription="select the Link type of component"
@@ -77,7 +77,7 @@
                                                                     text="Active"
                                                                     value="active"/>
                                                             </items>
-                                                    </linkType>
+                                                        </linkType>
                                                         <linktext
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

@@ -43,11 +43,17 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldLabel="CTA Text"
                                                 name="./ctaText"/>
+                                            <ctaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="CTA Link"
+                                                name="./ctaLink"
+                                                rootPath="/content"/>
                                             <league
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                 composite="{Boolean}true"
-                                                fieldLabel="Add News List Items">
+                                                fieldLabel="Add League List Items">
                                                 <field
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container"
@@ -70,17 +76,7 @@
                                                                     value="champion"/>
                                                             </items>
                                                         </viewType>
-                                                        <heading
-                                                            jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="Heading"
-                                                            name="./heading"/>
-                                                        <subHeading
-                                                            jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldLabel="Sub Heading"
-                                                            name="./subHeading"/>
-                                                        <leagueList
+                                                        <secondList
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                             composite="{Boolean}true"
@@ -88,31 +84,54 @@
                                                             <field
                                                                 jcr:primaryType="nt:unstructured"
                                                                 sling:resourceType="granite/ui/components/coral/foundation/container"
-                                                                name="./leagueList">
+                                                                name="./secondList">
                                                                 <items jcr:primaryType="nt:unstructured">
-                                                                    <month
+                                                                    <heading
                                                                         jcr:primaryType="nt:unstructured"
                                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                                        fieldLabel="Month"
-                                                                        name="./month"/>
-                                                                    <date
+                                                                        fieldLabel="Heading"
+                                                                        name="./heading"/>
+                                                                    <subHeading
                                                                         jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                                        fieldLabel="Date"
-                                                                        name="./date"/>
-                                                                    <week
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        fieldLabel="Sub Heading"
+                                                                        name="./subHeading"/>
+                                                                    <leagueList
                                                                         jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                                        fieldLabel="Week"
-                                                                        name="./week"/>
-                                                                    <time
-                                                                        jcr:primaryType="nt:unstructured"
-                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                                        fieldLabel="Time"
-                                                                        name="./time"/>
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                        composite="{Boolean}true"
+                                                                        fieldLabel="Add League List">
+                                                                        <field
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                            name="./leagueList">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <month
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldLabel="Month"
+                                                                                    name="./month"/>
+                                                                                <date
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldLabel="Date"
+                                                                                    name="./date"/>
+                                                                                <week
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldLabel="Week"
+                                                                                    name="./week"/>
+                                                                                <time
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    fieldLabel="Time"
+                                                                                    name="./time"/>
+                                                                            </items>
+                                                                        </field>
+                                                                    </leagueList>
                                                                 </items>
                                                             </field>
-                                                        </leagueList>
+                                                        </secondList>
                                                     </items>
                                                 </field>
                                             </league>

@@ -67,6 +67,22 @@
                                                 fieldDescription="A subtitle that will be displayed below the pretitle."
                                                 fieldLabel="Enter the subtitle here"
                                                 name="./subtitle"/>
+                                            <subHeadingColor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Sub Heading Color"
+                                                name="./subHeadingColor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <primary
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Primary"
+                                                        value="text-primary"/>
+                                                    <secondary
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Secondary"
+                                                        value="text-secondary"/>
+                                                </items>
+                                            </subHeadingColor>
                                             <subheading
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

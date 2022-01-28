@@ -1,66 +1,60 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext="Configure Fun Fact component here" class="cq-placeholder"></p>
-<div class="col-12">
-    <!-- FUN FACTS : STRIDE ESPORTS widget START -->
-    <div class="card">
-        <!-- fun facts Catd START -->
-        <div class="card border">
-            <div class="card-header">
-                <h4 class="text-white text-uppercase mb-0">${properties.cardheader} <span
-                        class="text-primary">${properties.primarytext}</span></h4>
-            </div>
-            <div class="card-body px-0">
-                <div class="d-block p-4">
-                    <h3 class="card-title text-uppercase">${properties.cardbodytext}<span
-                            class="text-primary mx-1">${properties.textmx}</span>${properties.spantext}<span class="text-primary mx-1">${properties.cardbodydescription}</span></h3>
-                </div>
-                <div class="d-block pb-4">
-                    <!-- Slider START -->
-                    <div
-                        class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
-                        <div class="tiny-slider-inner" data-autoplay="false"
-                            data-hoverpause="true" data-gutter="0"
-                            data-arrow="false" data-dots="true" data-items="1"
-                            data-loop="false">
-                            <!-- Slide item -->
-                            <sly data-sly-list.multifield="${resource.getChildren}">
-                                <sly data-sly-test="${multifield.name == 'cards'}">
-                                    <sly data-sly-list.route="${multifield.getChildren}">
-                                        <div class="item pb-5">
-                                            <!-- four group-card START -->
-                                            
-                                                        <div class="four-card row g-0">
-                                                            <sly data-sly-list.secondmultifield="${route.getChildren}">
-                                                                <sly data-sly-test="${secondmultifield.name == 'cardsList'}">
-                                                                    <sly data-sly-list.routeList="${secondmultifield.getChildren}">
-                                                                        <div class="col-6">
-                                                                            <div
-                                                                                class="vstack justify-content-center align-items-center text-center py-4">
-                                                                                <img class="icon-md mb-3"
-                                                                                    src="${routeList.image}">
-                                                                                    ${routeList.description @ context = 'html'}
-                                                                                <h6 class="display-6">${routeList.numbertext}</h6>
-                                                                                <h6 class="fs-5 text-uppercase m-0">
-                                                                                    ${routeList.newtext}<span
-                                                                                        class="text-primary mx-1">${routeList.player}</span>
-                                                                                </h6>
-                                                                                <span class="d-block fs-6">${routeList.sitename}</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </sly>
-                                                                </sly>
+<div class="card border z-index-99">
+    <div class="card-header">
+        <h4 class="text-white text-uppercase mb-0">${properties.cardheader} <span
+                class="text-primary">${properties.primarytext}</span></h4>
+    </div>
+    <div class="card-body px-0">
+    
+        <div class="d-block p-4">
+            <h3 class="card-title text-uppercase">${properties.cardbodytext}<span
+                    class="text-primary mx-1">${properties.textmx}</span>${properties.spantext}<span class="text-primary mx-1">${properties.cardbodydescription}</span></h3>
+        </div>
+        <div class="d-block pb-4 ll">
+            <!-- Slider START -->
+            <div
+                class="tiny-slider arrow-hover arrow-blur arrow-round rounded-3">
+                <div class="tiny-slider-inner" data-autoplay="false"
+                    data-hoverpause="true" data-gutter="0"
+                    data-arrow="false" data-dots="true" data-items="1"
+                    data-loop="false">
+                    <!-- Slide item -->
+                    <sly data-sly-list.multifield="${resource.getChildren}">
+                        <sly data-sly-test="${multifield.name == 'cards'}">
+                            <sly data-sly-list.route="${multifield.getChildren}">
+                                <div class="item pb-5">
+                                    <!-- four group-card START -->
+                                    
+                                                <div class="four-card row g-0">
+                                                    <sly data-sly-list.secondmultifield="${route.getChildren}">
+                                                        <sly data-sly-test="${secondmultifield.name == 'cardsList'}">
+                                                            <sly data-sly-list.routeList="${secondmultifield.getChildren}">
+                                                                <div class="col-6">
+                                                                    <div
+                                                                        class="vstack justify-content-center align-items-center text-center py-4">
+                                                                        <img class="icon-md mb-3"
+                                                                            src="${routeList.image}">
+                                                                            ${routeList.description @ context = 'html'}
+                                                                        <h6 class="display-6">${routeList.numbertext}</h6>
+                                                                        <h6 class="fs-5 text-uppercase m-0">
+                                                                            ${routeList.newtext}<span
+                                                                                class="text-primary mx-1">${routeList.player}</span>
+                                                                        </h6>
+                                                                        <span class="d-block fs-6">${routeList.sitename}</span>
+                                                                    </div>
+                                                                </div>
                                                             </sly>
-                                                        </div>
-                                                                    
-                                                   
-                                        </div>
-                                    </sly>
-                                </sly>
+                                                        </sly>
+                                                    </sly>
+                                                </div>
+                                                            
+                                            
+                                </div>
                             </sly>
-                        </div>
-                    </div>
+                        </sly>
+                    </sly>
                 </div>
             </div>
         </div>
     </div>
-    <!-- FUN FACTS : STRIDE ESPORTS widget END -->
 </div>
