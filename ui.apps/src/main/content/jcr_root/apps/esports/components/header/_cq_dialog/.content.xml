@@ -131,15 +131,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <offcanvaslink
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="cq/gui/components/coral/common/form/pagefield"
-                                                fieldDescription="this is the navigation root of this logo"
-                                                fieldLabel="Canvas Link"
-                                                name="./offcanvaslink"
-                                                required="{Boolean}true"
-                                                rootPath="/content"
-                                                value="${not empty cqDesign.navigationRoot ? cqDesign.navigationRoot : ''}"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
