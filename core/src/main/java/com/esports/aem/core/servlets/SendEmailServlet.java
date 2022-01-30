@@ -42,7 +42,8 @@ import java.util.Map;
         property = {
                 Constants.SERVICE_DESCRIPTION + "=" + "Send email servlet",
                 "sling.servlet.methods=" + HttpConstants.METHOD_POST,
-                "sling.servlet.paths=" + "/bin/sendEmail",
+                "sling.servlet.resourceTypes=" + "esports/components/contactUsForm",
+                "sling.servlet.extensions=service",
                 Constants.SERVICE_VENDOR + "=" + "Stride Esports",
         }
 )
