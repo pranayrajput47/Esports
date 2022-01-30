@@ -126,12 +126,10 @@ $(document).ready(function () {
 
             };
 
-            console.log(formData);
             $.ajax({
                 url: apiUrl,
                 method: "POST",
-                data: JSON.stringify(formData),
-                contentType: 'application/json',
+                data: formData,
                 success: function (res) {
                     $(".form-custom").hide();
                     $(".messagePopUp").show();

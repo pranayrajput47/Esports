@@ -4,12 +4,14 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
 <sly data-sly-call="${clientlib.all @categories = 'esports.contactUsForm'}" />
 
+<sly data-sly-use.model="com.esports.aem.core.models.ContactUsFormModel">
+
 <div class="position-absolute top-0 end-0 z-index-999 m-5 d-none d-md-block">
     <sly data-sly-resource="${'button' @ resourceType='/apps/esports/components/button'}">
     </sly>
 </div>
 
-<div class="modal custom-modal fade" id="formModal" api-Url="/bin/sendEmail" tabindex="-1"
+<div class="modal custom-modal fade" id="formModal" api-Url="${model.resourcePath}.service" tabindex="-1"
     aria-labelledby="Get in Touch form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -213,14 +215,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-body p-4 messagePopUp " success-message="${properties.successMessage}"
+                <div class="modal-body p-4 messagePopUp text-primary text center" success-message="${properties.successMessage}"
                     error-message="${properties.errorMessage}">
                     <h3 class="display-message"></h3>
-                </div>
-                <div class="modal-footer border-0 justify-content-between p-4 messagePopUp">
-                    <a href="#" class="btn btn-light-soft close btn-sm fst-italic rounded-pill text-uppercase"
-                        data-bs-dismiss="modal" aria-label="Close">Close</a>
-                    <a href="#" class="btn btn-primary btn-sm close fst-italic rounded-pill text-uppercase">ok</a>
                 </div>
             </div>
 
@@ -228,3 +225,4 @@
         </div>
     </div>
 </div>
+</sly>
