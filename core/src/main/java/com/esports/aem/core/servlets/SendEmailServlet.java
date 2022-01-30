@@ -89,6 +89,10 @@ public class SendEmailServlet extends SlingAllMethodsServlet {
                 response.getWriter().write(jsonObject.toString());
                 LOGGER.info("mail sent successfully");
             } else {
+                jsonObject.put("message", "Something went wrong");
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                response.getWriter().write(jsonObject.toString());
                 LOGGER.info("Error while sending email.");
             }
         } catch (JSONException e) {
