@@ -1,6 +1,7 @@
 package com.esports.aem.core.services.impl;
 
 import com.day.cq.commons.mail.MailTemplate;
+import com.day.cq.mailer.MailingException;
 import com.day.cq.mailer.MessageGateway;
 import com.day.cq.mailer.MessageGatewayService;
 import javax.mail.MessagingException;
@@ -65,7 +66,7 @@ public class EmailServiceImpl implements EmailService {
             MessageGateway messageGateway = messageGatewayService.getGateway(email.getClass());
             messageGateway.send(email);
             sentEmail = true;
-        } catch (EmailException | IOException | MessagingException e) {
+        } catch (EmailException | IOException | MessagingException | MailingException e) {
             LOGGER.error("Error sending email to " + recipients, e);
         }
 
@@ -83,7 +84,7 @@ public class EmailServiceImpl implements EmailService {
             MessageGateway messageGateway = messageGatewayService.getGateway(email.getClass());
             messageGateway.send(email);
             sentEmail = true;
-        } catch (EmailException | IOException | MessagingException e) {
+        } catch (EmailException | IOException | MessagingException | MailingException e) {
             LOGGER.error("Error sending email to " + emailParams.get("senderEmail"), e);
         }
 
