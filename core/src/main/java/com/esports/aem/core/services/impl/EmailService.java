@@ -7,4 +7,6 @@ import java.util.Map;
 public interface EmailService {
 
     boolean sendMail(ResourceResolver resolver, Map emailParams);
+
+    boolean sendMailToUser(ResourceResolver resolver, Map emailParams);
 }

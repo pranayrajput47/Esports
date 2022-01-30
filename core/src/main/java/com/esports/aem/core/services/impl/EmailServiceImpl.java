@@ -9,13 +9,14 @@ import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.commons.osgi.PropertiesUtil;
 import org.osgi.framework.Constants;
-import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.Designate;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,6 +24,7 @@ import javax.jcr.Session;
 import java.io.IOException;
 import java.util.Map;
 
+@Designate(ocd = EmailServiceImpl.Config.class)
 @Component(
         configurationPolicy = ConfigurationPolicy.OPTIONAL,
         immediate = true,
@@ -40,13 +42,16 @@ public class EmailServiceImpl implements EmailService {
     @Reference
     private MessageGatewayService messageGatewayService;
     private String templatePath;
+    private String userTemplatePath;
     private String senderEmail;
-    private String recipient;
+    private String[] recipients;
 
     @Activate
-    public void activate(final ComponentContext context) {
-        templatePath = PropertiesUtil.toString(context.getProperties().get("template.path"), "/etc/notification/email/html/esportsTemplate.html");
-        senderEmail = PropertiesUtil.toString(context.getProperties().get("sender.email"), "accessibility@k12.com");
+    public void activate(final Config config) {
+        this.templatePath = config.templatePath();
+        this.userTemplatePath = config.userTemplatePath();
+        this.senderEmail = config.email_from();
+        this.recipients = config.recipients();
     }
 
     @Override
@@ -54,6 +59,24 @@ public class EmailServiceImpl implements EmailService {
         boolean sentEmail = false;
         try {
             MailTemplate mailTemplate = MailTemplate.create(templatePath, resolver.adaptTo(Session.class));
+            Email email = mailTemplate.getEmail(StrLookup.mapLookup(emailParams), HtmlEmail.class);
+            email.addTo(recipients);
+            email.setFrom(senderEmail);
+            MessageGateway messageGateway = messageGatewayService.getGateway(email.getClass());
+            messageGateway.send(email);
+            sentEmail = true;
+        } catch (EmailException | IOException | MessagingException e) {
+            LOGGER.error("Error sending email to " + recipients, e);
+        }
+
+        return sentEmail;
+    }
+
+    @Override
+    public boolean sendMailToUser(ResourceResolver resolver, Map emailParams) {
+        boolean sentEmail = false;
+        try {
+            MailTemplate mailTemplate = MailTemplate.create(userTemplatePath, resolver.adaptTo(Session.class));
             Email email = mailTemplate.getEmail(StrLookup.mapLookup(emailParams), HtmlEmail.class);
             email.addTo(String.valueOf(emailParams.get("senderEmail")));
             email.setFrom(senderEmail);
@@ -65,6 +88,23 @@ public class EmailServiceImpl implements EmailService {
         }
 
         return sentEmail;
+    }
+
+    @ObjectClassDefinition(name = "Email Configuration")
+    public @interface Config {
+
+        @AttributeDefinition(name = "List Email Recipients Address", description = "List Email Recipients Address")
+        String[] recipients ();
+
+        @AttributeDefinition(name = "Sender Email Address", description = "Sender Email Address")
+        String email_from () default "accessibility@k12.com";
+
+        @AttributeDefinition(name="Email Template Path", description="Email Template Path")
+        String templatePath() default "/etc/notification/email/html/esportsTemplate.html";
+
+        @AttributeDefinition(name="Email Template Path", description="Email Template Path")
+        String userTemplatePath() default "/etc/notification/email/html/userEmailTemplate.html";
+
     }
 
 }
