@@ -1,8 +1,8 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure hero banner Component here" class = "cq-placeholder"></p>
 <section class="py-0">
 
-			<div class="js-custom-banner card overflow-hidden h-400 h-md-500 text-center shadow-lg-n rounded-0 parallax-hero-1200"
-				style="background-image:url(${properties.image @ context = 'html'}); background-position: center left; background-size: cover;">
+			<div class="js-custom-banner card overflow-hidden h-500 h-md-500 text-center shadow-lg-n rounded-0 parallax-hero-1200"
+				style="background-image:url(${properties.image @ context = 'html'}); background-position: center center; background-size: cover;">
 				
 				<div class="card-img-overlay d-flex align-items-center p-3 p-sm-4">
 					<div class="container">
@@ -10,7 +10,7 @@
 							<div class="col-12">
 								<div class="w-100 my-auto text-lg-start">
 									<h6 class="${properties.textColor}" data-scroll-reveal="enter bottom move 20px over 0.5s after 0.5s">${properties.pretitle}</h6>
-									<h1 class="text-white fst-italic display-1 lh-1" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s">${properties.subtitle} <br>
+									<h1 class="text-white fst-italic display-1 lh-1 parallax-fade-hero-2" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s">${properties.subtitle} <br>
 										<span class="${properties.subHeadingColor}">${properties.subheading}</span>
 									</h1>
 								</div>
@@ -19,7 +19,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="w-100 my-auto text-md-start d-md-flex" data-sly-test="${properties.viewType == 'generic'}">
-									<h3 class="text-white fst-italic pe-lg-5 d-lg-inline" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s">${properties.startInfo}</h3>
+									<h3 class="text-white fst-italic pe-lg-5 d-lg-inline parallax-fade-hero-2" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s">${properties.startInfo}</h3>
 									<div>
 									<a href="${properties.ctaLink}" class="btn ${properties.btnColor} btn-sm fst-italic rounded-pill text-uppercase"
 										role="button" aria-lable="view" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s">${properties.viewInfo}<i
@@ -52,9 +52,8 @@
 										</sly>
 									</sly>
 									<div>
-										<a href="${properties.ctaLink}"
+										<a href="${properties.ctaLink}.html"
 											class="btn ${properties.btnColor} btn-sm fst-italic rounded-pill text-uppercase" data-scroll-reveal="enter right move 40px over 0.5s after 0.5s"
-                                            data-glightbox data-gallery="y-video"
 											role="button" aria-lable="view" >${properties.viewInfo}<i
 												class="fas fa-angle-right ms-2 align-middle"></i></a>
 

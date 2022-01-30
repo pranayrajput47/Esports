@@ -79,6 +79,7 @@ public class SendEmailServlet extends SlingAllMethodsServlet {
             emailParams.put("interestedGrade", interestedGrade);
 
             boolean sentEmail = emailService.sendMail(resolver, emailParams);
+            boolean sentEmailToUser = emailService.sendMailToUser(resolver, emailParams);
 
             JSONObject jsonObject = new JSONObject();
             if (sentEmail) {
