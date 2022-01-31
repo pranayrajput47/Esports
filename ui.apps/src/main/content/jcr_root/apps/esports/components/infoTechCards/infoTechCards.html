@@ -1,16 +1,10 @@
-
-
-
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Event Cards component here" class = "cq-placeholder"></p>
-
-
 <div class="row g-4 p-4">
-
     <sly data-sly-list.multifield="${resource.getChildren}">
         <sly data-sly-test="${multifield.name == 'events'}">
             <sly data-sly-list.route="${multifield.getChildren}"> 
-                <div class="col-md-6">
-                    
+                <div class="col-md-6" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+
                     <div>
                         <div class="card">
                             <div class="card-header align-items-center py-3">

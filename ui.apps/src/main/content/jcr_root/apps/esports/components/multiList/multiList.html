@@ -4,7 +4,7 @@
         <sly data-sly-test="${multifield.name == 'videoMultiList'}">
         <sly data-sly-list.route="${multifield.getChildren}">
             <sly data-sly-test="${route.backgroundType == 'image'}"> 
-            <div class="card border up-hover p-3 mb-3">
+            <div class="card border up-hover p-3 mb-3" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                 <div class="row g-3">
                     <div class="col-4">
                         <img src="${route.image}" alt="jkd">
@@ -18,7 +18,7 @@
             </sly>
             <!-- Small Card info item   -->
             <sly data-sly-test="${route.backgroundType == 'video'}">
-            <div class="card border up-hover p-3 mb-3">
+            <div class="card border up-hover p-3 mb-3" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                 <div class="row g-3">
                     <div class="col-4">
                         <!-- Card img -->

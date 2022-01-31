@@ -4,7 +4,7 @@
     <!--<h5 class="mb-3">${properties.title}</h5> -->
     <!-- Default Card : START -->
     <div>
-        <div class="card border">
+        <div class="card border" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
             <div class="card-header">
                 <h4 class="text-white text-uppercase mb-0">${properties.heading}</h4>
             </div>
@@ -20,7 +20,7 @@
                             <sly data-sly-list.multifield="${resource.getChildren}">
                                 <sly data-sly-test="${multifield.name == 'infoList'}">
                                 <sly data-sly-list.route="${multifield.getChildren}">
-                            <div class="col-6">
+                            <div class="col-6" data-scroll-reveal="enter bottom move 40px over 0.5s after 0.5s">
                                 <div class="vstack justify-content-center align-items-center text-center py-3">
                                     <img class="card-img" src="${route.logo}" alt="${route.altText}">
                                 </div>

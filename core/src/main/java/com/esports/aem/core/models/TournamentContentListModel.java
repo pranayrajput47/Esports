@@ -19,8 +19,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
         extensions = ExporterConstants.SLING_MODEL_EXTENSION,selector = "model")
 public class TournamentContentListModel {
 
-
-
     @Self
     private SlingHttpServletRequest request;
 

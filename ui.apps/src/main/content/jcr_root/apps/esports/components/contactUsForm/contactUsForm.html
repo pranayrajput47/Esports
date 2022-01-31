@@ -6,223 +6,318 @@
 
 <sly data-sly-use.model="com.esports.aem.core.models.ContactUsFormModel">
 
-<div class="position-absolute top-0 end-0 z-index-999 m-5 d-none d-md-block">
-    <sly data-sly-resource="${'button' @ resourceType='/apps/esports/components/button'}">
-    </sly>
-</div>
+    <div class="position-absolute top-0 end-0 z-index-999 m-5 d-none d-md-block">
+        <sly data-sly-resource="${'button' @ resourceType='/apps/esports/components/button'}">
+        </sly>
+    </div>
 
-<div class="modal custom-modal fade" id="formModal" api-Url="${model.resourcePath}.service" tabindex="-1"
-    aria-labelledby="Get in Touch form" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <div class="from form-custom card bg-gray-dark border">
-                        <div class="card-body p-4 p-lg-5">
-                            <div class="row justify-content-center">
-                                <div class="col-12">
-                                    <h2 class="text-uppercase fst-italic text-center h1 mb-4">${properties.greetingText}
-                                    </h2>
-                                    <h3 class="text-uppercase fst-italic text-center mb-4"> <span
-                                            class="text-primary">${properties.heading}</span>${properties.subHeading}
-                                    </h3>
+    <div class="modal custom-modal fade" id="formModal" api-Url="${model.resourcePath}.service" tabindex="-1"
+        aria-labelledby="Get in Touch form" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="from form-custom card bg-gray-dark border">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-12">
+                                        <h2 class="text-uppercase fst-italic text-center h1 mb-4">
+                                            ${properties.greetingText}
+                                        </h2>
+                                        <h3 class="text-uppercase fst-italic text-center mb-4"> <span
+                                                class="text-primary">${properties.heading}</span>${properties.subHeading}
+                                        </h3>
 
-                                    <form class="contact-form" id="contact-form" name="contactform" method="POST">
-                                        <div class="row justify-content-center">
-                                            <div class="col-md-7 col-lg-6">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="mb-3 mt-1 is-astrik">
-                                                            <select class="form-select form-select-lg rounded-pill"
-                                                                name="selectCity" aria-label="State 3 select example">
-                                                                <option value="">${properties.state}</option>
-                                                                <option value="INTL">International</option>
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="AZ">Arizona</option>
-                                                                <option value="AR">Arkansas</option>
-                                                                <option value="CA">California</option>
-                                                                <option value="CO">Colorado</option>
-                                                                <option value="CT">Connecticut</option>
-                                                                <option value="DC">District of
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="NY">New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                                <option value="ND">North Dakota</option>
-                                                                <option value="OH">Ohio</option>
-                                                                <option value="OK">Oklahoma</option>
-                                                                <option value="OR">Oregon</option>
-                                                                <option value="PA">Pennsylvania</option>
-                                                                <option value="RI">Rhode Island</option>
-                                                                <option value="SC">South Carolina</option>
-                                                                <option value="SD">South Dakota</option>
-                                                                <option value="TN">Tennessee</option>
-                                                                <option value="TX">Texas</option>
-                                                                <option value="UT">Utah</option>
-                                                                <option value="VT">Vermont</option>
-                                                                <option value="VA">Virginia</option>
-                                                                <option value="WA">Washington</option>
-                                                                <option value="WV">West Virginia</option>
-                                                                <option value="WI">Wisconsin</option>
-                                                                <option value="WY">Wyoming</option>
-                                                            </select>
-                                                            <div class=" error CityError">${properties.chooseCity}</div>
+                                        <form class="contact-form" id="contact-form" name="contactform" method="POST">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-7 col-lg-6">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="mb-3 mt-1 is-astrik">
+                                                                <select class="form-select form-select-lg rounded-pill"
+                                                                    name="selectCity"
+                                                                    aria-label="State 3 select example">
+                                                                    <option value="">${properties.state}</option>
+                                                                    <option value="INTL">International</option>
+                                                                    <option value="AL">Alabama</option>
+                                                                    <option value="AK">Alaska</option>
+                                                                    <option value="AZ">Arizona</option>
+                                                                    <option value="AR">Arkansas</option>
+                                                                    <option value="CA">California</option>
+                                                                    <option value="CO">Colorado</option>
+                                                                    <option value="CT">Connecticut</option>
+                                                                    <option value="DC">District of
+                                                                    <option value="MO">Missouri</option>
+                                                                    <option value="MT">Montana</option>
+                                                                    <option value="NE">Nebraska</option>
+                                                                    <option value="NV">Nevada</option>
+                                                                    <option value="NH">New Hampshire</option>
+                                                                    <option value="NJ">New Jersey</option>
+                                                                    <option value="NM">New Mexico</option>
+                                                                    <option value="NY">New York</option>
+                                                                    <option value="NC">North Carolina</option>
+                                                                    <option value="ND">North Dakota</option>
+                                                                    <option value="OH">Ohio</option>
+                                                                    <option value="OK">Oklahoma</option>
+                                                                    <option value="OR">Oregon</option>
+                                                                    <option value="PA">Pennsylvania</option>
+                                                                    <option value="RI">Rhode Island</option>
+                                                                    <option value="SC">South Carolina</option>
+                                                                    <option value="SD">South Dakota</option>
+                                                                    <option value="TN">Tennessee</option>
+                                                                    <option value="TX">Texas</option>
+                                                                    <option value="UT">Utah</option>
+                                                                    <option value="VT">Vermont</option>
+                                                                    <option value="VA">Virginia</option>
+                                                                    <option value="WA">Washington</option>
+                                                                    <option value="WV">West Virginia</option>
+                                                                    <option value="WI">Wisconsin</option>
+                                                                    <option value="WY">Wyoming</option>
+                                                                </select>
+                                                                <div class=" error CityError">${properties.chooseCity}
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="mb-3 mt-1 is-astrik">
-                                                            <input id="con-name" name="firstname" type="text"
-                                                                aria-label="First Name"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                maxlength="20" pattern="[A-Za-z]" placeholder="${properties.firstName}">
+                                                        <div class="col-12">
+                                                            <div class="mb-3 mt-1 is-astrik">
+                                                                <input id="con-name" name="firstname" type="text"
+                                                                    aria-label="First Name"
+                                                                    class="form-control form-control-lg rounded-pill"
+                                                                    maxlength="20" pattern="[A-Za-z]"
+                                                                    placeholder="${properties.firstName}">
+                                                            </div>
+                                                            <div class=" error fNameError">${properties.enterFirstName}
+                                                            </div>
                                                         </div>
-                                                        <div class=" error fNameError">${properties.enterFirstName}
+                                                        <div class="col-12">
+                                                            <div class="mb-3 mt-1 is-astrik">
+                                                                <input id="con-name" name="lastname" type="text"
+                                                                    aria-label="last Name"
+                                                                    class="form-control form-control-lg rounded-pill"
+                                                                    maxlength="20" pattern="[A-Za-z]"
+                                                                    placeholder="${properties.lastName}">
+                                                            </div>
+                                                            <div class=" error lNameError">${properties.enterLastName}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="mb-3 mt-1 is-astrik">
-                                                            <input id="con-name" name="lastname" type="text"
-                                                                aria-label="last Name"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                maxlength="20" pattern="[A-Za-z]" placeholder="${properties.lastName}">
+                                                        <div class="col-12">
+                                                            <div class="mb-3 mt-1 is-astrik">
+                                                                <input id="con-email" name="email" type="email"
+                                                                    aria-label="E Mail"
+                                                                    class="form-control form-control-lg rounded-pill"
+                                                                    pattern="[^ @]*@[^ @]*"
+                                                                    placeholder="${properties.email}">
+                                                            </div>
+                                                            <div class=" error EmailError">${properties.enterEmail}
+                                                            </div>
                                                         </div>
-                                                        <div class=" error lNameError">${properties.enterLastName}</div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="mb-3 mt-1 is-astrik">
-                                                            <input id="con-email" name="email" type="email"
-                                                                aria-label="E Mail"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                pattern="[^ @]*@[^ @]*"
-                                                                placeholder="${properties.email}">
+                                                        <div class="col-6">
+                                                            <div class="mb-3 mt-1 is-astrik">
+                                                                <input id="con-subject" name="zip" type="text"
+                                                                    aria-label="last Name"
+                                                                    class="form-control form-control-lg rounded-pill"
+                                                                    pattern="\d{5,5}(-\d{4,4})?"
+                                                                    placeholder="${properties.zipCode}">
+                                                            </div>
+                                                            <div class=" error PincodeError">${properties.enterZip}
+                                                            </div>
                                                         </div>
-                                                        <div class=" error EmailError">${properties.enterEmail}</div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="mb-3 mt-1 is-astrik">
-                                                            <input id="con-subject" name="zip" type="text"
-                                                                aria-label="last Name"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                pattern="\d{5,5}(-\d{4,4})?"
-                                                                placeholder="${properties.zipCode}">
-                                                        </div>
-                                                        <div class=" error PincodeError">${properties.enterZip}</div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="mb-3 mt-1">
-                                                            <input id="con-subject" name="phone" type="text"
-                                                                aria-label="last Name"
-                                                                class="form-control form-control-lg rounded-pill"
-                                                                minlength = "8" maxlength = "15 "pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                                                                placeholder="${properties.phoneNumber}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <hr>
-                                            <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">
-                                                    ${properties.messageHeading}
-                                                    <span class="text-primary">${properties.messageSubHeading}</span>
-                                                </h4>
-                                                <div class="row justify-content-center">
-                                                    <div class="col-10  text-center">
-                                                        <div class="mb-4">
-                                                            <textarea id="con-message" name="message" cols="40" rows="6"
-                                                                class="form-control rounded-3"
-                                                                placeholder="${properties.message}"></textarea>
-                                                            <div class="error MessageError">${properties.enterMessage}
+                                                        <div class="col-6">
+                                                            <div class="mb-3 mt-1">
+                                                                <input id="con-subject" name="phone" type="text"
+                                                                    aria-label="last Name"
+                                                                    class="form-control form-control-lg rounded-pill"
+                                                                    minlength="8" maxlength="15 "
+                                                                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                                                    placeholder="${properties.phoneNumber}">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <h4 class="text-center fst-italic mb-3 fs-4">
-                                                    ${properties.checkboxHeading}<span
-                                                        class="text-primary">${properties.checkboxSubHeading}</span>
-                                                </h4>
 
-                                                <div class="row justify-content-center">
-                                                    <div class="col-10  text-center">
-
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input checkbox-val" type="checkbox"
-                                                                id="inlineCheckbox1" value=${properties.checkbox1}>
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic" for="
-                                                                inlineCheckbox1">${properties.checkbox1}</label>
+                                                <hr>
+                                                <div class="col-md-10">
+                                                    <h4 class="text-center fst-italic mb-3 fs-4">
+                                                        ${properties.messageHeading}
+                                                        <span
+                                                            class="text-primary">${properties.messageSubHeading}</span>
+                                                    </h4>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-10  text-center">
+                                                            <div class="mb-4">
+                                                                <textarea id="con-message" name="message" cols="40"
+                                                                    rows="6" class="form-control rounded-3"
+                                                                    placeholder="${properties.message}"></textarea>
+                                                                <div class="error MessageError">
+                                                                    ${properties.enterMessage}
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <h4 class="text-center fst-italic mb-3 fs-4">
+                                                        ${properties.checkboxHeading}<span
+                                                            class="text-primary">${properties.checkboxSubHeading}</span>
+                                                    </h4>
+
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-10  text-center">
+
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input checkbox-val"
+                                                                    type="checkbox" id="inlineCheckbox1"
+                                                                    value=${properties.checkbox1}>
+                                                                <label
+                                                                    class="form-check-label text-white font-heading h4 fst-italic"
+                                                                    for="
+                                                                inlineCheckbox1">${properties.checkbox1}</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input checkbox-val"
+                                                                    type="checkbox" id="inlineCheckbox2"
+                                                                    value=${properties.checkbox2}>
+                                                                <label
+                                                                    class="form-check-label text-white font-heading h4 fst-italic"
+                                                                    for="inlineCheckbox2">${properties.checkbox2}</label>
+                                                            </div>
+
+                                                            <div
+                                                                class="form-check form-check-inline is-astrik shift-astrik">
+                                                                <input class="form-check-input checkbox-val"
+                                                                    type="checkbox" id="inlineCheckbox3"
+                                                                    value=${properties.checkbox3}>
+                                                                <label
+                                                                    class="form-check-label text-white font-heading h4 fst-italic"
+                                                                    for="
+                                                                inlineCheckbox3">${properties.checkbox3}</label>
+                                                                <div class=" error GradeError">${properties.enterGrade}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <hr>
+                                                <div class="col-md-10 text-center">
+                                                    <div class="mb-4">
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input checkbox-val" type="checkbox"
-                                                                id="inlineCheckbox2" value=${properties.checkbox2}>
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="inlineCheckbox6"
+                                                                value=${properties.enrolledCheckbox}>
                                                             <label
                                                                 class="form-check-label text-white font-heading h4 fst-italic"
-                                                                for="inlineCheckbox2">${properties.checkbox2}</label>
-                                                        </div>
-
-                                                        <div class="form-check form-check-inline is-astrik shift-astrik">
-                                                            <input class="form-check-input checkbox-val" type="checkbox"
-                                                                id="inlineCheckbox3" value=${properties.checkbox3}>
-                                                            <label
-                                                                class="form-check-label text-white font-heading h4 fst-italic" for="
-                                                                inlineCheckbox3">${properties.checkbox3}</label>
-                                                            <div class=" error GradeError">${properties.enterGrade}
+                                                                for="inlineCheckbox6">${properties.enrolledCheckbox}</label>
+                                                            <div class="error EnrollError">
+                                                                ${properties.selectEnrolled}
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <button
+                                                        class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase w-50 mb-4"
+                                                        type="submit" id="esportsSubmit">${properties.ctaText}</button>
                                                 </div>
-
-                                            </div>
-
-                                            <hr>
-                                            <div class="col-md-10 text-center">
-                                                <div class="mb-4">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox6" value=${properties.enrolledCheckbox}>
-                                                        <label
-                                                            class="form-check-label text-white font-heading h4 fst-italic"
-                                                            for="inlineCheckbox6">${properties.enrolledCheckbox}</label>
-                                                        <div class="error EnrollError">
-                                                            ${properties.selectEnrolled}
-                                                        </div>
-                                                    </div>
+                                                <div class="col-md-10 text-center">
+                                                    <p>${properties.agreementText}</p>
                                                 </div>
-                                                <button
-                                                    class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase w-50 mb-4"
-                                                    type="submit" id="esportsSubmit">${properties.ctaText}</button>
                                             </div>
-                                            <div class="col-md-10 text-center">
-                                                <p>${properties.agreementText}</p>
-                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body p-4 messagePopUp text-primary text center"
+                        success-message="${properties.successMessage}" error-message="${properties.errorMessage}">
+                        <h3 class="display-message"></h3>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-between"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-Up : Model Overlay Success-->
+    <div class="modal custom-modal fade" id="alertSuccessModal" tabindex="-1"
+        aria-labelledby="alert" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-xl modal-dialog-centered">
+            <div class="modal-content bg-gray-dark m-2">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body m-4">
+                    <div class="card bg-gray-dark">
+                        <div class="card-body">																												<!-- Add Any Components Here  -->
+                            <div class="vstack align-items-center position-relative h-300 justify-content-center">
+                                <div class="alert-title d-flex align-items-center position-relative">
+                                    <div class="avatar avatar-lg">
+                                        <div class="avatar-img rounded-circle icon-success">
+                                            <span class="text-white position-absolute top-50 start-50 translate-middle fw-bold fs-3">
+                                                <i class="fas fa-check"></i>
+                                            </span>
                                         </div>
-                                    </form>
+                                    </div>
+                                    <span class="ms-3 justify-content-center text-center">															
+                                        <h2 class="fs-1 fst-italic lh-1 text-uppercase">Thank you for <span class="text-primary">getting in touch!</span></h2>
+                                    </span>
+                                </div>
+                                <div class="alert-text d-flex align-items-center position-relative justify-content-center col-10 col-md-6 mx-auto">															
+                                        <h3 class="fst-italic lh-1 mt-2 text-uppercase text-center"> <span class="text-primary">We will</span> contact you soon!</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-body p-4 messagePopUp text-primary text center" success-message="${properties.successMessage}"
-                    error-message="${properties.errorMessage}">
-                    <h3 class="display-message"></h3>
-                </div>
             </div>
-
-            <div class="modal-footer border-0 justify-content-between"></div>
         </div>
     </div>
-</div>
+    <!-- Pop-Up : Model Success  -->
+
+    <!-- Pop-Up : Model Overlay Warning -->
+    <div class="modal custom-modal fade" id="alertWarningModal" tabindex="-1"
+    aria-labelledby="alert" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-xl modal-dialog-centered">
+            <div class="modal-content bg-gray-dark m-2">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card bg-gray-dark">
+                        <div class="card-body">																												<!-- Add Any Components Here  -->
+                            <div class="vstack align-items-center position-relative h-300 justify-content-center">
+                                <div class="alert-title d-flex align-items-center position-relative">
+                                    <div class="avatar avatar-lg">
+                                        <div class="avatar-img rounded-circle icon-danger">
+                                            <span class="text-white position-absolute top-50 start-50 translate-middle fw-bold fs-3">
+                                                <i class="bi bi-info display-6"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="ms-3 justify-content-center text-center">															
+                                        <h2 class="fs-1 fst-italic lh-1 text-uppercase">Sorry but something went wrong</h2>
+                                    </span>
+                                </div>
+                                <div class="alert-text d-flex align-items-center position-relative justify-content-center col-10 col-md-6 mx-auto">														
+                                        <h3 class="fst-italic lh-1 mt-2 text-uppercase text-center">Please check the email or password you entered at signup and try again</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pop-Up : Model Overlay Warning-->
 </sly>

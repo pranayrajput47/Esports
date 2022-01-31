@@ -7,16 +7,14 @@
     <div class="col-12">
         
         <div>
-            <div class="card border">
+            <div class="card border" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <div class="avatar avatar-lg mx-2">
-                            <img class="avatar-img scale-4" src="${route.image}" alt="${route.altText}">
-                        </div>
+                        <img class="icon-xl" src="${route.image}" alt="${route.altText}">
                         <div class="w-100 ms-3">
                             <h6 class="text-white fst-italic text-uppercase mb-1"><a href="${route.link}" data-glightbox data-gallery="y-video"> ${route.title}</a></h6>
                             <small class="small d-block mb-1">${route.heading} </small>
-                            <h6 class="fs-5 fst-italic mb-1 text-uppercase d-flex align-items-center"><i class="bi bi-record-fill fs-5 me-2 fw-bold text-secondary"></i>${route.days}</h6>
+                            <h6 class="fs-5 pt-2 fst-italic mb-1 text-uppercase d-flex align-items-center"><i class="bi bi-record-fill fs-5 me-2 fw-bold text-secondary"></i>${route.days}</h6>
                             <div class="d-flex justify-content-end">
                                 <ul class="nav fs-6 mt-n2">
                                     <li class="nav-item ms-3">

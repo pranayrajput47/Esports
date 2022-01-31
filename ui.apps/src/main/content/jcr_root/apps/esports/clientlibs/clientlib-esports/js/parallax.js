@@ -9,8 +9,8 @@
                 'opacity' : 1-(scrollPos/700)
             });
             $('.parallax-fade-hero-2').css({
-                'top' : (scrollPos/1.6)+'px',
-                'opacity' : 1-(scrollPos/700)
+                'top' : (scrollPos/1)+'px',
+                'opacity' : 1-(scrollPos/300)
             });
             $('.parallax-hero').css({
                 'top' : (scrollPos/2.2)+'px'

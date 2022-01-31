@@ -1,6 +1,6 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Roster Component here" class="cq-placeholder"></p>
 
-        <div class="card card-custom">
+        <div class="card card-custom" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
             <div class="card-header">
                 <h4 class="text-white text-uppercase mb-1">${properties.rosterHeading}<span
                         class="text-primary">${properties.rosterSubHeading}</span></h4>
@@ -35,7 +35,7 @@
                                                         <sly data-sly-test="${secondMultifield.name == 'rosterList'}">
                                                             <sly data-sly-list.data="${secondMultifield.getChildren}">
                                                                 <div
-                                                                    class="vstack justify-content-center align-items-center text-center p-4">
+                                                                    class="vstack justify-content-center align-items-center text-center p-3">
                                                                     <a href="${data.imageLink}" target = "_blank"><img class="card-img"
                                                                             src="${data.image}"
                                                                             alt="${data.altText}"></a>
