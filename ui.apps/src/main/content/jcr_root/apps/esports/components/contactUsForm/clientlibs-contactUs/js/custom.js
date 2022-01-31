@@ -38,7 +38,7 @@ $(document).ready(function () {
         }
     });
     $("input[name=phone]").on("input", function () {
-        var passwrdNu =/^[0-9]+$/;
+        var passwrdNu = /^[0-9]+$/;
         var mobile = $(this).val();
         if (!passwrdNu.test(mobile) || mobile.length > 15) {
             var mobilestr = mobile.substring(0, mobile.length - 1);
@@ -62,7 +62,7 @@ $(document).ready(function () {
         // RegEx variables
         let emailRe = /^\b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b$/i;
         let zipCodeRe = /^[0-9]{5}$/;
-        let city = $("[name='selectCity'] option:selected").val();
+        let state = $("[name='selectCity'] option:selected").val();
         let fullName = $("[name='firstname']").val();
         let lastName = $("[name='lastname']").val();
         let email = $("[name='email']").val();
@@ -75,11 +75,11 @@ $(document).ready(function () {
         let interested = $('.checkbox-val:checked').map(function (_, el) {
             return $(el).val();
         }).get();
-        let enrolled = $('#inlineCheckbox6:checked').val();
+        let enrolled = $("#inlineCheckbox6").prop("checked")
         if (enrolled == undefined) {
             enrolled = "";
         }
-        if (city == "") {
+        if (state == "") {
             $(".CityError").show();
             $("[name='selectCity']").focus();
         } else if (fullName == "") {
@@ -114,7 +114,7 @@ $(document).ready(function () {
         // }
         else {
             formData = {
-                city: city,
+                state: state,
                 fname: fullName,
                 lname: lastName,
                 email: email,
@@ -124,16 +124,19 @@ $(document).ready(function () {
                 interested: interested,
                 enrolled: enrolled
 
-            };
 
+            };
+            $(".form-custom").hide();
+            $(".loader-rce").show();
             $.ajax({
                 url: apiUrl,
                 method: "POST",
                 data: formData,
                 success: function (res) {
+                    $(".loader-rce").hide();
                     $(".form-custom").hide();
                     $(".messagePopUp").show();
-                    $(".messagePopUp").html(successMessage);
+                    $(".success-message").show();
                     $(document).on("click", ".close", function (e) {
                         location.reload();
 
@@ -141,9 +144,10 @@ $(document).ready(function () {
 
                 },
                 error: function (error) {
+                    $(".loader-rce").hide();
                     $(".form-custom").hide();
                     $(".messagePopUp").show();
-                    $(".display-message").append(errorMessage);
+                    $(".error-message").show();
                     $(document).on("click", ".close", function (e) {
                         location.reload();
 
