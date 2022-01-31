@@ -1,10 +1,14 @@
+<p data-sly-test.edit="${wcmmode.edit}" date-emptytext="Configure Pre Notification Component here" class="cq-placeholder"></p>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.all @categories = 'clientlib.preNotify'}" />
 <div class="alert bg-dark alert-dismissible fade show position-fixed bottom-0 start-50 translate-middle-x z-index-999 d-lg-flex justify-content-between align-items-center shadow p-4 col-9 col-md-5" role="alert">
 	<p class="m-0 pe-3">${properties.heading} <a class="text-reset" href="${properties.link}"> <u>${properties.subHeading}</u></a></p>
 	<div class="d-flex mt-3 mt-lg-0">
 		<button type="button" class="btn btn-light-soft btn-sm fst-italic rounded-pill text-uppercase mb-0 me-2" data-bs-dismiss="alert" aria-label="Close">
 		<span aria-hidden="true">${properties.ctaOne}</span>
 		</button>
-		<button type="button" class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase mb-0" data-bs-dismiss="alert" aria-label="Close">
+		<button type="button" class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase mb-0 btn-gdpr" data-bs-dismiss="alert" aria-label="Close">
 		<span aria-hidden="true">${properties.ctaTwo}</span>
 		</button>
 	</div>
