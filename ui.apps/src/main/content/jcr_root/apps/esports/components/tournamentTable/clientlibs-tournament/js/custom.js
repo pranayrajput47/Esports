@@ -16,7 +16,7 @@ function fetchData(category) {
             method: "GET",
             contentType: 'application/json',
             success: function (res) {
-                content = Object.values(res);
+                content = Object.values(res.request.resource.contentList);
                 populate(content, category);
 
             },
