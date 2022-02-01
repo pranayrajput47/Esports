@@ -1,6 +1,6 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Job Title component here" class = "cq-placeholder"></p>
 
-<div class="card" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+<div class="card">
     <div class="card-header">
         <h4 class="text-white text-uppercase mb-0">${properties.primaryHeading}</h4>
     </div>
@@ -9,11 +9,11 @@
             <sly data-sly-list.multifield="${resource.getChildren}">
                 <sly data-sly-test="${multifield.name == 'jobs'}">
                     <sly data-sly-list.route="${multifield.getChildren}">
-                        <div class="d-flex align-items-start position-relative">
+                        <div class="d-flex align-items-start position-relative" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                             <img class="icon-xl" src="${route.image}"
                             alt="${route.altText}">
                             <div class="info ms-5">
-                                <h4 class="text-primary text-uppercase mb-3">${route.heading}</h4>
+                                <h4 class="text-primary text-uppercase mb-3" >${route.heading}</h4>
                                 <p>${route.description @ context = 'html'}</p>
                                 <div class="row">
                                     <sly data-sly-list.secondmultifield="${route.getChildren}">

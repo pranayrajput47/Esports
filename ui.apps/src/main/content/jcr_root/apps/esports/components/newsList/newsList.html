@@ -5,7 +5,7 @@
 
 <div>
     <!-- Card START -->
-    <div class="card card-custom" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+    <div class="card card-custom">
         <div class="card-header">
             <h4 class="text-white text-uppercase mb-1">${properties.title}</h4>
             <div class="card-toolbar">
@@ -24,24 +24,25 @@
                                     <div class="row">
                                         <!-- Image -->
                                         <div class="col-md-5 position-relative">
-                                            <div class="mb-4"><img src="${route.image}" alt="Image Title"></div>
-                                            <div class="w-100 mb-4">
+                                            <div class="mb-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s"><img src="${route.image}" alt="Image Title"></div>
+                                            <div class="w-100 mb-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                                                 <div class="small text-start mb-2">${route.sponserText}</div>
-                                                <a href="${route.logoLink}" class="d-block card-img-flash">
+                                                <a href="${route.logoLink}" target="_blank" class="d-block card-img-flash">
                                                     <img src="${route.logoImg}" alt="stride">
                                                 </a>
                                             </div>
                                         </div>
                                         <!-- Content -->
                                         <div class="col-md-7">
-                                            <h3 class="card-title text-uppercase mb-4"><a href="${route.headingLink}"
+                                            <h3 class="card-title text-uppercase mb-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s"><a href="${route.headingLink}" target="_blank"
                                                     class="btn-link text-reset fw-bold">${route.heading}</a></h3>
-                                            <h6 class="small fst-italic mb-4">${route.dateHeading}
+                                            <h6 class="small fst-italic mb-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">${route.dateHeading}
                                             </h6>
-                                            <h6 class="small fst-italic mb-4">${route.writeBy}
+                                            <h6 class="small fst-italic mb-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">${route.writeBy}
                                             </h6>
-                                            <p>${route.description @ context = 'html'}</p>
-                                            <div class="w-100 mt-4 text-center text-lg-end">
+                                            <p data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">${route.description @ context = 'html'}</p>
+
+                                            <div class="w-100 mt-4 text-center text-lg-end" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                                                 <a href="${route.btnLink}" target = "_blank"
                                                     class="btn btn-primary btn-sm fst-italic rounded-pill text-uppercase"
                                                     role="button" aria-lable="learn">${route.btnText} <i

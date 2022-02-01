@@ -1,5 +1,5 @@
 <p data-sly-test.edit="${wcmmode.edit}" data-emptytext="Configure League List here" class="cq-placeholder"></p>
-<div class="card card-custom" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+<div class="card card-custom">
     <div class="card-header">
         <h4 class="text-white text-uppercase mb-1">${properties.cardTitle}<br>${properties.cardSubTitle}</h4>
         <sly data-sly-test="${properties.ctaText}">
@@ -29,12 +29,12 @@
                                             <sly data-sly-test="${second.name == 'secondList'}">
                                                 <sly data-sly-list.secondList="${second.getChildren}">
                                         <div class="schedule-academy-leauge">
-                                            <div class="d-flex px-4 py-3 justify-content-between align-items-center">
+                                            <div class="d-flex px-4 py-3 justify-content-between align-items-center" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                                                 <span
                                                     class="text-primary font-heading fw-bolder lead text-uppercase">${secondList.heading}<span class="winner ms-1 text-white">${secondList.subHeading}</span></span>
                                             </div>
                                             <table
-                                                class="table table-schedule-leauge table-borderless align-middle font-heading text-uppercase">
+                                                class="table table-schedule-leauge table-borderless align-middle font-heading text-uppercase" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                                                 <thead>
                                                     <tr>
                                                         <th class="p-0"></th>

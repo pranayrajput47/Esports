@@ -2,6 +2,10 @@ $(document).ready(function () {
     let successMessage = $(".messagePopUp").attr("success-message");
     let errorMessage = $(".messagePopUp").attr("error-message");
     let apiUrl = $("#formModal").attr("api-Url");
+    let emailLink = $("#formModal").attr("email-link");
+    if (emailLink == undefined) {
+        emailLink = "";
+    }
 
     $("[name='firstname']").on("input", function () {
         let username = $(this).val();
@@ -68,6 +72,9 @@ $(document).ready(function () {
         let email = $("[name='email']").val();
         let zipcode = $("[name='zip']").val();
         let description = $("#con-message").val();
+        if (description == undefined) {
+            description = "";
+        }
         let phone = $("input[name=phone]").val();
         if (phone == undefined) {
             phone = "";
@@ -98,11 +105,14 @@ $(document).ready(function () {
             $(".GradeError").show();
             $("#inlineCheckbox1").focus();
 
-        } else if (description == "") {
-            $(".MessageError").show();
-            $("#con-message").focus();
-        } else {
+        }
+        // else if (description == "") {
+        //     $(".MessageError").show();
+        //     $("#con-message").focus();
+        // }
+        else {
             formData = {
+                emailLink: emailLink,
                 state: state,
                 fname: fullName,
                 lname: lastName,
