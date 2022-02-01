@@ -8,6 +8,7 @@
         <!-- START: Table -->
         <div class="">
             <table class="table table-tournament table-borderless align-middle font-heading text-uppercase">
+
                 <thead>
                     <tr>
                         <th class="p-0"></th>
@@ -19,7 +20,7 @@
                     </tr>
                 </thead>
                 <tbody id="tableContents" root-path="${properties.contentRootPath}">
-
+<div class="loader-rce"></div>
                 </tbody>
 
             </table>
@@ -27,6 +28,7 @@
         <!-- END: Table -->
     </div>
     <script id="tableTemplate" type="text/x-handlebars-template">
+
                     {{#each this}}
                                 <tr>
                                     <td class="ps-3 pe-2 text-center">

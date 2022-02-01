@@ -1,10 +1,12 @@
 $(document).ready(function () {
+    $(".loader-rce").show();
     fetchData("all");
 });
 
 $("#categories").on("change", function () {
     var category = $('#categories :selected').val();
     fetchData(category);
+    $(".loader-rce").show();
 });
 
 function fetchData(category) {
@@ -18,6 +20,7 @@ function fetchData(category) {
             success: function (res) {
                 content = Object.values(res.request.resource.contentList);
                 populate(content, category);
+                $(".loader-rce").hide();
 
             },
             error: function (error) {
