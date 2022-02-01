@@ -116,7 +116,9 @@ $(document).ready(function () {
 
             };
             $(".form-custom").hide();
-            $(".loader-rce").show();
+            $(".modal-header").hide();
+            $(".modal-footer").hide()
+            $(".loader-stride").show();
             $.ajax({
                 url: apiUrl,
                 method: "POST",
@@ -124,8 +126,9 @@ $(document).ready(function () {
                 success: function (res) {
                     console.log(res.code)
                     if (res.code == 200) {
-                        $(".loader-rce").hide();
+                        $(".loader-stride").hide();
                         $(".form-custom").hide();
+                        $(".modal-header").show();
                         $(".messagePopUp").show();
                         $(".success-message").show();
                         $(document).on("click", ".close", function (e) {
@@ -134,8 +137,9 @@ $(document).ready(function () {
                         });
 
                     } else {
-                        $(".loader-rce").hide();
+                        $(".loader-stride").hide();
                         $(".form-custom").hide();
+                        $(".modal-header").show();
                         $(".messagePopUp").show();
                         $(".error-message").show();
                         $(document).on("click", ".close", function (e) {
@@ -145,8 +149,9 @@ $(document).ready(function () {
                     }
                 },
                 error: function (error) {
-                    $(".loader-rce").hide();
+                    $(".loader-stride").hide();
                     $(".form-custom").hide();
+                    $(".modal-header").show();
                     $(".messagePopUp").show();
                     $(".error-message").show();
                     $(document).on("click", ".close", function (e) {
