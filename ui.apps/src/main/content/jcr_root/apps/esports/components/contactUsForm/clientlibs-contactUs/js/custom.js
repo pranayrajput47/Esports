@@ -94,25 +94,14 @@ $(document).ready(function () {
         } else if (zipcode == "" || !zipCodeRe.test(zipcode)) {
             $(".PincodeError").show();
             $("#con-subject").focus();
-        }
-        // else if ($("#inlineCheckbox1").prop("checked") == false) {
-        //     $(".GradeError").show();
-        //     $("#inlineCheckbox1").focus();
-        // }
-        else if ($("#inlineCheckbox1").prop("checked") == false && $("#inlineCheckbox2").prop("checked") == false && $("#inlineCheckbox3").prop("checked") == false) {
+        } else if ($("#inlineCheckbox1").prop("checked") == false && $("#inlineCheckbox2").prop("checked") == false && $("#inlineCheckbox3").prop("checked") == false) {
             $(".GradeError").show();
             $("#inlineCheckbox1").focus();
 
         } else if (description == "") {
             $(".MessageError").show();
             $("#con-message").focus();
-        }
-
-        // else if ($("#inlineCheckbox6").prop("checked") == false) {
-        //     $(".EnrollError").show();
-        //     $("#inlineCheckbox6").focus();
-        // }
-        else {
+        } else {
             formData = {
                 state: state,
                 fname: fullName,
@@ -133,15 +122,27 @@ $(document).ready(function () {
                 method: "POST",
                 data: formData,
                 success: function (res) {
-                    $(".loader-rce").hide();
-                    $(".form-custom").hide();
-                    $(".messagePopUp").show();
-                    $(".success-message").show();
-                    $(document).on("click", ".close", function (e) {
-                        location.reload();
+                    console.log(res.code)
+                    if (res.code == 200) {
+                        $(".loader-rce").hide();
+                        $(".form-custom").hide();
+                        $(".messagePopUp").show();
+                        $(".success-message").show();
+                        $(document).on("click", ".close", function (e) {
+                            location.reload();
 
-                    });
+                        });
 
+                    } else {
+                        $(".loader-rce").hide();
+                        $(".form-custom").hide();
+                        $(".messagePopUp").show();
+                        $(".error-message").show();
+                        $(document).on("click", ".close", function (e) {
+                            location.reload();
+
+                        });
+                    }
                 },
                 error: function (error) {
                     $(".loader-rce").hide();
@@ -213,17 +214,6 @@ $(document).ready(function () {
         $(".EnrollError").hide();
         $(".GradeError").hide();
     });
-    // $("#inlineCheckbox1").on("input", function () {
-    //     $(".GradeError").hide();
-    //     $(".QuestionError2").hide();
-    //     $(".CityError").hide();
-    //     $(".fNameError").hide();
-    //     $(".lNameError").hide();
-    //     $(".EmailError").hide();
-    //     $(".PincodeError").hide();
-    //     $(".MessageError").hide();
-    //     $(".EnrollError").hide();
-    // });
     $("#inlineCheckbox1").on("input", function () {
         $(".QuestionError2").hide();
         $(".CityError").hide();
@@ -268,17 +258,6 @@ $(document).ready(function () {
         $(".EnrollError").hide();
         $(".GradeError").hide();
     });
-    // $("#inlineCheckbox6").on("input", function () {
-    //     $(".EnrollError").hide();
-    //     $(".CityError").hide();
-    //     $(".fNameError").hide();
-    //     $(".lNameError").hide();
-    //     $(".EmailError").hide();
-    //     $(".PincodeError").hide();
-    //     $(".QuestionError2").hide();
-    //     $(".MessageError").hide();
-    //     $(".GradeError").hide();
-    // });
 
 
 })
