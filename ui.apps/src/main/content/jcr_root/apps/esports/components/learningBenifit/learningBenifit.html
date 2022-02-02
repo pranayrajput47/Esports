@@ -2,14 +2,14 @@
 <sly data-sly-test="${properties.viewType == 'learning'}">
     <div>
 
-        <div class="card border" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+        <div class="card border">
             <div class="card-header">
                 <h4 class="text-white text-uppercase mb-0">${properties.title}
                 </h4>
             </div>
             <div class="card-body px-0">
                 <div class="d-block p-4">
-                    <h3 class="card-title text-uppercase">${properties.heading1} <span
+                    <h3 class="card-title text-uppercase" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">${properties.heading1} <span
                             class="text-primary">${properties.primaryText}</span>${properties.heading2}</h3>
                 </div>
                 <div class="d-block">
@@ -19,7 +19,7 @@
                         <sly data-sly-list.multifield="${resource.getChildren}">
                             <sly data-sly-test="${multifield.name == 'learingItem'}">
                             <sly data-sly-list.route="${multifield.getChildren}">
-                        <div class="col-12">
+                        <div class="col-12" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
 
                             <div class="hstack justify-content-start align-items-center px-3 py-2">
                                 <img class="icon-lg mx-4 my-3"
@@ -56,7 +56,7 @@
                     <sly data-sly-list.multifield="${resource.getChildren}">
                         <sly data-sly-test="${multifield.name == 'learingItem'}">
                         <sly data-sly-list.route="${multifield.getChildren}">
-                    <div class="col-12">
+                    <div class="col-12" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                         <div
                             class="hstack justify-content-start align-items-center px-4 py-3">
                             <img class="icon-lg me-4"

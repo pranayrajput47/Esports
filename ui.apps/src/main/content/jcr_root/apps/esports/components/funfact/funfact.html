@@ -1,5 +1,5 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext="Configure Fun Fact component here" class="cq-placeholder"></p>
-<div class="card border" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+<div class="card border">
     <div class="card-header">
         <h4 class="text-white text-uppercase mb-0">${properties.cardheader} <span
                 class="text-primary">${properties.primarytext}</span></h4>
@@ -7,7 +7,7 @@
     <div class="card-body px-0">
     
         <div class="d-block p-4">
-            <h3 class="card-title text-uppercase">${properties.cardbodytext}<span
+            <h3 class="card-title text-uppercase" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">${properties.cardbodytext}<span
                     class="text-primary mx-1">${properties.textmx}</span>${properties.spantext}<span class="text-primary mx-1">${properties.cardbodydescription}</span></h3>
         </div>
         <div class="d-block pb-4 ll">
@@ -31,8 +31,8 @@
                                                             <sly data-sly-list.routeList="${secondmultifield.getChildren}">
                                                                 <div class="col-6">
                                                                     <div
-                                                                        class="vstack justify-content-center align-items-center text-center py-4">
-                                                                        <img class="icon-md mb-3"
+                                                                        class="vstack justify-content-center align-items-center text-center py-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+                                                                        <img class="icon-lg mb-3"
                                                                             src="${routeList.image}">
                                                                             ${routeList.description @ context = 'html'}
                                                                         <h6 class="display-6">${routeList.numbertext}</h6>

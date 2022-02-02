@@ -1,13 +1,13 @@
 <p data-sly-test.edit = "${wcmmode.edit}" date-emptytext = "Configure Overview Component here" class = "cq-placeholder"></p>
 <div>
     <!-- Card START -->
-    <div class="card" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+    <div class="card">
         <div class="pt-3 pb-2 px-3">
             <h5 class="text-primary text-uppercase mb-0 mb-n1">${properties.heading}</h5>
             <h2 class="card-title text-uppercase display-5 mb-0 mt-n2">${properties.subHeading}</h2>
         </div>
         <img src="${properties.image}" alt="${properties.imageAltText}">
-        <div class="card-body p-4">
+        <div class="card-body p-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
 
             ${properties.description @context = 'html'}
 

@@ -1,6 +1,6 @@
 <p data-sly-test.edit = "${wcmmode.edit}" data-emptytext = "Configure Roster Component here" class="cq-placeholder"></p>
 
-        <div class="card card-custom" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+        <div class="card card-custom">
             <div class="card-header">
                 <h4 class="text-white text-uppercase mb-1">${properties.rosterHeading}<span
                         class="text-primary">${properties.rosterSubHeading}</span></h4>
@@ -12,7 +12,7 @@
             <div class="card-body p-4">
                 <div class="row">
                     <!-- Title -->
-                    <div class="col-12">
+                    <div class="col-12" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                         <h3 class="card-title text-uppercase mb-4 text-center">${properties.rosterYear}
                             <span class="text-primary">${properties.rosterTitle}</span>
                         </h3>
@@ -36,7 +36,7 @@
                                                             <sly data-sly-list.data="${secondMultifield.getChildren}">
                                                                 <div
                                                                     class="vstack justify-content-center align-items-center text-center p-3">
-                                                                    <a href="${data.imageLink}" target = "_blank"><img class="card-img"
+                                                                    <a href="${data.imageLink}" target = "_blank" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s"><img class="card-img"
                                                                             src="${data.image}"
                                                                             alt="${data.altText}"></a>
                                                                 </div>
@@ -75,7 +75,7 @@
 
 									<!-- Title -->
 									<div class="col-12">
-										<h3 class="card-title text-uppercase mb-4 text-center">${properties.rosterYear}
+										<h3 class="card-title text-uppercase mb-4 text-center" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">${properties.rosterYear}
 											<span class="text-primary">${properties.rosterTitle}</span>
 										</h3>
 									</div>
@@ -92,8 +92,8 @@
                                                                     <sly data-sly-list.routeList="${secmultifield.getChildren}">
                                                                         <div class="col-6 col-sm-4 col-lg-2">
                                                                             <div
-                                                                                class="vstack justify-content-center align-items-center text-center p-3">
-                                                                                <a href="${routeList.imageLink}"><img class="card-img"
+                                                                                class="vstack justify-content-center align-items-center text-center p-3" data-scroll-reveal="enter left move 40px over 0.3s after 0.3s">
+                                                                                <a href="${routeList.imageLink}" target="_blank"><img class="card-img"
                                                                                         src="${routeList.image}"
                                                                                         alt="${routeList.altText}"></a>
                                                                             </div>

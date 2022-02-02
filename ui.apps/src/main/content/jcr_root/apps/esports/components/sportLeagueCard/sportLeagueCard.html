@@ -2,7 +2,7 @@
 
  <div>
 
-    <div class="card border" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
+    <div class="card border">
         <div class="card-header">
             <h4 class="text-white text-uppercase mb-0">${properties.title}
             </h4>
@@ -23,14 +23,14 @@
                         <sly data-sly-test="${multifield.name == 'sportLeagueCard'}">
                         <sly data-sly-list.route="${multifield.getChildren}">
                         <div class="vstack justify-content-center align-items-center px-4 py-3">
-                        <img class="icon-xl mb-4"
+                        <img class="icon-xl mb-4" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s"
                             src="${route.image}">
                         <div>
-                            <h3 class="text-center mb-1">
+                            <h3 class="text-center mb-1" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                                 ${route.multiHeading}<span
                                     class="text-primary">${route.primaryMultiHeading}</span>
                             </h3>
-                            <p class="text-center">
+                            <p class="text-center" data-scroll-reveal="enter bottom move 40px over 0.3s after 0.3s">
                                 <span class="text-primary">${route.primaryDescription}</span>${route.description}
                             </p>
                         </div>
