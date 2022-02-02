@@ -17,7 +17,7 @@ $(document).ready(function () {
     if (flag != "true") {
         $(".alert-dismissible").css("display", "block");
     } else {
-        $(".alert-dismissible").css("display", "none");
+        $(".alert-dismissible").addClass("dp-none");
     }
     $(".btn-gdpr").click(function () {
         if (flag != "true") {
