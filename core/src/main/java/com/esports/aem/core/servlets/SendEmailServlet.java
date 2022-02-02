@@ -67,6 +67,7 @@ public class SendEmailServlet extends SlingAllMethodsServlet {
             String state = request.getParameter("state") == null ? StringUtils.EMPTY : request.getParameter("state");
             String description = request.getParameter("description") == null ? StringUtils.EMPTY : request.getParameter("description");
             String interestedGrade = request.getParameter("interested") == null ? StringUtils.EMPTY : request.getParameter("interested");
+            String emailLink = request.getParameter("emailLink") == null ? StringUtils.EMPTY : request.getParameter("emailLink");
 
             Map emailParams = new HashMap<>();
             emailParams.put("senderFName", firstName);
@@ -77,6 +78,7 @@ public class SendEmailServlet extends SlingAllMethodsServlet {
             emailParams.put("state", state);
             emailParams.put("description", description);
             emailParams.put("interestedGrade", interestedGrade);
+            emailParams.put("emailLink", emailLink);
 
             boolean sentEmail = emailService.sendMail(resolver, emailParams);
             boolean sentEmailToUser = emailService.sendMailToUser(resolver, emailParams);

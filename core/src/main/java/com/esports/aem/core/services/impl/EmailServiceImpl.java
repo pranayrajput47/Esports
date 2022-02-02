@@ -98,7 +98,7 @@ public class EmailServiceImpl implements EmailService {
         String[] recipients ();
 
         @AttributeDefinition(name = "Sender Email Address", description = "Sender Email Address")
-        String email_from () default "accessibility@k12.com";
+        String email_from () default "strideesport@k12.com";
 
         @AttributeDefinition(name="Email Template Path", description="Email Template Path")
         String templatePath() default "/etc/notification/email/html/esportsTemplate.html";
